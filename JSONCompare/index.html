@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="JSON, Compare, Solve">
     <meta name="author" content="Samuel Gauthier">
-    <meta name="description" content="Tool allowing you to compare two JSONs to find the added, removed and changed properties">
+    <meta name="description"
+        content="Tool allowing you to compare two JSONs to find the added, removed and changed properties">
 
     <title>JSON Compare</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
@@ -39,9 +40,9 @@
             </div>
             <div id="outputContainer">
                 <div class="input-group">
-                    <textarea id="addedOutput" readonly
-                        placeholder="JSON found in the modified that the original doesn't have"></textarea>
-                    <label for="" title="Content added by the modified JSON">Added</label>
+                    <textarea id="removedOutput" readonly
+                        placeholder="JSON found in the original that the modified doesn't have"></textarea>
+                    <label for="" title="Content removed from the original JSON">Removed</label>
                 </div>
                 <div class="input-group">
                     <textarea id="changedOutput" readonly
@@ -49,11 +50,10 @@
                     <label for="" title="Content changed from the original JSON">Changed</label>
                 </div>
                 <div class="input-group">
-                    <textarea id="removedOutput" readonly
-                        placeholder="JSON found in the original that the modified doesn't have"></textarea>
-                    <label for="" title="Content removed from the original JSON">Removed</label>
+                    <textarea id="addedOutput" readonly
+                        placeholder="JSON found in the modified that the original doesn't have"></textarea>
+                    <label for="" title="Content added by the modified JSON">Added</label>
                 </div>
-
             </div>
         </div>
         <div id="buttonContainer">
