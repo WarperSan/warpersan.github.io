@@ -4,7 +4,6 @@ window.onload = function () {
     let addedOutput = document.getElementById("addedOutput");
     let changedOutput = document.getElementById("changedOutput");
     let removedOutput = document.getElementById("removedOutput");
-    
 
     function onClick() {
         let original = JSON.parse(originalInput.value);
@@ -24,7 +23,7 @@ window.onload = function () {
     }
 
     function setValue(t, o) {
-        if (o !== undefined && Object.keys(o).length != 0)
+        if (o !== undefined)
             t.value = JSON.stringify(o, null, 2);
         else
             t.value = "Nothing";
@@ -49,26 +48,70 @@ window.onload = function () {
         errorContainer.style.opacity = 1;
     }
 
+    // --- PRETTIFY ---
+    function prettifyOriginal(value) {
+        try {
+            let original = JSON.parse(value);
+            originalInput.value = JSON.stringify(original, null, 2);
+        } catch (error) {
+            onError(error);
+            console.log(error);
+        }
+    }
+
+    function prettifyModified(value) {
+        try {
+            let modified = JSON.parse(value);
+            modifiedInput.value = JSON.stringify(modified, null, 2);
+        } catch (error) {
+            onError(error);
+            console.log(error);
+        }
+    }
+
+    let prettifyBtn = document.getElementById("prettifyButton");
+    prettifyBtn.addEventListener("click", function () {
+        prettifyOriginal(originalInput.value);
+        prettifyModified(modifiedInput.value);
+    });
+
+    // --- PARAMS ---
+    function parse_query_string(query) {
+        var vars = query.split("&");
+        var query_string = {};
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            var key = decodeURIComponent(pair.shift());
+            var value = decodeURIComponent(pair.join("="));
+            // If first entry with this name
+            if (typeof query_string[key] === "undefined") {
+                query_string[key] = value;
+                // If second entry with this name
+            } else if (typeof query_string[key] === "string") {
+                var arr = [query_string[key], value];
+                query_string[key] = arr;
+                // If third or later entry with this name
+            } else {
+                query_string[key].push(value);
+            }
+        }
+        return query_string;
+    }
+
+    var query = window.location.search.substring(1);
+    var qs = parse_query_string(query);
+
+    if (qs["original"] !== undefined)
+        prettifyOriginal(qs["original"]);
+
+    if (qs["modified"] !== undefined)
+        prettifyModified(qs["modified"]);
+
     // --- EVENT LISTENER ---
     let btn = document.getElementById("compareButton");
     btn.addEventListener("click", function () {
         try {
             onClick();
-        } catch (error) {
-            onError(error);
-            console.log(error);
-        }
-    });
-
-    let prettifyBtn = document.getElementById("prettifyButton");
-    prettifyBtn.addEventListener("click", function () {
-        try {
-            let original = JSON.parse(originalInput.value);
-            let modified = JSON.parse(modifiedInput.value);
-
-            // Prettify inputs
-            originalInput.value = JSON.stringify(original, null, 2);
-            modifiedInput.value = JSON.stringify(modified, null, 2);
         } catch (error) {
             onError(error);
             console.log(error);
