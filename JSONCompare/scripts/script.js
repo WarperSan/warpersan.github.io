@@ -6,20 +6,25 @@ window.onload = function () {
     let removedOutput = document.getElementById("removedOutput");
 
     function onClick() {
-        let original = JSON.parse(originalInput.value);
-        let modified = JSON.parse(modifiedInput.value);
+        try {
+            let original = JSON.parse(originalInput.value);
+            let modified = JSON.parse(modifiedInput.value);
 
-        // Check for added fields
-        let added = new AdditionChecker().process(original, modified);
-        setValue(addedOutput, added);
+            // Check for added fields
+            let added = new AdditionChecker().process(original, modified);
+            setValue(addedOutput, added);
 
-        // Check for removed fields
-        let removed = new RemovalChecker().process(original, modified);
-        setValue(removedOutput, removed);
+            // Check for removed fields
+            let removed = new RemovalChecker().process(original, modified);
+            setValue(removedOutput, removed);
 
-        // Check for modified fields
-        let changed = new ChangesChecker().process(original, modified);
-        setValue(changedOutput, changed);
+            // Check for modified fields
+            let changed = new ChangesChecker().process(original, modified);
+            setValue(changedOutput, changed);
+        } catch (error) {
+            onError(error);
+            console.log(error);
+        }
     }
 
     function setValue(t, o) {
@@ -100,23 +105,21 @@ window.onload = function () {
 
     var query = window.location.search.substring(1);
     var qs = parse_query_string(query);
+    var qsOriginal = qs["original"];
+    var qsModified = qs["modified"];
 
-    if (qs["original"] !== undefined)
-        prettifyOriginal(qs["original"]);
+    if (qsOriginal !== undefined)
+        prettifyOriginal(qsOriginal);
 
-    if (qs["modified"] !== undefined)
-        prettifyModified(qs["modified"]);
+    if (qsModified !== undefined)
+        prettifyModified(qsModified);
+
+    if (qsOriginal !== undefined && qsModified !== undefined)
+        onClick();
 
     // --- EVENT LISTENER ---
     let btn = document.getElementById("compareButton");
-    btn.addEventListener("click", function () {
-        try {
-            onClick();
-        } catch (error) {
-            onError(error);
-            console.log(error);
-        }
-    });
+    btn.addEventListener("click", onClick);
 
     let clearAllBtn = document.getElementById("clearAllButton");
     clearAllBtn.addEventListener("click", function () {
