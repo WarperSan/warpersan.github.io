@@ -16,10 +16,6 @@ class AdditionChecker {
         if (original === undefined)
             return modified;
 
-        // If the modified value is null, return the difference
-        if (modified === null)
-            return modified;
-
         let type = typeof modified;
         let constructor = modified.constructor;
 
