@@ -9,11 +9,11 @@ class AdditionChecker {
     #findDifferences(original, modified) {
 
         // If the modified value is not set, return no difference
-        if (modified === undefined || modified === null)
+        if (modified === undefined)
             return this.#NOTHING_ADDED;
 
         // If the original value is not set, return the difference
-        if (original === undefined || original === null)
+        if (original === undefined)
             return modified;
 
         let type = typeof modified;
