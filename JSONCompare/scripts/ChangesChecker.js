@@ -14,6 +14,13 @@ class ChangesChecker {
         if (original === undefined)
             return this.#NOTHING_CHANGED;
 
+        // If original or modified is null but not both, return the difference
+        if (original === null && modified !== null)
+            return modified;
+
+        if (modified === null && original !== null)
+            return original;
+
         let type = typeof original;
         let constructor = original.constructor;
 
