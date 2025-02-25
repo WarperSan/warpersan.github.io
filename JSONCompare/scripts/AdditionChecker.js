@@ -7,7 +7,6 @@ class AdditionChecker {
     }
 
     #findDifferences(original, modified) {
-
         // If the modified value is not set, return no difference
         if (modified === undefined)
             return this.#NOTHING_ADDED;
@@ -16,19 +15,23 @@ class AdditionChecker {
         if (original === undefined)
             return modified;
 
-        let type = typeof modified;
-        let constructor = modified.constructor;
-
-        // If the original and the modified are different types, return no difference
-        if (type !== typeof original || constructor !== original.constructor)
+        // If one of the values is null, return no difference
+        if (original === null || modified === null)
             return this.#NOTHING_ADDED;
 
+        // If the original and the modified are different types, return the difference
+        if (typeof original !== typeof modified)
+            return original;
+
+        if (original.constructor !== modified.constructor)
+            return original;
+
         // If the values are arrays, process them as arrays
-        if (constructor === Array)
+        if (modified.constructor === Array)
             return this.#processArray(original, modified);
 
         // If the values are objects, process them as objects
-        if (type === "object")
+        if (typeof modified === "object")
             return this.#processObject(original, modified);
 
         // Return no difference
