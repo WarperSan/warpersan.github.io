@@ -6,42 +6,35 @@ class ChangesChecker {
     }
 
     #findDifferences(original, modified) {
-        // If the modified value is not set, return no difference
-        if (modified === undefined)
+        // If one of the values is not set, return no difference
+        if (modified === undefined || original === undefined)
             return this.#NOTHING_CHANGED;
 
-        // If the original value is not set, return the difference
-        if (original === undefined)
+        // If the values are the same, return no difference;
+        if (original === modified)
             return this.#NOTHING_CHANGED;
 
-        // If original or modified is null but not both, return the difference
-        if (original === null && modified !== null)
-            return modified;
-
-        if (modified === null && original !== null)
+        // If only one of the values is null, return the difference
+        if (original === null && modified !== null || original !== null && modified === null)
             return original;
 
-        let type = typeof original;
-        let constructor = original.constructor;
+        // If the original and the modified are different types, return the difference
+        if (typeof original !== typeof modified)
+            return original;
 
-        // If the original and the modified are different types, return no difference
-        if (type !== typeof modified || constructor !== modified.constructor)
+        if (original.constructor !== modified.constructor)
             return original;
 
         // If the values are arrays, process them as arrays
-        if (constructor === Array)
+        if (original.constructor === Array)
             return this.#processArray(original, modified);
 
         // If the values are objects, process them as objects
-        if (type === "object")
+        if (typeof original === "object")
             return this.#processObject(original, modified);
 
-        // If the original is different from the modified, return the difference
-        if (original !== modified)
-            return original;
-    
-        // Return no difference
-        return this.#NOTHING_CHANGED;
+        // Return the difference
+        return original;
     }
 
     #processArray(original, modified) {
