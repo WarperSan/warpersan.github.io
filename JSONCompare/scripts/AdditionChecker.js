@@ -21,10 +21,10 @@ class AdditionChecker {
 
         // If the original and the modified are different types, return the difference
         if (typeof original !== typeof modified)
-            return original;
+            return this.#NOTHING_ADDED;
 
         if (original.constructor !== modified.constructor)
-            return original;
+            return this.#NOTHING_ADDED;
 
         // If the values are arrays, process them as arrays
         if (modified.constructor === Array)

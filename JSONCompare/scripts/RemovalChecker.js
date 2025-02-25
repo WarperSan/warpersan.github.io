@@ -6,7 +6,6 @@ class RemovalChecker {
     }
 
     #findDifferences(original, modified) {
-
         // If the original value is not set, return no difference
         if (original === undefined)
             return this.#NOTHING_REMOVED;
@@ -15,19 +14,23 @@ class RemovalChecker {
         if (modified === undefined)
             return original;
 
-        let type = typeof original;
-        let constructor = original.constructor;
+        // If one of the values is null, return no difference
+        if (original === null || modified === null)
+            return this.#NOTHING_REMOVED;
 
         // If the original and the modified are different types, return no difference
-        if (type !== typeof modified || constructor !== modified.constructor)
+        if (typeof original !== typeof modified)
+            return this.#NOTHING_REMOVED;
+
+        if (original.constructor !== modified.constructor)
             return this.#NOTHING_REMOVED;
 
         // If the values are arrays, process them as arrays
-        if (constructor === Array)
+        if (original.constructor === Array)
             return this.#processArray(original, modified);
 
         // If the values are objects, process them as objects
-        if (type === "object")
+        if (typeof original === "object")
             return this.#processObject(original, modified);
 
         // Return no difference
