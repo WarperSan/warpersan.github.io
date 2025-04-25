@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles/fonts.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #1A1A1D;
+            --dark: #3B1C32;
+            --main: #6A1E55;
+            --light: #A64D79;
+            --bg-panel: #242428;
+            --border: #4B2C3F;
+            --accent: #7D295F;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            font-family: 'JetBrains Mono', sans-serif;
+            color: white;
+
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            padding: 0.5rem;
+
+            background-color: var(--main);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            padding: 0.5rem;
+
+            background-color: var(--dark);
+        }
+
+        #main {
+            flex: 1;
+            overflow-y: scroll;
+
+            margin: 3rem 1rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            justify-content: space-evenly;
+
+            padding: 1rem;
+            border-radius: 5px;
+
+            background-color: var(--bg-panel);
+
+            overflow-x: scroll;
+        }
+
+        .skills>i {
+            color: var(--main);
+            transition: color 0.25s;
+
+            font-size: 4em;
+        }
+
+        .skills>i:hover {
+            color: var(--light);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        Header
+    </nav>
+
+    <div id="main">
+        <h2>About me</h2>
+        <span>
+            I'm Samuel, a Canadian programmer that loves to mess around libraries. I specialize myself in game
+            making, back-end web developement and library creation, mostly written in C#. I'm passionate about
+            delivering high-quality work while keeping my work as organized as possible.
+        </span>
+        <h2>Skills</h2>
+        <h3>Languages</h3>
+        <div class="skills">
+            <i class="devicon-php-plain" title="PHP"></i>
+            <i class="devicon-java-plain" title="Java"></i>
+            <i class="devicon-css3-plain" title="CSS"></i>
+            <i class="devicon-javascript-plain" title="JavaScript"></i>
+            <i class="devicon-androidstudio-plain" title="Android"></i>
+            <i class="devicon-csharp-plain" title="C#"></i>
+            <i class="devicon-cplusplus-plain" title="C++"></i>
+            <i class="devicon-bash-plain" title="Bash"></i>
+            <i class="devicon-azuresqldatabase-plain" title="SQL"></i>
+            <i class="devicon-html5-plain" title="HTML"></i>
+            <i class="devicon-lua-plain" title="Lua"></i>
+            <i class="devicon-markdown-plain" title="Markdown"></i>
+            <i class="devicon-git-plain" title="Git"></i>
+        </div>
+        <h3>Frameworks</h3>
+        <div class="skills">
+            <i class="devicon-react-plain" title="React"></i>
+            <i class="devicon-nodejs-plain" title="Node JS"></i>
+            <i class="devicon-typescript-plain" title="TypeScript"></i>
+            <i class="devicon-haxe-plain" title="Haxe"></i>
+            <i class="devicon-mongodb-plain" title="MongoDB"></i>
+            <i class="devicon-jquery-plain" title="JQuery"></i>
+            <i class="devicon-github-plain" title="GitHub"></i>
+        </div>
+        <h3>IDEs</h3>
+        <div class="skills">
+            <i class="devicon-rider-plain" title="Rider"></i>
+            <i class="devicon-webstorm-plain" title="WebStorm"></i>
+            <i class="devicon-vscode-plain" title="VS Code"></i>
+            <i class="devicon-visualstudio-plain" title="Visual Studio"></i>
+        </div>
+        <h3>Personal Use</h3>
+        <div class="skills">
+            <i class="devicon-unity-plain" title="Unity"></i>
+            <i class="devicon-linux-plain" title="Linux"></i>
+            <i class="devicon-ubuntu-plain" title="Ubuntu"></i>
+        </div>
+        <h3>Professional Use</h3>
+        <div class="skills">
+            <i class="devicon-codeigniter-plain" title="CodeIgniter"></i>
+            <i class="devicon-docker-plain" title="Docker"></i>
+            <i class="devicon-jira-plain" title="Jira"></i>
+            <i class="devicon-slack-plain" title="Slack"></i>
+            <i class="devicon-sonarqube-plain" title="SonarQube"></i>
+            <i class="devicon-swagger-plain" title="Swagger"></i>
+            <i class="devicon-windows11-plain" title="Windows 11"></i>
+        </div>
+    </div>
+    <footer>
+        Footer
+    </footer>
+</body>
+
+</html>
