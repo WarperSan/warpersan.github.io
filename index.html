@@ -57,10 +57,23 @@
             margin: 3rem 1rem;
         }
 
+        /* SKILLS */
+        #skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-evenly;
+        }
+
+        #skills-container>div {
+            box-sizing: border-box;
+            flex: fit-content;
+            overflow-x: hidden;
+        }
+
         .skills {
             display: flex;
-            flex-direction: row;
-            gap: 2rem;
+            gap: 1rem;
             justify-content: space-evenly;
 
             padding: 1rem;
@@ -81,6 +94,10 @@
         .skills>i:hover {
             color: var(--light);
         }
+
+        #skills-container h3 {
+            user-select: none;
+        }
     </style>
 </head>
 
@@ -97,55 +114,68 @@
             delivering high-quality work while keeping my work as organized as possible.
         </span>
         <h2>Skills</h2>
-        <h3>Languages</h3>
-        <div class="skills">
-            <i class="devicon-php-plain" title="PHP"></i>
-            <i class="devicon-java-plain" title="Java"></i>
-            <i class="devicon-css3-plain" title="CSS"></i>
-            <i class="devicon-javascript-plain" title="JavaScript"></i>
-            <i class="devicon-androidstudio-plain" title="Android"></i>
-            <i class="devicon-csharp-plain" title="C#"></i>
-            <i class="devicon-cplusplus-plain" title="C++"></i>
-            <i class="devicon-bash-plain" title="Bash"></i>
-            <i class="devicon-azuresqldatabase-plain" title="SQL"></i>
-            <i class="devicon-html5-plain" title="HTML"></i>
-            <i class="devicon-lua-plain" title="Lua"></i>
-            <i class="devicon-markdown-plain" title="Markdown"></i>
-            <i class="devicon-git-plain" title="Git"></i>
+        <div id="skills-container">
+            <div>
+                <h3 title="All the languages I once used">Languages</h3>
+                <div class="skills">
+                    <i class="devicon-php-plain" title="PHP"></i>
+                    <i class="devicon-java-plain" title="Java"></i>
+                    <i class="devicon-css3-plain" title="CSS"></i>
+                    <i class="devicon-javascript-plain" title="JavaScript"></i>
+                    <i class="devicon-androidstudio-plain" title="Android"></i>
+                    <i class="devicon-csharp-plain" title="C#"></i>
+                    <i class="devicon-cplusplus-plain" title="C++"></i>
+                    <i class="devicon-bash-plain" title="Bash"></i>
+                    <i class="devicon-azuresqldatabase-plain" title="SQL"></i>
+                    <i class="devicon-html5-plain" title="HTML"></i>
+                    <i class="devicon-lua-plain" title="Lua"></i>
+                    <i class="devicon-markdown-plain" title="Markdown"></i>
+                    <i class="devicon-git-plain" title="Git"></i>
+                </div>
+            </div>
+            <div>
+                <h3 title="All the frameworks I once used">Frameworks</h3>
+                <div class="skills">
+                    <i class="devicon-react-plain" title="React"></i>
+                    <i class="devicon-nodejs-plain" title="Node JS"></i>
+                    <i class="devicon-typescript-plain" title="TypeScript"></i>
+                    <i class="devicon-haxe-plain" title="Haxe"></i>
+                    <i class="devicon-mongodb-plain" title="MongoDB"></i>
+                    <i class="devicon-jquery-plain" title="JQuery"></i>
+                    <i class="devicon-github-plain" title="GitHub"></i>
+                </div>
+            </div>
+            <div>
+                <h3 title="All the IDEs I once used">IDEs</h3>
+                <div class="skills">
+                    <i class="devicon-rider-plain" title="Rider"></i>
+                    <i class="devicon-webstorm-plain" title="WebStorm"></i>
+                    <i class="devicon-vscode-plain" title="VS Code"></i>
+                    <i class="devicon-visualstudio-plain" title="Visual Studio"></i>
+                </div>
+            </div>
+            <div>
+                <h3 title="All I once used in my personal work">Personal Use</h3>
+                <div class="skills">
+                    <i class="devicon-unity-plain" title="Unity"></i>
+                    <i class="devicon-linux-plain" title="Linux"></i>
+                    <i class="devicon-ubuntu-plain" title="Ubuntu"></i>
+                </div>
+            </div>
+            <div>
+                <h3 title="All I once used in my professional work">Professional Use</h3>
+                <div class="skills">
+                    <i class="devicon-codeigniter-plain" title="CodeIgniter"></i>
+                    <i class="devicon-docker-plain" title="Docker"></i>
+                    <i class="devicon-jira-plain" title="Jira"></i>
+                    <i class="devicon-slack-plain" title="Slack"></i>
+                    <i class="devicon-sonarqube-plain" title="SonarQube"></i>
+                    <i class="devicon-swagger-plain" title="Swagger"></i>
+                    <i class="devicon-windows11-plain" title="Windows 11"></i>
+                </div>
+            </div>
         </div>
-        <h3>Frameworks</h3>
-        <div class="skills">
-            <i class="devicon-react-plain" title="React"></i>
-            <i class="devicon-nodejs-plain" title="Node JS"></i>
-            <i class="devicon-typescript-plain" title="TypeScript"></i>
-            <i class="devicon-haxe-plain" title="Haxe"></i>
-            <i class="devicon-mongodb-plain" title="MongoDB"></i>
-            <i class="devicon-jquery-plain" title="JQuery"></i>
-            <i class="devicon-github-plain" title="GitHub"></i>
-        </div>
-        <h3>IDEs</h3>
-        <div class="skills">
-            <i class="devicon-rider-plain" title="Rider"></i>
-            <i class="devicon-webstorm-plain" title="WebStorm"></i>
-            <i class="devicon-vscode-plain" title="VS Code"></i>
-            <i class="devicon-visualstudio-plain" title="Visual Studio"></i>
-        </div>
-        <h3>Personal Use</h3>
-        <div class="skills">
-            <i class="devicon-unity-plain" title="Unity"></i>
-            <i class="devicon-linux-plain" title="Linux"></i>
-            <i class="devicon-ubuntu-plain" title="Ubuntu"></i>
-        </div>
-        <h3>Professional Use</h3>
-        <div class="skills">
-            <i class="devicon-codeigniter-plain" title="CodeIgniter"></i>
-            <i class="devicon-docker-plain" title="Docker"></i>
-            <i class="devicon-jira-plain" title="Jira"></i>
-            <i class="devicon-slack-plain" title="Slack"></i>
-            <i class="devicon-sonarqube-plain" title="SonarQube"></i>
-            <i class="devicon-swagger-plain" title="Swagger"></i>
-            <i class="devicon-windows11-plain" title="Windows 11"></i>
-        </div>
+
     </div>
     <footer>
         Footer
