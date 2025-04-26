@@ -30,23 +30,9 @@
             width: 100vw;
         }
 
-        nav {
-            display: flex;
-
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-
-            padding: 0.5rem;
-
-            background-color: var(--main);
-
-            user-select: none;
-        }
-
         footer {
             display: flex;
+            justify-content: center;
 
             padding: 0.5rem;
 
@@ -65,11 +51,35 @@
             margin: 2rem 1rem;
         }
 
-        a {
-            color: var(--accent);
+        /* HEADER */
+        nav {
+            display: flex;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            padding: 0.5rem 1rem;
+
+            background-color: var(--main);
+
+            user-select: none;
         }
 
-        a:hover {
+        nav>div {
+            display: flex;
+            flex: 1;
+            justify-content: end;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+        }
+
+        nav a:hover {
             color: var(--light);
         }
 
@@ -146,6 +156,14 @@
             border-color: var(--accent);
         }
 
+        .projects a {
+            color: var(--light);
+        }
+
+        .projects a:hover {
+            color: var(--accent);
+        }
+
         .projects>hr {
             border-color: var(--main);
             width: 80%;
@@ -180,22 +198,47 @@
             color: var(--bg);
             background-color: var(--main);
         }
+
+        /* CONTACTS */
+        #contact-container>div {
+            display: flex;
+            justify-content: space-evenly;
+
+            margin: 1rem;
+            font-size: 2em;
+        }
+
+        #contact-container a {
+            text-decoration: none;
+
+            color: var(--light);
+        }
+
+        #contact-container a:hover {
+            color: var(--accent);
+        }
     </style>
 </head>
 
 <body>
     <nav>
-        WarperSan
+        <span>WarperSan</span>
+        <div>
+            <a href="#about-me"><i class="fas fa-user"></i></a>
+            <a href="#tools-and-skills"><i class="fas fa-tools"></i></a>
+            <a href="#featured-projects"><i class="fas fa-folder-open"></i></a>
+            <a href="#contact-me"><i class="fas fa-envelope"></i></a>
+        </div>
     </nav>
 
     <div id="main">
-        <h2>About me</h2>
+        <h2 id="about-me">About me</h2>
         <span>
-            I'm Samuel, a Canadian programmer that loves to mess around libraries. I specialize myself in game
+            I'm Samuel Gauthier, also known as WarperSan. I am a Canadian programmer that loves to mess around libraries. I specialize myself in game
             making, back-end web developement and library creation, mostly written in C#. I'm passionate about
             delivering high-quality work while keeping my work as organized as possible.
         </span>
-        <h2>Skills</h2>
+        <h2 id="tools-and-skills">Skills</h2>
         <div id="skills-container">
             <div>
                 <h3 title="All the languages I once used">Languages</h3>
@@ -257,7 +300,7 @@
                 </div>
             </div>
         </div>
-        <h2>Projects</h2>
+        <h2 id="featured-projects">Projects</h2>
         <div id="projects-container">
             <div>
                 <h3>Bingo API</h3>
@@ -280,9 +323,21 @@
                 </div>
             </div>
         </div>
+        <h2 id="contact-me">Contact me</h2>
+        <div id="contact-container">
+            <span>You can contact me through the following means:</span>
+            <div>
+                <a href="https://discord.com/users/457981279485427724" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                <a href="mailto:samgauthier29@outlook.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://ko-fi.com/warpersan" target="_blank"><i class="fa-brands fa-gratipay"></i></a>
+                <a href="https://linkedin.com/in/samuel-gauthier-8157b2276" target="_blank"><i class="devicon-linkedin-plain"></i></a>
+                <a href="https://github.com/WarperSan" target="_blank"><i class="devicon-github-plain"></i></a>
+                <a href="https://youtube.com/@WarperSan" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
     </div>
     <footer>
-        <span>© 2025 Your Name. All rights reserved.</span>
+        <span>© 2025 WarperSan. All rights reserved.</span>
     </footer>
 </body>
 
