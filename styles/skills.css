@@ -1,0 +1,41 @@
+
+#skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+#skills-container>div {
+    box-sizing: border-box;
+    flex: fit-content;
+    overflow-x: hidden;
+}
+
+#skills-container h3 {
+    user-select: none;
+}
+
+.skills {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+
+    padding: 1rem;
+    border-radius: 5px;
+
+    background-color: var(--bg-panel);
+
+    overflow-x: scroll;
+}
+
+.skills>i {
+    color: var(--main);
+    transition: color 0.25s;
+
+    font-size: 4em;
+}
+
+.skills>i:hover {
+    color: var(--light);
+}

@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    padding: 0.5rem 1rem;
+
+    background-color: var(--main);
+
+    user-select: none;
+}
+
+nav>div {
+    display: flex;
+    flex: 1;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+}
+
+nav a:hover {
+    color: var(--light);
+}

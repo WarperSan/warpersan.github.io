@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="styles/fonts.css" rel="stylesheet">
+    <link href="styles/header.css" rel="stylesheet">
+    <link href="styles/skills.css" rel="stylesheet">
+    <link href="styles/projects.css" rel="stylesheet">
+    <link href="styles/contact.css" rel="stylesheet">
+    <link href="styles/footer.css" rel="stylesheet">
     <style>
         :root {
             --bg: #1A1A1D;
@@ -34,192 +39,11 @@
             scroll-margin-top: 3rem;
         }
 
-        footer {
-            display: flex;
-            justify-content: center;
-
-            padding: 0.5rem;
-
-            background-color: var(--dark);
-            color: var(--main);
-
-            user-select: none;
-
-            font-size: 0.8em;
-        }
-
 
         #main {
             flex: 1;
 
             margin: 2rem 1rem;
-        }
-
-        /* HEADER */
-        nav {
-            display: flex;
-
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-
-            padding: 0.5rem 1rem;
-
-            background-color: var(--main);
-
-            user-select: none;
-        }
-
-        nav>div {
-            display: flex;
-            flex: 1;
-            justify-content: end;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        nav a {
-            color: white;
-        }
-
-        nav a:hover {
-            color: var(--light);
-        }
-
-        /* SKILLS */
-        #skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: space-evenly;
-        }
-
-        #skills-container>div {
-            box-sizing: border-box;
-            flex: fit-content;
-            overflow-x: hidden;
-        }
-
-        #skills-container h3 {
-            user-select: none;
-        }
-
-        .skills {
-            display: flex;
-            gap: 1rem;
-            justify-content: space-evenly;
-
-            padding: 1rem;
-            border-radius: 5px;
-
-            background-color: var(--bg-panel);
-
-            overflow-x: scroll;
-        }
-
-        .skills>i {
-            color: var(--main);
-            transition: color 0.25s;
-
-            font-size: 4em;
-        }
-
-        .skills>i:hover {
-            color: var(--light);
-        }
-
-        /* PROJECTS */
-        #projects-container {
-            display: flex;
-            gap: 10px;
-            justify-content: space-evenly;
-        }
-
-        #projects-container h3 {
-            user-select: none;
-        }
-
-        .projects {
-            display: flex;
-            flex-direction: column;
-
-            background-color: var(--bg-panel);
-
-            border-radius: 5px;
-            border: 2px solid var(--border);
-
-            padding: 1rem;
-            margin-left: 0.5rem;
-            margin-right: 0.5rem;
-
-            transition: border 0.25s;
-        }
-
-        .projects:hover {
-            border-color: var(--accent);
-        }
-
-        .projects a {
-            color: var(--light);
-        }
-
-        .projects a:hover {
-            color: var(--accent);
-        }
-
-        .projects>hr {
-            border-color: var(--main);
-            width: 80%;
-            align-self: center;
-            margin: 1.4rem 0;
-        }
-
-        .projects-controls {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .projects-controls>a {
-            flex: 1;
-
-            padding: 0.5rem;
-
-            font-size: 1.2em;
-            color: var(--accent);
-            text-align: center;
-            text-decoration: none;
-
-            background-color: var(--dark);
-
-            border: 1px solid var(--li);
-            border-radius: 0.5rem;
-
-            transition: color 0.2s, background-color 0.2s;
-        }
-
-        .projects-controls>a:hover {
-            color: var(--bg);
-            background-color: var(--main);
-        }
-
-        /* CONTACTS */
-        #contact-container>div {
-            display: flex;
-            justify-content: space-evenly;
-
-            margin: 1rem;
-            font-size: 2em;
-        }
-
-        #contact-container a {
-            text-decoration: none;
-
-            color: var(--light);
-        }
-
-        #contact-container a:hover {
-            color: var(--accent);
         }
     </style>
 </head>
