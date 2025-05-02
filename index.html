@@ -38,7 +38,10 @@
             width: 100vw;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             scroll-margin-top: 3rem;
         }
 
@@ -52,6 +55,8 @@
             margin-right: 1rem;
         }
     </style>
+
+    <script src="scripts/elements/SkillElement.js"></script>
 </head>
 
 <body>
@@ -68,7 +73,8 @@
     <div id="main">
         <h2 id="about-me">About me</h2>
         <span>
-            I'm Samuel, also known as WarperSan. I am a Canadian programmer that loves to mess around libraries. I specialize myself in game
+            I'm Samuel, also known as WarperSan. I am a Canadian programmer that loves to mess around libraries. I
+            specialize myself in game
             making, back-end web developement and library creation, mostly written in C#. I'm passionate about
             delivering high-quality work while keeping my work as organized as possible.
         </span>
@@ -77,66 +83,67 @@
             <div>
                 <h3 title="All the languages I once used">Languages</h3>
                 <div class="skills">
-                    <i class="devicon-php-plain" title="PHP"></i>
-                    <i class="devicon-java-plain" title="Java"></i>
-                    <i class="devicon-css3-plain" title="CSS"></i>
-                    <i class="devicon-javascript-plain" title="JavaScript"></i>
-                    <i class="devicon-androidstudio-plain" title="Android"></i>
-                    <i class="devicon-csharp-plain" title="C#"></i>
-                    <i class="devicon-cplusplus-plain" title="C++"></i>
-                    <i class="devicon-bash-plain" title="Bash"></i>
-                    <i class="devicon-azuresqldatabase-plain" title="SQL"></i>
-                    <i class="devicon-html5-plain" title="HTML"></i>
-                    <i class="devicon-lua-plain" title="Lua"></i>
-                    <i class="devicon-markdown-plain" title="Markdown"></i>
-                    <i class="devicon-git-plain" title="Git"></i>
+                    <skill-icon class="devicon-php-plain">PHP</skill-icon>
+                    <skill-icon class="devicon-java-plain">Java</skill-icon>
+                    <skill-icon class="devicon-css3-plain">CSS</skill-icon>
+                    <skill-icon class="devicon-javascript-plain">JavaScript</skill-icon>
+                    <skill-icon class="devicon-androidstudio-plain">Android</skill-icon>
+                    <skill-icon class="devicon-csharp-plain">C#</skill-icon>
+                    <skill-icon class="devicon-cplusplus-plain">C++</skill-icon>
+                    <skill-icon class="devicon-bash-plain">Bash</skill-icon>
+                    <skill-icon class="devicon-azuresqldatabase-plain">SQL</skill-icon>
+                    <skill-icon class="devicon-html5-plain">HTML</skill-icon>
+                    <skill-icon class="devicon-lua-plain">Lua</skill-icon>
+                    <skill-icon class="devicon-markdown-plain">Markdown</skill-icon>
+                    <skill-icon class="devicon-git-plain">Git</skill-icon>
                 </div>
             </div>
             <div>
                 <h3 title="All the frameworks I once used">Frameworks</h3>
                 <div class="skills">
-                    <i class="devicon-react-plain" title="React"></i>
-                    <i class="devicon-nodejs-plain" title="Node JS"></i>
-                    <i class="devicon-typescript-plain" title="TypeScript"></i>
-                    <i class="devicon-haxe-plain" title="Haxe"></i>
-                    <i class="devicon-mongodb-plain" title="MongoDB"></i>
-                    <i class="devicon-jquery-plain" title="JQuery"></i>
-                    <i class="devicon-github-plain" title="GitHub"></i>
+                    <skill-icon class="devicon-react-plain">React</skill-icon>
+                    <skill-icon class="devicon-nodejs-plain">Node JS</skill-icon>
+                    <skill-icon class="devicon-typescript-plain">TypeScript</skill-icon>
+                    <skill-icon class="devicon-haxe-plain">Haxe</skill-icon>
+                    <skill-icon class="devicon-mongodb-plain">MongoDB</skill-icon>
+                    <skill-icon class="devicon-jquery-plain">JQuery</skill-icon>
+                    <skill-icon class="devicon-github-plain">GitHub</skill-icon>
                 </div>
             </div>
             <div>
                 <h3 title="All the IDEs I once used">IDEs</h3>
                 <div class="skills">
-                    <i class="devicon-rider-plain" title="Rider"></i>
-                    <i class="devicon-webstorm-plain" title="WebStorm"></i>
-                    <i class="devicon-vscode-plain" title="VS Code"></i>
-                    <i class="devicon-visualstudio-plain" title="Visual Studio"></i>
+                    <skill-icon class="devicon-rider-plain">Rider</skill-icon>
+                    <skill-icon class="devicon-webstorm-plain">WebStorm</skill-icon>
+                    <skill-icon class="devicon-vscode-plain">VS Code</skill-icon>
+                    <skill-icon class="devicon-visualstudio-plain">Visual Studio</skill-icon>
                 </div>
             </div>
             <div>
                 <h3 title="All I once used in my personal work">Personal Use</h3>
                 <div class="skills">
-                    <i class="devicon-unity-plain" title="Unity"></i>
-                    <i class="devicon-linux-plain" title="Linux"></i>
-                    <i class="devicon-ubuntu-plain" title="Ubuntu"></i>
+                    <skill-icon class="devicon-unity-plain">Unity</skill-icon>
+                    <skill-icon class="devicon-linux-plain">Linux</skill-icon>
+                    <skill-icon class="devicon-ubuntu-plain">Ubuntu</skill-icon>
                 </div>
             </div>
             <div>
                 <h3 title="All I once used in my professional work">Professional Use</h3>
                 <div class="skills">
-                    <i class="devicon-codeigniter-plain" title="CodeIgniter"></i>
-                    <i class="devicon-docker-plain" title="Docker"></i>
-                    <i class="devicon-jira-plain" title="Jira"></i>
-                    <i class="devicon-slack-plain" title="Slack"></i>
-                    <i class="devicon-sonarqube-plain" title="SonarQube"></i>
-                    <i class="devicon-swagger-plain" title="Swagger"></i>
-                    <i class="devicon-windows11-plain" title="Windows 11"></i>
+                    <skill-icon class="devicon-codeigniter-plain">CodeIgniter</skill-icon>
+                    <skill-icon class="devicon-docker-plain">Docker</skill-icon>
+                    <skill-icon class="devicon-jira-plain">Jira</skill-icon>
+                    <skill-icon class="devicon-slack-plain">Slack</skill-icon>
+                    <skill-icon class="devicon-sonarqube-plain">SonarQube</skill-icon>
+                    <skill-icon class="devicon-swagger-plain">Swagger</skill-icon>
+                    <skill-icon class="devicon-windows11-plain">Windows 11</skill-icon>
                 </div>
             </div>
         </div>
         <h2 id="featured-projects">Projects</h2>
         <span>
-            This is a list of the featured projects that I did. If you want more information on the projects I did, you can check <a href="https://warpersan-blog.onrender.com/" target="_blank">this</a>.
+            This is a list of the featured projects that I did. If you want more information on the projects I did, you
+            can check <a href="https://warpersan-blog.onrender.com/" target="_blank">this</a>.
         </span>
         <div id="projects-container">
             <div>
@@ -144,7 +151,11 @@
                 <div class="projects">
                     <div>
                         <span>
-                            This game is the result of a self-hosted game jam. In one week, I was able to make a small arcade game similar to <i>Ultimate Chicken Horse</i>.<br><br>Although this game is very simple and unbalanced, it is still a blast to play with friends. This project required me to manage my time efficiently, draw art without overdesigning, create modular parts to easily add new stuff and manage networking for multiplayer.
+                            This game is the result of a self-hosted game jam. In one week, I was able to make a small
+                            arcade game similar to <i>Ultimate Chicken Horse</i>.<br><br>Although this game is very
+                            simple and unbalanced, it is still a blast to play with friends. This project required me to
+                            manage my time efficiently, draw art without overdesigning, create modular parts to easily
+                            add new stuff and manage networking for multiplayer.
                         </span>
                     </div>
                     <hr>
@@ -158,7 +169,12 @@
                 <div class="projects">
                     <div>
                         <span>
-                            For my game developement class, me and my friend achieved to make a retro dungeon crawler. Throughout its making, we had to solve multiple problems we never faced before: path finding, room generation, enemy and weapon design.<br><br>By the end, we had a working game with several weapons, multiple enemies, a progressive room generation and a <i>Undertale</i>-like fight system. This project taught us how to design a world to make it interesting yet challenging.
+                            For my game developement class, me and my friend achieved to make a retro dungeon crawler.
+                            Throughout its making, we had to solve multiple problems we never faced before: path
+                            finding, room generation, enemy and weapon design.<br><br>By the end, we had a working game
+                            with several weapons, multiple enemies, a progressive room generation and a
+                            <i>Undertale</i>-like fight system. This project taught us how to design a world to make it
+                            interesting yet challenging.
                         </span>
                     </div>
                     <hr>
@@ -192,10 +208,12 @@
         <div id="contact-container">
             <span>You can contact me through the following means:</span>
             <div>
-                <a href="https://discord.com/users/457981279485427724" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://discord.com/users/457981279485427724" target="_blank"><i
+                        class="fa-brands fa-discord"></i></a>
                 <a href="mailto:samgauthier29@outlook.com"><i class="fas fa-envelope"></i></a>
                 <a href="https://ko-fi.com/warpersan" target="_blank"><i class="fa-brands fa-gratipay"></i></a>
-                <a href="https://linkedin.com/in/samuel-gauthier-8157b2276" target="_blank"><i class="devicon-linkedin-plain"></i></a>
+                <a href="https://linkedin.com/in/samuel-gauthier-8157b2276" target="_blank"><i
+                        class="devicon-linkedin-plain"></i></a>
                 <a href="https://github.com/WarperSan" target="_blank"><i class="devicon-github-plain"></i></a>
                 <a href="https://youtube.com/@WarperSan" target="_blank"><i class="fa-brands fa-youtube"></i></a>
             </div>
