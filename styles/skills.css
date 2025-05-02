@@ -26,6 +26,7 @@
     background-color: var(--bg-panel);
 
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .skill {
