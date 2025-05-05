@@ -14,7 +14,7 @@ nav {
     user-select: none;
 }
 
-nav>div {
+#headerIcons {
     display: flex;
     flex: 1;
     justify-content: end;
@@ -22,10 +22,23 @@ nav>div {
     gap: 1rem;
 }
 
-nav a {
-    color: white;
+.headerIcon {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
 }
 
-nav a:hover {
+.headerIcon {
+    color: white;
+    text-decoration: none;
+}
+
+.headerIcon:hover {
     color: var(--light);
+}
+
+@media (max-width:300px) {
+    .headerIcon span {
+        display: none;
+    }
 }
