@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.className = classes;
 
         link.appendChild(icon);
-        link.appendChild(label);
+        //link.appendChild(label);
 
         return link;
     }
