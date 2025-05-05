@@ -36,9 +36,3 @@ nav {
 .headerIcon:hover {
     color: var(--light);
 }
-
-@media (max-width:300px) {
-    .headerIcon span {
-        display: none;
-    }
-}

@@ -2,15 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function createIcon(url, classes, title) {
         const link = document.createElement("a");
         const icon = document.createElement("i");
-        const label = document.createElement("span");
 
         link.href = new URL(url, window.location.origin);
         link.classList.add("headerIcon");
-        label.innerText = title;
+        link.title = title;
         icon.className = classes;
 
         link.appendChild(icon);
-        //link.appendChild(label);
 
         return link;
     }
