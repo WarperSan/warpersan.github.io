@@ -30,6 +30,10 @@
     border-color: var(--accent);
 }
 
+.projects h3 {
+    margin-top: 0;
+}
+
 .projects a {
     color: var(--light);
 }
