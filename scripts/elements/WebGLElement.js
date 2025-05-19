@@ -41,13 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
         player.setAttribute("scrolling", "no");
         player.addEventListener("load", () => onPlayerLoaded(player, foreground));
 
-        foreground.title = "Click to Play";
         foreground.classList.add("web-game-foreground");
 
         const isMobile =  window.mobileCheck && window.mobileCheck();
         const isPlayable = isMobile && mobile != null || !isMobile && pc != null;
 
         if (isPlayable) {
+            foreground.title = "Click to Play";
             foreground.classList.add("play");
             foreground.addEventListener("click", e => {
                 if (!player.hasAttribute("src"))
@@ -56,7 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 foreground.style.display = "none";
             });
         } else {
+            foreground.title = "Your platform is not compatible with this game";
             foreground.classList.add("error");
+            foreground.style.pointerEvents = "none";
         }
 
         container.appendChild(player);
