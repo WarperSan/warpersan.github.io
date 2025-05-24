@@ -34,7 +34,7 @@ function createControl(classes, title, callback) {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('webgl').forEach(el => {
         // ATTRIBUTES
-        const src = el.getAttribute("src");
+        const src = new URL(el.getAttribute("src"), window.location.origin);
         const mobile = el.getAttribute("mobile");
         const pc = el.getAttribute("pc");
 
@@ -68,7 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
             foreground.classList.add("play");
             foreground.addEventListener("click", e => {
                 if (!player.hasAttribute("src"))
+                {
+                    ;
                     player.setAttribute("src", src);
+                }
 
                 foreground.style.display = "none";
             });
