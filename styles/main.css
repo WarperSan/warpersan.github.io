@@ -26,6 +26,8 @@ h2,
 h3,
 h4 {
     scroll-margin-top: 3rem;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--bg-panel);
 }
 
 h2~h2 {
