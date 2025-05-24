@@ -81,7 +81,7 @@ function createGameContainer(el) {
         overlay.style.pointerEvents = "none";
 
         const errorMessage = document.createElement("span");
-        errorMessage.textContent = "This game is not compatible with your platform";
+        errorMessage.textContent = "Not Compatible";
         overlay.appendChild(errorMessage);
     }
 
