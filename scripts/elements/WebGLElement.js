@@ -88,7 +88,6 @@ function createGameContainer(el) {
     /* CONTROLS */
     const controls = document.createElement("div");
     controls.classList.add("web-game-controls");
-    controls.style.display = isPlayable ? "inherit" : "none";
 
     const leftControls = document.createElement("div");
     Object.assign(leftControls.style, {
