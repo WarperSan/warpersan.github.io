@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const link = document.createElement("a");
         const icon = document.createElement("i");
 
-        link.href = new URL(url, window.location.origin);
+        link.href = window.absoluteSrc(url);
         link.classList.add("headerIcon");
         link.title = title;
         icon.className = classes;

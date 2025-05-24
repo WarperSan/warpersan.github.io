@@ -76,3 +76,10 @@
 .web-game-foreground:is(.error)::after {
     color: red;
 }
+
+.web-game-foreground>span {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

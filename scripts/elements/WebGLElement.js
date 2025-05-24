@@ -34,7 +34,7 @@ function createControl(classes, title, callback) {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('webgl').forEach(el => {
         // ATTRIBUTES
-        const src = new URL(el.getAttribute("src"), window.location.origin);
+        const src = window.absoluteSrc(el.getAttribute("src"));
         const mobile = el.getAttribute("mobile");
         const pc = el.getAttribute("pc");
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // FOREGROUND
         foreground.classList.add("web-game-foreground");
 
-        const isMobile = window.mobileCheck && window.mobileCheck();
+        const isMobile = window.mobileCheck();
         const isPlayable = isMobile && mobile != null || !isMobile && pc != null;
 
         if (isPlayable) {
@@ -76,9 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 foreground.style.display = "none";
             });
         } else {
-            foreground.title = "Your platform is not compatible with this game";
             foreground.classList.add("error");
             foreground.style.pointerEvents = "none";
+
+            const errorMessage = document.createElement("span");
+            errorMessage.textContent = "This game is not compatible with your platform";
+
+            foreground.appendChild(errorMessage);
         }
 
         // CONTROLS
