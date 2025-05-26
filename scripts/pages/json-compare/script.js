@@ -139,4 +139,11 @@ window.onload = function () {
     copyDownButton.addEventListener("click", function () {
         modifiedInput.value = originalInput.value;
     });
+
+    let swapButton = document.getElementById("swapButton");
+    swapButton.addEventListener("click", function() {
+        let temp = originalInput.value;
+        originalInput.value = modifiedInput.value;
+        modifiedInput.value = temp;
+    });
 }
