@@ -19,12 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const icons = document.createElement("div");
 
         const home = createIcon("index.html", "fa-solid fa-house", "Home");
+        const pages = createIcon("pages/index.html", "fa-solid fa-compass", "Pages");
 
         title.innerText = "WarperSan";
         icons.id = "headerIcons";
 
 
         icons.appendChild(home);
+        icons.appendChild(pages);
+
         nav.appendChild(title);
         nav.appendChild(icons);
 
