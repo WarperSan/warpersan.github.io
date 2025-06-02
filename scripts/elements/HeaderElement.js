@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.querySelectorAll('custom-header').forEach(el => {
+        const titleText = el.getAttribute("title") ?? "Home";
+
         const header = document.createElement("header");
         const title = document.createElement("span");
         const icons = document.createElement("div");
@@ -21,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const home = createIcon("index.html", "fa-solid fa-house", "Home");
         const pages = createIcon("pages/index.html", "fa-solid fa-compass", "Pages");
 
-        title.innerText = "WarperSan";
+        title.innerText = titleText;
         icons.id = "headerIcons";
 
 

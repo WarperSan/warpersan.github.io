@@ -22,97 +22,118 @@
 </head>
 
 <body>
-    <custom-header></custom-header>
+    <custom-header title="Unity Decompiling"></custom-header>
 
-    <div id="main">
-        <h2>Introduction</h2>
-        <p>
-            There are multiple reasons why you might want to decompile a game:
-        </p>
-        <ul>
-            <li>Extracting assets</li>
-            <li>Learning from others</li>
-            <li>Modding</li>
-        </ul>
-        <p>
-            In this article, I will go over how to decompile a game. Specifically, I will go over Unity games. Games
-            made in Unreal Engine or any other engine can also be decompiled, but this method won't work for these
-            engines.
-        </p>
-        <h2>How to obtain the game</h2>
-        <p>
-            Of course, you need the game itself in order to extract the project. The act of decompiling is already shady
-            enough, you might not want to add piracy to your case.
-        </p>
-        <h2>How to extract the project</h2>
-        <p>
-            It is possible to go from an executable to a Unity project. If you want to do so, you need to follow theses
-            steps:
-        </p>
-        <ol>
-            <li>Download the Unity Editor</li>
+    <article>
+        <section>
+            <h2>Introduction</h2>
             <p>
-                Depending on the game, you need to install a different editor. A way to check what version you need is
-                to install something like <a href="https://github.com/BepInEx/BepInEx">BepInEx</a>. When you will run
-                it, it should display the version of Unity required.<br><br>You can always use a different version, but
-                it is not recommended, due to potential bugs from the different versions.
+                There are multiple reasons why you might want to decompile a game:
             </p>
-            <li>Download <a href="https://github.com/AssetRipper/AssetRipper">AssetRipper</a></li>
-            <li>Launch the program</li>
-            <li>Click <b>File</b> > <b>Open File</b></li>
-            <li>Select the executable</li>
-            <li>Click <b>Export</b> > <b>Export All Files</b></li>
-            <li>Click <b>Select Folder</b> and select the destination folder</li>
-            <li>Click <b>Export Unity Project</b></li>
-            <li>With Unity, open the folder <b>ExportedProject</b></li>
-        </ol>
-        <p>
-            Just a head's up: this can take a while. Normally, only the first time should take as long (due to Unity
-            downloading the missing libraries and setting assets up).<br><br>You can now see all the game's assets and
-            continue your task. Note that decompiling only makes an approximate project. You won't have the same project
-            as the creator(s).
-        </p>
-        <h2>Fixing the project</h2>
-        <p>
-            When opening the project for the first time, you might come across errors with the project. If Unity asked
-            to open the project in <b>Safe Mode</b>, the project needs a bit of fixing. However, it is possible to fix
-            the project in order to make it work. In this section, we will go over some errors and how to fix them.
-        </p>
-        <h3>Broken DLLs</h3>
-        <p>
-            If an issue like <b>Unloading broken assembly 'AnyDLLFile', this assembly can cause crashes in the
-                runtime</b> comes up, here is how to fix it:
-        </p>
-        <ol>
-            <li>Select the broken DLL in the <b>Plugins</b> folder</li>
-            <li>In the Inspector, change the OS in the Editor Settings to <b>Windows</b></li>
-            <li>Click <b>Apply</b></li>
-        </ol>
-        <h3>Black Scene</h3>
-        <p>
-            If you can't see anything in the <b>Scene</b> window, make sure the following files have their OS set to
-            <b>Windows</b>:
-        </p>
-        <ul>
-            <li><b>Unity.RenderPipelines.Universal.Runtime.dll</b></li>
-            <li><b>Unity.RenderPipelines.Core.Runtime.dll</b></li>
-        </ul>
-        <h3>Broken Text</h3>
-        <p>
-            If there is text that displays as invisible, black or pink boxes, here is how to fix it:
-        </p>
-        <ol>
-            <li>Located the shader that is linked to the material for the font</li>
-            <li>Replace the shader's code with a clean one</li>
+            <ul>
+                <li>Extracting assets</li>
+                <li>Learning from others</li>
+                <li>Modding</li>
+            </ul>
             <p>
-                If the shader is <b>TextMeshPro/Mobile/Distance Field</b>, you can replace the code with <a href="https://gist.github.com/WarperSan/eaea2b6ee17c78d8b441fafad27105e4#file-textmeshpro_distance-field-shader">this</a>. You can also create a blank project, import the needed shaders and copy the code from there.
+                In this article, I will go over how to decompile a game. Specifically, I will go over Unity games. Games
+                made in Unreal Engine or any other engine can also be decompiled, but this method won't work for these
+                engines.
             </p>
-            <li>Create a <b>TMPro_Properties.cginc</b> in the <b>Shader</b> folder</li>
+        </section>
+        <section>
+            <h2>How to obtain the game</h2>
             <p>
-                You can use <a href="https://gist.github.com/WarperSan/eaea2b6ee17c78d8b441fafad27105e4#file-tmpro_properties-cginc">this</a> file or find it in a blank project.
+                Of course, you need the game itself in order to extract the project. The act of decompiling is already
+                shady
+                enough, you might not want to add piracy to your case.
             </p>
-        </ol>
-    </div>
+        </section>
+        <section>
+            <h2>How to extract the project</h2>
+            <p>
+                It is possible to go from an executable to a Unity project. If you want to do so, you need to follow
+                theses
+                steps:
+            </p>
+            <ol>
+                <li>Download the Unity Editor</li>
+                <p>
+                    Depending on the game, you need to install a different editor. A way to check what version you need
+                    is
+                    to install something like <a href="https://github.com/BepInEx/BepInEx">BepInEx</a>. When you will
+                    run
+                    it, it should display the version of Unity required.<br><br>You can always use a different version,
+                    but
+                    it is not recommended, due to potential bugs from the different versions.
+                </p>
+                <li>Download <a href="https://github.com/AssetRipper/AssetRipper">AssetRipper</a></li>
+                <li>Launch the program</li>
+                <li>Click <b>File</b> > <b>Open File</b></li>
+                <li>Select the executable</li>
+                <li>Click <b>Export</b> > <b>Export All Files</b></li>
+                <li>Click <b>Select Folder</b> and select the destination folder</li>
+                <li>Click <b>Export Unity Project</b></li>
+                <li>With Unity, open the folder <b>ExportedProject</b></li>
+            </ol>
+            <p>
+                Just a head's up: this can take a while. Normally, only the first time should take as long (due to Unity
+                downloading the missing libraries and setting assets up).<br><br>You can now see all the game's assets
+                and
+                continue your task. Note that decompiling only makes an approximate project. You won't have the same
+                project
+                as the creator(s).
+            </p>
+        </section>
+        <section>
+            <h2>Fixing the project</h2>
+            <p>
+                When opening the project for the first time, you might come across errors with the project. If Unity
+                asked
+                to open the project in <b>Safe Mode</b>, the project needs a bit of fixing. However, it is possible to
+                fix
+                the project in order to make it work. In this section, we will go over some errors and how to fix them.
+            </p>
+            <h3>Broken DLLs</h3>
+            <p>
+                If an issue like <b>Unloading broken assembly 'AnyDLLFile', this assembly can cause crashes in the
+                    runtime</b> comes up, here is how to fix it:
+            </p>
+            <ol>
+                <li>Select the broken DLL in the <b>Plugins</b> folder</li>
+                <li>In the Inspector, change the OS in the Editor Settings to <b>Windows</b></li>
+                <li>Click <b>Apply</b></li>
+            </ol>
+            <h3>Black Scene</h3>
+            <p>
+                If you can't see anything in the <b>Scene</b> window, make sure the following files have their OS set to
+                <b>Windows</b>:
+            </p>
+            <ul>
+                <li><b>Unity.RenderPipelines.Universal.Runtime.dll</b></li>
+                <li><b>Unity.RenderPipelines.Core.Runtime.dll</b></li>
+            </ul>
+            <h3>Broken Text</h3>
+            <p>
+                If there is text that displays as invisible, black or pink boxes, here is how to fix it:
+            </p>
+            <ol>
+                <li>Located the shader that is linked to the material for the font</li>
+                <li>Replace the shader's code with a clean one</li>
+                <p>
+                    If the shader is <b>TextMeshPro/Mobile/Distance Field</b>, you can replace the code with <a
+                        href="https://gist.github.com/WarperSan/eaea2b6ee17c78d8b441fafad27105e4#file-textmeshpro_distance-field-shader">this</a>.
+                    You can also create a blank project, import the needed shaders and copy the code from there.
+                </p>
+                <li>Create a <b>TMPro_Properties.cginc</b> in the <b>Shader</b> folder</li>
+                <p>
+                    You can use <a
+                        href="https://gist.github.com/WarperSan/eaea2b6ee17c78d8b441fafad27105e4#file-tmpro_properties-cginc">this</a>
+                    file or find it in a blank project.
+                </p>
+            </ol>
+        </section>
+    </article>
 
     <custom-footer></custom-footer>
 </body>
