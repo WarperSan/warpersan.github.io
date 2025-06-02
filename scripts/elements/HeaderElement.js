@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.querySelectorAll('custom-header').forEach(el => {
-        const nav = document.createElement("nav");
+        const header = document.createElement("header");
         const title = document.createElement("span");
         const icons = document.createElement("div");
 
@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
         icons.appendChild(home);
         icons.appendChild(pages);
 
-        nav.appendChild(title);
-        nav.appendChild(icons);
+        header.appendChild(title);
+        header.appendChild(icons);
 
-        el.replaceWith(nav);
+        el.replaceWith(header);
     });
 });
