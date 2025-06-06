@@ -1,7 +1,7 @@
 function createTip(el) {
     const container = document.createElement("p");
 
-    container.innerText = el.innerText;
+    container.innerHTML = el.innerHTML;
 
     container.classList.add("tip");
 
