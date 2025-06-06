@@ -6,86 +6,106 @@
     --bg-panel: #242428;
     --border: #4B2C3F;
     --accent: #7D295F;
+
+    /* Text */
+    --text-main: white;
+    --text-muted: #d0d0d0;
 }
 
 body {
-    margin: 0;
-    background-color: var(--bg);
-    font-family: 'JetBrains Mono', sans-serif;
-    color: white;
-
     display: flex;
     flex-direction: column;
 
     height: 100vh;
     width: 100vw;
+
+    margin: 0;
+
+    font-family: 'JetBrains Mono', sans-serif;
+    color: var(--text-main);
+
+    background-color: var(--bg);
 }
 
-/* HEADERS */
-h1,
-h2,
-h3,
-h4 {
-    scroll-margin-top: 3rem;
-}
-
-h2 {
-    position: relative;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    margin-top: 2rem;
-}
-
-h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    border-bottom: 3px solid var(--bg-panel);
-}
-
-/* MAIN */
 article {
-    flex: 1;
+    padding: 2rem;
 
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    background-color: var(--bg-panel);
 
-    line-height: 1.5;
+    border-radius: 8px;
+    border: 1px solid var(--border);
 }
 
-/* TEXTS */
-article>p,
-section>p {
-    margin-left: 2rem;
-    margin-right: 2rem;
+article:is(.full) {
+    flex: 1;
+    margin: 3rem;
+}
+
+article:not(.full) {
+    max-width: 850px;
+    margin: 3rem auto;
+}
+
+/* TEXT PARAGRAPH */
+article>section>p,
+article>p {
+    margin: 1rem 0;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #eaeaea;
+}
+
+/* HEADINGS */
+h2,
+h3 {
+    color: #f4f4f4;
+}
+
+/* LIST STYLING */
+ul,
+ol {
+    margin: 1rem 2rem;
+    padding-left: 1rem;
+}
+
+li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+ol li::marker {
+    color: var(--accent);
+    font-weight: bold;
 }
 
 /* LINKS */
 a {
     color: var(--light);
-    transition: color 0.25s;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    outline-offset: 2px;
 }
 
-a:hover {
-    color: var(--main);
+a:hover,
+a:focus-visible {
+    color: var(--accent);
+    text-decoration: underline;
+    outline: none;
 }
 
-/* LISTS */
-li~li {
-    margin-top: 0.5em;
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
-/* BOLDS */
-b {
-    display: inline-block;
-    background-color: var(--bg-panel);
-    padding: 0.3em;
-    border-radius: 0.5em;
-    font-weight: normal;
-
-    user-select: none;
+/* INLINE CODE */
+code {
+    background-color: #2c2c2e;
+    color: #fc78ad;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 0.95em;
+    font-family: 'JetBrains Mono', monospace;
 }

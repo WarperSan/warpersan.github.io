@@ -23,7 +23,9 @@
     padding: 1rem;
     border-radius: 5px;
 
-    background-color: var(--bg-panel);
+    background-color: var(--bg);
+
+    border: 1px solid var(--border);
 
     overflow-x: scroll;
     overflow-y: hidden;

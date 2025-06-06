@@ -1,0 +1,26 @@
+.tip:is(.help) {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-left: 4px solid #9dcdf5;
+    background-color: #29373b;
+    color: var(--text-muted);
+    border-radius: 6px;
+}
+
+.tip:is(.warning) {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-left: 4px solid #f5d19d;
+    background-color: #3B2B29;
+    color: var(--text-muted);
+    border-radius: 6px;
+}
+
+.tip:is(.alert) {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-left: 4px solid #f88080;
+    background-color: #482323;
+    color: var(--text-muted);
+    border-radius: 6px;
+}
