@@ -46,6 +46,13 @@ article:not(.full) {
     margin: 3rem auto;
 }
 
+@media (min-width: 1200px) {
+    article:not(.full) {
+        max-width: 1100px;
+        /* wider for big screens */
+    }
+}
+
 /* TEXT PARAGRAPH */
 article>section>p,
 article>p {
@@ -100,12 +107,17 @@ a:focus-visible {
     outline-offset: 2px;
 }
 
-/* INLINE CODE */
-code {
+/* CODE */
+code:not(pre code) {
     background-color: #2c2c2e;
     color: #fc78ad;
     padding: 0.2em 0.4em;
     border-radius: 4px;
     font-size: 0.95em;
     font-family: 'JetBrains Mono', monospace;
+}
+
+pre:has(>code) {
+    border-radius: 0.5rem;
+    border: 1px solid var(--bg);
 }
