@@ -53,6 +53,12 @@ article:not(.full) {
     }
 }
 
+@media (max-width: 850px) {
+    article {
+        margin: 3rem 0.5rem !important;
+    }
+}
+
 /* TEXT PARAGRAPH */
 article>section>p,
 article>p {
