@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.querySelectorAll('custom-header').forEach(el => {
-        const titleText = el.getAttribute("title") ?? "Home";
+        const titleText = el.getAttribute("title") ?? document.title;
 
         const header = document.createElement("header");
         const title = document.createElement("span");
