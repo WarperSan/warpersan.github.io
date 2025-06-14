@@ -94,7 +94,7 @@ class Converter {
                 const alphaBits = this.#reader.readUlong();
                 const startAlpha = Number(alphaBits & 0xFFn);
                 const endAlpha = Number(alphaBits >> 8n & 0xFFn);
-                const alphaMask = Number(alphaBits >> 16n & 0xFFFFFFFFFFFFn);
+                const alphaMask = alphaBits >> 16n & 0xFFFFFFFFFFFFn;
 
                 alphaTable[0] = startAlpha;
                 alphaTable[1] = endAlpha;
@@ -154,7 +154,7 @@ class Converter {
                         const color = colorTable[colorIndex];
 
                         //Read alpha
-                        const alphaIndex = alphaMask >> index * 3 & 0x7;
+                        const alphaIndex = Number((alphaMask >> BigInt(index * 3)) & 0x7n);
                         const alpha = alphaTable[alphaIndex];
 
                         // Assign color
