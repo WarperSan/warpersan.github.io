@@ -1,7 +1,5 @@
 class Converter {
     #reader;
-    #view;
-    #offset;
 
     constructor(buffer) {
         this.#reader = new BinaryReader(buffer);
