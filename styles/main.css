@@ -29,6 +29,7 @@ body {
 
 article {
     padding: 2rem;
+    margin-top: 3rem;
 
     background-color: var(--bg-panel);
 
@@ -38,24 +39,26 @@ article {
 
 article:is(.full) {
     flex: 1;
-    margin: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
 }
 
 article:not(.full) {
     max-width: 850px;
-    margin: 3rem auto;
+    margin: 2rem auto;
 }
 
 @media (min-width: 1200px) {
     article:not(.full) {
         max-width: 1100px;
-        /* wider for big screens */
     }
 }
 
 @media (max-width: 850px) {
     article {
-        margin: 3rem 0.5rem !important;
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
     }
 }
 
