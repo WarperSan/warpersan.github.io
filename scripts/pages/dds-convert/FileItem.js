@@ -24,6 +24,7 @@ class FileItem {
         const name = document.createElement("span");
         name.classList.add("file-name");
         name.innerText = this.#file.name;
+        name.title = this.#file.name;
 
         // Loading
         const loadingContainer = document.createElement("div");
