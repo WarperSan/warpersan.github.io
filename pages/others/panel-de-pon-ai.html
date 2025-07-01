@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GENERIC -->
+    <link href="/styles/import.css" rel="stylesheet">
+    <script src="/scripts/utils.js"></script>
+    <script src="/scripts/elements/HeaderElement.js"></script>
+    <script src="/scripts/elements/FooterElement.js"></script>
+
+    <!-- SPECIFIC -->
+    <title>Panel de Pon - AI</title>
+    <link rel="icon" href="" type="image/x-icon" />
+    <meta name="title" content="Panel de Pon - AI">
+    <meta name="description"
+        content="A C++ and SFML remake of Panel de Pon, focused on implementing genetic algorithms to play the game. Includes optimizations, custom grid logic, and mechanics like combos and rising.">
+    <meta name="author" content="WarperSan">
+    <meta name="keywords"
+        content="Panel de Pon, Tetris Attack, AI Project, Genetic Algorithm, Game Development, C++, SFML, Retro Game AI, Block Puzzle AI, WarperSan">
+</head>
+
+<body>
+    <custom-header></custom-header>
+
+    <article>
+        <section>
+            <h1>Story</h1>
+            <p>
+                At the start of 2024, I was fascinated with AI. More specifically, genetic algorithms. I watched
+                countless
+                videos
+                on YouTube that explains, showcases and makes genetic algorithms. I decided to make my own to
+                play an old game: <strong>Panel de pon / Tetris Attack</strong>
+                (<i>the name depends on the version of the game</i>).
+            </p>
+        </section>
+        <section>
+            <h1>Development</h1>
+            <p>
+                I also wanted to upgrade my skills in C++, so I decided to remake the game in C++, using the library
+                SFML
+                for the
+                graphics.
+            </p>
+        </section>
+        <section>
+
+            <h2>Cursor</h2>
+            <p>
+                In the first video, I showcased what I did so far. I programmed the cursor, I allowed the player to swap
+                two
+                blocks
+                and to connect multiple. The cursor is a pretty standard cursor. You increase the position on either
+                axis
+                and you
+                clamp
+                it so that it can't go outside the bounds.
+            </p>
+
+            <iframe src="https://www.youtube.com/embed/V0K9dWUWNWA"></iframe>
+        </section>
+        <section>
+
+            <h2>Blocks</h2>
+            <p>
+                The neat part about this is that I, by myself, made a compact system. By that, I mean that
+                the grid takes as little space as possible. Each block stored 3 values:
+            </p>
+
+            <ul>
+                <li>Type (Block, Air)</li>
+                <li>State (Swapping right, left, falling, being destroyed)</li>
+                <li>Color (red, blue, green, yellow, ...)</li>
+            </ul>
+
+            <p>
+                Each value is an enum. However, enums are int and I don't need 4 bytes of data for each value.
+                Yes, if I wanted to add more, it would be easy. However, I just wanted to replicate the original game.
+                So each value just needs 1/2 bytes. By that logic, I just combined all the values into a single unsigned
+                short.
+            </p>
+
+            <img src="/assets/images/pages/panel-de-pon-ai/data-optimizing.png" title="Data optimizing" />
+
+            <p>
+                This allows each block to only 2 bytes large. This taught me how to think like old developers and
+                to find ways to optimize a problem. After a bit of searching, I found in an old conversation the code of
+                this class.
+            </p>
+
+            <script src="https://gist.github.com/WarperSan/03b47d689a73632e95c79700cc273b7a.js"></script>
+
+            <p>
+                Sadly, this exposes that the blocks aren't actually 2 bytes large. Their data is, but there were other
+                fields that I
+                needed to store, making the struct bigger.
+            </p>
+        </section>
+        <section>
+
+            <h2>Combo system</h2>
+            <p>
+                After that, I developed the combo system. In the original game, the more match
+                you make from one move, the more points you gain. Here, I made that the player
+                can make combos from falling blocks.
+            </p>
+
+            <iframe src="https://www.youtube.com/embed/rVkpZM_vDTM"></iframe>
+
+            <p>
+                Not much to say other that it was a pain to manage timers and states. Each block has a timer
+                linked to it <i>basically two 2D arrays</i> and all the timers are updated at once.
+                I remember struggling with it, because blocks would match while falling or fall through matched blocks.
+            </p>
+        </section>
+        <section>
+            <h2>Rising</h2>
+            <p>
+                After that, I implemented the rising mechanic. In the game, the board automatically
+                rises <i>or the player can manually rise it</i> in order to
+                reveal new blocks.
+            </p>
+
+            <iframe src="https://www.youtube.com/embed/TnTwPHsVVHw"></iframe>
+
+            <p>
+                This was more fun than the last one, because it was only offsetting stuff around and
+                moving up a hidden layer.
+            </p>
+        </section>
+        <section>
+            <h1>Conclusion</h1>
+            <p>
+                Sadly, this is where the project ends. I never actually implemented the genetic
+                algorithm in this project <i>probably a combination of lack of motivation and school
+                    work</i>.
+                Moreover, I lost all the code in an attempt to censor my name from the system path
+                <i>don't try to change the name of your user folder AND MAKE BACKUPS</i>. I'm still very
+                lucky that I was able to show code.
+            </p>
+        </section>
+    </article>
+
+    <custom-footer></custom-footer>
+</body>
+
+</html>
