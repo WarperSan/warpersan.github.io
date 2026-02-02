@@ -21,6 +21,21 @@
     margin-bottom: 1rem;
 }
 
+.game-area {
+    position: relative;
+}
+
+.web-game-player {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.web-game-content {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+}
+
 /* CONTROLS */
 .web-game-controls {
     display: flex;
@@ -30,6 +45,20 @@
 
     background-color: var(--bg);
     border-top: 1px solid var(--border);
+}
+
+.web-game-controls .left {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 1rem;
+}
+
+.web-game-controls .right {
+    display: flex;
+    flex: 1;
+    flex-direction: row-reverse;
+    gap: 1rem;
 }
 
 /* FOREGROUND */

@@ -1,139 +1,168 @@
-function setupGamePlayer(player, overlay) {
-    if (!player.hasAttribute("src"))
-        return;
+class WebGLPlayerElement extends HTMLElement {
+    static observedAttributes = ["src", "mobile", "pc"];
 
-    const iframeDoc = player.contentDocument || player.contentWindow.document;
-    const gameCanvas = iframeDoc.querySelector("canvas");
+    connectedCallback() {
+        const src = window.absoluteSrc(this.getAttribute("src"));
+        const platforms = this.getSupportedPlatforms();
+        const isPlayable = this.isPlayable(platforms);
 
-    if (!gameCanvas)
-        return;
+        const container = document.createElement("div");
+        container.classList.add("web-game");
 
-    gameCanvas.addEventListener("blur", () => {
-        overlay.style.display = "block";
-        overlay.style.pointerEvents = "none";
-    });
+        const gameArea = document.createElement("div");
+        gameArea.classList.add("game-area");
+        container.appendChild(gameArea);
 
-    gameCanvas.addEventListener("focus", () => {
-        overlay.style.display = "none";
-    });
+        const player = this.createPlayer(platforms);
+        player.addEventListener("load", () => setupGamePlayer(player, overlay));
+        gameArea.appendChild(player);
 
-    gameCanvas.classList.add("web-game-content");
-    Object.assign(gameCanvas.style, {
-        width: "100%",
-        height: "100%",
-        aspectRatio: "16 / 9",
-    });
-}
-
-function createIcon(classNames, title) {
-    const icon = document.createElement("i");
-    icon.className = classNames;
-    icon.title = title;
-    return icon;
-}
-
-function createButton(classNames, title, onClick) {
-    const button = createIcon(classNames, title);
-    button.addEventListener("click", onClick);
-    return button;
-}
-
-function createGameContainer(el) {
-    const src = window.absoluteSrc(el.getAttribute("src"));
-    const mobileAttr = el.getAttribute("mobile");
-    const pcAttr = el.getAttribute("pc");
-
-    const isMobile = window.mobileCheck();
-    const isPlayable = (isMobile && mobileAttr != null) || (!isMobile && pcAttr != null);
-
-    const container = document.createElement("div");
-    container.classList.add("web-game");
-
-    const player = document.createElement("iframe");
-    player.classList.add("web-game-player");
-    Object.assign(player, {
-        allow: "fullscreen",
-        allowFullscreen: true,
-    });
-    Object.assign(player.style, {
-        width: "100%",
-        aspectRatio: "16 / 9",
-    });
-    player.setAttribute("allowtransparency", "true");
-    player.setAttribute("frameborder", "0");
-    player.setAttribute("scrolling", "no");
-    player.addEventListener("load", () => setupGamePlayer(player, overlay));
-
-    const overlay = document.createElement("div");
-    overlay.classList.add("web-game-foreground");
-
-    if (isPlayable) {
-        overlay.title = "Click to Play";
-        overlay.classList.add("play");
-        overlay.addEventListener("click", () => {
+        const overlay = this.createOverlay(isPlayable, () => {
             if (!player.hasAttribute("src"))
                 player.setAttribute("src", src);
 
             overlay.style.display = "none";
         });
-    } else {
-        overlay.classList.add("error");
-        overlay.style.pointerEvents = "none";
+        gameArea.appendChild(overlay);
 
-        const errorMessage = document.createElement("span");
-        errorMessage.textContent = "Not Compatible";
-        overlay.appendChild(errorMessage);
+        const controls = this.createControls(platforms, () => {
+            const reqFullscreen = player.requestFullscreen
+                || player.mozRequestFullScreen
+                || player.webkitRequestFullscreen
+                || player.msRequestFullscreen;
+
+            if (reqFullscreen)
+                reqFullscreen.call(player);
+        });
+        container.appendChild(controls);
+
+        this.replaceWith(container);
     }
 
-    /* CONTROLS */
-    const controls = document.createElement("div");
-    controls.classList.add("web-game-controls");
+    // Platforms
+    getSupportedPlatforms() {
+        let platforms = [];
 
-    const leftControls = document.createElement("div");
-    Object.assign(leftControls.style, {
-        flex: 1,
-        display: "flex",
-        flexDirection: "row",
-        gap: "1em"
-    });
+        if (this.hasAttribute("mobile"))
+            platforms.push("mobile");
 
-    if (pcAttr != null) {
-        const pcIcon = createIcon("fa-solid fa-desktop", "PC");
-        leftControls.appendChild(pcIcon);
+        if (this.hasAttribute("pc"))
+            platforms.push("pc");
+
+        return platforms;
     }
 
-    if (mobileAttr != null) {
-        const mobileIcon = createIcon("fa-solid fa-mobile-screen", "Mobile");
-        leftControls.appendChild(mobileIcon);
+    isPlayable(platforms) {
+        const isOnMobile = window.mobileCheck();
+
+        if (isOnMobile)
+            return platforms.includes("mobile");
+
+        return platforms.includes("pc");
     }
 
-    const rightControls = document.createElement("div");
-    Object.assign(rightControls.style, {
-        flex: 1,
-        display: "flex",
-        flexDirection: "row-reverse",
-        gap: "1em"
-    });
+    addPlatformIcons(container, platforms) {
+        if (platforms.includes("pc")) {
+            const pcIcon = this.createIcon("PC", "fa-solid fa-desktop");
+            container.appendChild(pcIcon);
+        }
 
-    const fullscreenButton = createButton("fa-solid fa-expand", "Fullscreen", () => {
-        const reqFullscreen = player.requestFullscreen
-            || player.mozRequestFullScreen
-            || player.webkitRequestFullscreen
-            || player.msRequestFullscreen;
+        if (platforms.includes("mobile")) {
+            const mobileIcon = this.createIcon("Mobile", "fa-solid fa-mobile-screen");
+            container.appendChild(mobileIcon);
+        }
+    }
 
-        if (reqFullscreen)
-            reqFullscreen.call(player);
-    });
+    // Game Area
+    createPlayer() {
+        const player = document.createElement("iframe");
+        player.classList.add("web-game-player");
+        player.allow = "fullscreen";
+        player.allowFullscreen = true;
+        player.setAttribute("allowtransparency", "true");
+        player.setAttribute("frameborder", "0");
+        player.setAttribute("scrolling", "no");
 
-    rightControls.appendChild(fullscreenButton);
+        return player;
+    }
 
-    controls.appendChild(leftControls);
-    controls.appendChild(rightControls);
+    setupPlayer(player, overlay) {
+        if (!player.hasAttribute("src"))
+            return;
 
-    container.append(player, overlay, controls);
-    el.replaceWith(container);
+        const iframeDoc = player.contentDocument || player.contentWindow.document;
+        const gameCanvas = iframeDoc.querySelector("canvas");
+
+        if (!gameCanvas)
+            return;
+
+        gameCanvas.addEventListener("blur", () => {
+            overlay.style.display = "block";
+            overlay.style.pointerEvents = "none";
+        });
+
+        gameCanvas.addEventListener("focus", () => {
+            overlay.style.display = "none";
+        });
+
+        gameCanvas.classList.add("web-game-content");
+    }
+
+    createOverlay(isSupported, onClickToPlay) {
+        const overlay = document.createElement("div");
+        overlay.classList.add("web-game-foreground");
+
+        if (isSupported) {
+            overlay.title = "Click to Play";
+            overlay.classList.add("play");
+            overlay.addEventListener("click", onClickToPlay);
+        } else {
+            overlay.classList.add("error");
+            overlay.style.pointerEvents = "none";
+
+            const errorMessage = document.createElement("span");
+            errorMessage.textContent = "Not Compatible";
+            overlay.appendChild(errorMessage);
+        }
+
+        return overlay;
+    }
+
+    // Controls
+    createControls(supportedPlatforms, onFullScreenRequested) {
+        const controls = document.createElement("div");
+        controls.classList.add("web-game-controls");
+
+        const leftControls = document.createElement("div");
+        leftControls.classList.add("left");
+
+        this.addPlatformIcons(leftControls, supportedPlatforms);
+
+        const rightControls = document.createElement("div");
+        rightControls.classList.add("right");
+
+        const fullscreenButton = this.createButton("Fullscreen", "fa-solid fa-expand", onFullScreenRequested);
+
+        rightControls.appendChild(fullscreenButton);
+
+        controls.appendChild(leftControls);
+        controls.appendChild(rightControls);
+
+        return controls;
+    }
+
+    createIcon(title, classes) {
+        const icon = document.createElement("i");
+        icon.className = classes;
+        icon.title = title;
+        return icon;
+    }
+
+    createButton(title, classes, onClick) {
+        const button = this.createIcon(classes, title);
+        button.addEventListener("click", onClick);
+        return button;
+    }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("webgl").forEach(createGameContainer);
-});
+customElements.define("webgl-player", WebGLPlayerElement);
