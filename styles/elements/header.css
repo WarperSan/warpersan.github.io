@@ -26,13 +26,6 @@ header {
     display: flex;
     align-items: baseline;
     gap: 0.3rem;
-}
-
-.headerIcon {
     color: white;
     text-decoration: none;
-}
-
-.headerIcon:hover {
-    color: var(--light);
 }

@@ -1,20 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
-    function createIcon(url, classes, title) {
-        const link = document.createElement("a");
-        const icon = document.createElement("i");
+function createIcon(url, classes, title) {
+    const link = document.createElement("a");
+    link.href = url;
+    link.classList.add("headerIcon");
+    link.title = title;
+    
+    const icon = document.createElement("i");
+    icon.className = classes;
 
-        link.href = window.absoluteSrc(url);
-        link.classList.add("headerIcon");
-        link.title = title;
-        icon.className = classes;
+    const label = document.createElement("span");
+    label.innerText = title;
 
-        link.appendChild(icon);
+    link.appendChild(icon);
+    link.appendChild(label);
 
-        return link;
-    }
+    return link;
+}
 
-    document.querySelectorAll('custom-header').forEach(el => {
-        const titleText = el.getAttribute("title") ?? document.title;
+class Header extends HTMLElement {
+    connectedCallback() {
+        const titleText = this.getAttribute("title") ?? document.title;
 
         const header = document.createElement("header");
         const title = document.createElement("span");
@@ -33,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
         header.appendChild(title);
         header.appendChild(icons);
 
-        el.replaceWith(header);
-    });
-});
+        this.replaceWith(header);
+    }
+}
+
+customElements.define("custom-header", Header);
