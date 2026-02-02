@@ -4,6 +4,23 @@ window.mobileCheck = function () {
   return check;
 };
 
-window.absoluteSrc = function(url) {
+window.absoluteSrc = function (url) {
   return new URL(url, window.location.origin);
-}
+};
+
+window.loadStylesheet = function (url) {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = url;
+  document.head.appendChild(link);
+};
+
+window.loadScript = function (url) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = url;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+};
