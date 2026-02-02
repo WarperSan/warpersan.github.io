@@ -25,6 +25,7 @@ class Header extends HTMLElement {
         const icons = document.createElement("div");
 
         const home = createIcon("index.html", "fa-solid fa-house", "Home");
+        const aboutMe = createIcon("pages/about-me.html", "fa-solid fa-user", "About Me");
         const pages = createIcon("pages/index.html", "fa-solid fa-compass", "Pages");
 
         title.innerText = titleText;
@@ -32,6 +33,7 @@ class Header extends HTMLElement {
 
 
         icons.appendChild(home);
+        icons.appendChild(aboutMe);
         icons.appendChild(pages);
 
         header.appendChild(title);
