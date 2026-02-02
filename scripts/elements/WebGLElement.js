@@ -14,7 +14,7 @@ class WebGLPlayerElement extends HTMLElement {
         container.appendChild(gameArea);
 
         const player = this.createPlayer(platforms);
-        player.addEventListener("load", () => setupGamePlayer(player, overlay));
+        player.addEventListener("load", () => this.setupPlayer(player, overlay));
         gameArea.appendChild(player);
 
         const overlay = this.createOverlay(isPlayable, () => {
@@ -77,8 +77,6 @@ class WebGLPlayerElement extends HTMLElement {
     createPlayer() {
         const player = document.createElement("iframe");
         player.classList.add("web-game-player");
-        player.allow = "fullscreen";
-        player.allowFullscreen = true;
         player.setAttribute("allowtransparency", "true");
         player.setAttribute("frameborder", "0");
         player.setAttribute("scrolling", "no");
@@ -105,7 +103,11 @@ class WebGLPlayerElement extends HTMLElement {
             overlay.style.display = "none";
         });
 
-        gameCanvas.classList.add("web-game-content");
+        Object.assign(gameCanvas.style, {
+            width: "100%",
+            height: "100%",
+            aspectRatio: "16 / 9",
+        });
     }
 
     createOverlay(isSupported, onClickToPlay) {
@@ -142,7 +144,6 @@ class WebGLPlayerElement extends HTMLElement {
         rightControls.classList.add("right");
 
         const fullscreenButton = this.createButton("Fullscreen", "fa-solid fa-expand", onFullScreenRequested);
-
         rightControls.appendChild(fullscreenButton);
 
         controls.appendChild(leftControls);
@@ -159,7 +160,7 @@ class WebGLPlayerElement extends HTMLElement {
     }
 
     createButton(title, classes, onClick) {
-        const button = this.createIcon(classes, title);
+        const button = this.createIcon(title, classes);
         button.addEventListener("click", onClick);
         return button;
     }

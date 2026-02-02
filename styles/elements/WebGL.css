@@ -30,12 +30,6 @@
     aspect-ratio: 16 / 9;
 }
 
-.web-game-content {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 16 / 9;
-}
-
 /* CONTROLS */
 .web-game-controls {
     display: flex;
