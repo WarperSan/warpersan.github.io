@@ -24,7 +24,7 @@ header {
 
 .headerIcon {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 0.3rem;
 }
 
