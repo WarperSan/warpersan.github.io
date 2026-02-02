@@ -11,13 +11,6 @@
     <script src="/scripts/elements/HeaderElement.js"></script>
     <script src="/scripts/elements/FooterElement.js"></script>
 
-    <link href="/styles/elements/Tip.css" rel="stylesheet" />
-    <script src="/scripts/elements/TipElement.js"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
-
     <!-- SPECIFIC -->
     <title>Harmony Patching</title>
     <link rel="icon" href="https://raw.githubusercontent.com/pardeike/Harmony/master/HarmonyLogo.png"
@@ -27,6 +20,14 @@
     <meta name="keywords"
         content="Harmony, C# patching, HarmonyLib, modding, prefix, postfix, transpiler, guide, tutorial">
     <meta name="author" content="WarperSan">
+
+    <link href="/styles/elements/Tip.css" rel="stylesheet" />
+    <script src="/scripts/elements/TipElement.js"></script>
+    <script defer src="/scripts/elements/CodeElement.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
 </head>
 
 <body>
@@ -57,12 +58,13 @@
             <p>
                 To create a patch, you need to write code similar to the following:
             </p>
-            <pre><code class="language-csharp">[HarmonyPatch(typeof(OriginalClass))]
+            <code-block lang="csharp">
+[HarmonyPatch(typeof(OriginalClass))]
 internal class OriginalClass_Patches
 {
     // Content to be followed
 }
-</code></pre>
+            </code-block>
             <p>
                 Grouping patches by type improves readability and maintainability by keeping the code organized and
                 structured.
@@ -78,12 +80,13 @@ internal class OriginalClass_Patches
                 For patches to work correctly, they need to be applied first. There are several ways to do this, but the
                 example below is the cleanest and most reliable approach I've found:
             </p>
-            <pre><code class="language-csharp">var harmony = new HarmonyLib.Harmony("com.company.project.product");
+            <code-block lang="csharp">
+var harmony = new HarmonyLib.Harmony("com.company.project.product");
 
 harmony.PatchAll(typeof(Patches.OriginalClass_Patches));
 harmony.PatchAll(typeof(Patches.OriginalClass2_Patches));
 harmony.PatchAll(typeof(Patches.OriginalClass3_Patches));
-</code></pre>
+            </code-block>
             <p>
                 If your project doesn't involve patching dependencies, you can simplify things by using
                 <code>harmony.PatchAll()</code> without any arguments. It will automatically detect and apply all
@@ -93,7 +96,8 @@ harmony.PatchAll(typeof(Patches.OriginalClass3_Patches));
                 While applying all patches at once is convenient, I find that applying them by type gives more control —
                 especially when dealing with dependencies:
             </p>
-            <pre><code class="language-csharp">var harmony = new HarmonyLib.Harmony("com.company.project.product");
+            <code-block lang="csharp">
+var harmony = new HarmonyLib.Harmony("com.company.project.product");
 
 harmony.PatchAll(typeof(Patches.OriginalClass_Patches));
 harmony.PatchAll(typeof(Patches.OriginalClass2_Patches));
@@ -103,7 +107,7 @@ if (Dependency.ModTest.Enabled)
     harmony.PatchAll(typeof(Patches.ModdedClass_Patches));
     harmony.PatchAll(typeof(Patches.ModdedClass2_Patches));
 }
-</code></pre>
+            </code-block>
         </section>
         <section>
             <h2>Types of Patching</h2>
@@ -134,35 +138,36 @@ if (Dependency.ModTest.Enabled)
                 A prefix is a method that runs before the original method. It's great for running early logic or
                 skipping the original method entirely. Here's a basic example:
             </p>
-            <pre><code class="language-csharp">[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyPrefix]
+            <code-block lang="csharp">
+[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyPrefix]
 private static void OriginalMethod_Prefix()
 {
     // Custom logic before the original method runs
 }
-</code></pre>
-
+            </code-block>
             <p>
                 If you need access to the object instance or the method's arguments, just include them in the prefix
                 method's parameters:
             </p>
-            <pre><code class="language-csharp">[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyPrefix]
+            <code-block lang="csharp">
+[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyPrefix]
 private static void OriginalMethod_Prefix(OriginalClass __instance, int number, string format)
 {
     // Use __instance or modify arguments before the original method
 }
-</code></pre>
-
+            </code-block>
             <p>
                 You can also control whether the original method runs at all. By returning <code>false</code>, the
                 original method will be skipped entirely:
             </p>
-            <pre><code class="language-csharp">[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyPrefix]
+            <code-block lang="csharp">
+[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyPrefix]
 private static bool OriginalMethod_Prefix()
 {
     // Skip the original method
     return false;
 }
-</code></pre>
+            </code-block>
         </section>
         <section>
             <h3>Postfix</h3>
@@ -170,23 +175,24 @@ private static bool OriginalMethod_Prefix()
                 A postfix is a method that runs after the original method has completed. It's great for running
                 follow-up logic or modifying the method's result. Here's a basic example:
             </p>
-            <pre><code class="language-csharp">[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyPostfix]
+            <code-block lang="csharp">
+[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyPostfix]
 private static void OriginalMethod_Postfix()
 {
     // Custom logic after the original method runs
 }
-</code></pre>
-
+            </code-block>
             <p>
                 You can also access the return value using the <code>ref</code> keyword with <code>__result</code> to
                 modify what the original method returns:
             </p>
-            <pre><code class="language-csharp">[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyPostfix]
+            <code-block lang="csharp">
+[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyPostfix]
 private static void OriginalMethod_Postfix(ref int __result)
 {
     __result += 10; // Modify the return value
 }
-</code></pre>
+            </code-block>
         </section>
         <section>
             <h3>Transpiler</h3>
@@ -204,7 +210,8 @@ private static void OriginalMethod_Postfix(ref int __result)
 
             <p>Here's a basic template for a transpiler:</p>
 
-            <pre><code class="language-csharp">[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyTranspiler]
+            <code-block lang="csharp">
+[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyTranspiler]
 private static IEnumerable&lt;CodeInstruction&gt; OriginalMethod_Transpiler(IEnumerable&lt;CodeInstruction&gt; instructions)
 {
     var code = new List&lt;CodeInstruction&gt;(instructions);
@@ -233,11 +240,11 @@ private static IEnumerable&lt;CodeInstruction&gt; OriginalMethod_Transpiler(IEnu
 
     return code;
 }
-</code></pre>
-
+            </code-block>
             <p>Let's use the following method as a reference:</p>
 
-            <pre><code class="language-csharp">public int OriginalMethod(int number, string format)
+            <code-block lang="csharp">
+public int OriginalMethod(int number, string format)
 {
     var formatted = number.ToString(format);
 
@@ -247,8 +254,7 @@ private static IEnumerable&lt;CodeInstruction&gt; OriginalMethod_Transpiler(IEnu
     System.Console.WriteLine(formatted);
     return number;
 }
-</code></pre>
-
+            </code-block>
             <help>
                 To analyze IL code, tools like
                 <a href="https://www.jetbrains.com/help/rider/Viewing_Intermediate_Language.html#using-il-viewer"
@@ -264,7 +270,8 @@ private static IEnumerable&lt;CodeInstruction&gt; OriginalMethod_Transpiler(IEnu
 
             <p>For our example, the IL looks like this:</p>
 
-            <pre><code class="language-clike">nop
+            <code-block lang="clike">
+nop
 ldarga.s     number
 ldarg.2      // format
 call         instance string [mscorlib]System.Int32::ToString(string)
@@ -277,15 +284,15 @@ stloc.1      // V_1
 br.s         IL_0015
 ldloc.1      // V_1
 ret
-</code></pre>
-
+            </code-block>
             <p>
                 The instruction <code>ldloc.0</code> is a good marker. It appears just before the call to
                 <code>Console.WriteLine</code>, which is where we want to inject our logic. We can then go through every
                 instruction, looking for the desired pattern.
             </p>
 
-            <pre><code class="language-csharp">var insertionIndex = -1;
+            <code-block lang="csharp">
+var insertionIndex = -1;
 
 for (var i = 0; i &lt; code.Count - 1; i++)
 {
@@ -297,8 +304,7 @@ for (var i = 0; i &lt; code.Count - 1; i++)
     insertionIndex = i;
     break;
 }
-</code></pre>
-
+            </code-block>
             <help>
                 For more precise targeting, consider matching a sequence of instructions—for example,
                 <code>ldloc.0</code> followed by <code>call</code>. This reduces the risk of injecting at the wrong
@@ -310,18 +316,19 @@ for (var i = 0; i &lt; code.Count - 1; i++)
                 method, then examine its IL output. For our target modification, the IL looks like this:
             </p>
 
-            <pre><code class="language-clike">ldstr        "|"
+            <code-block lang="clike">
+ldstr        "|"
 ldloc.0      // formatted
 ldstr        "|"
 call         string [mscorlib]System.String::Concat(string, string, string)
 stloc.0      // formatted
-</code></pre>
-
+            </code-block>
             <p>
                 Incorporating these instructions into the transpiler gives us the final implementation:
             </p>
 
-            <pre><code class="language-csharp">[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyTranspiler]
+            <code-block lang="csharp">
+[HarmonyPatch(nameof(OriginalClass.OriginalMethod)), HarmonyTranspiler]
 private static IEnumerable&lt;CodeInstruction&gt; OriginalMethod_Transpiler(IEnumerable&lt;CodeInstruction&gt; instructions)
 {
     var code = new List&lt;CodeInstruction&gt;(instructions);
@@ -359,8 +366,7 @@ private static IEnumerable&lt;CodeInstruction&gt; OriginalMethod_Transpiler(IEnu
 
     return code;
 }
-</code></pre>
-
+            </code-block>
             <help>For more complex logic, it is recommended to inject instructions that call a separate method
                 containing your code. This approach is simpler and more maintainable than injecting each instruction
                 individually.</help>

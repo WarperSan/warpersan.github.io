@@ -11,13 +11,6 @@
     <script src="/scripts/elements/HeaderElement.js"></script>
     <script src="/scripts/elements/FooterElement.js"></script>
 
-    <link href="/styles/elements/Tip.css" rel="stylesheet" />
-    <script src="/scripts/elements/TipElement.js"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-php.min.js"></script>
-
     <!-- SPECIFIC -->
     <title>PHP PDO</title>
     <link rel="icon" href="" type="image/x-icon" />
@@ -27,6 +20,14 @@
     <meta name="author" content="WarperSan">
     <meta name="keywords"
         content="PHP PDO, PDO Manager, PHP Database, OOP PHP, PDO Wrapper, Stored Procedures, SQL Automation, PHP School Project">
+
+    <link href="/styles/elements/Tip.css" rel="stylesheet" />
+    <script src="/scripts/elements/TipElement.js"></script>
+    <script defer src="/scripts/elements/CodeElement.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-php.min.js"></script>
 </head>
 
 <body>
@@ -55,10 +56,11 @@
                 The external code would simply need to run the following code in order to directly call procedures and
                 functions:
             </p>
-            <pre><code class="language-php">$a = 10;
+            <code-block lang="php">
+$a = 10;
 $b = "0x0";
 PDO_Manager::call_procedure("test", $a, $b, null);
-</code></pre>
+            </code-block>
             <p>
                 The manager would then automatically create the query needed to call it. The advantage is also that the
                 manager would convert PHP values into SQL values. For example, it would convert <code>null</code> into
@@ -75,7 +77,8 @@ PDO_Manager::call_procedure("test", $a, $b, null);
             <p>
                 This problematic was solved by creating a class that would bridge this gap:
             </p>
-            <pre><code class="language-php">class User extends PDO_Object
+            <code-block lang="php">
+class User extends PDO_Object
 {
     #[PDO_Object_Id("idUser")]
     public string $Id = "";
@@ -86,7 +89,7 @@ PDO_Manager::call_procedure("test", $a, $b, null);
     #[PDO_Object_Id("name")]
     public string $Name = "";
 }
-</code></pre>
+            </code-block>
             <p>
                 By giving a string map, the object would assign each value to the correct property, following the
                 column's name defined in the attribute. This allows to separate the database names and the PHP names,
@@ -95,7 +98,8 @@ PDO_Manager::call_procedure("test", $a, $b, null);
             <p>
                 It also allows to have type safety that are more understandable than before:
             </p>
-            <pre><code class="language-php">function updateUser(array $user): void
+            <code-block lang="php">
+function updateUser(array $user): void
 {
     // Need to assume that the array has the correct values
 }
@@ -104,7 +108,7 @@ function updateUser(User $user): void
 {
     // Prevents giving the wrong values
 }
-</code></pre>
+</code-block>
             <p>
                 You can also add instance functions to these classes to make special queries. For example, you could
                 call <code>$user->censorName()</code> to call special queries or functions from a given state.
@@ -115,7 +119,7 @@ function updateUser(User $user): void
             <p>
                 While adding the support for custom queries, I also added custom functions to help create the query:
             </p>
-            <pre><code class="language-php">
+            <code-block lang="php">
 // Instead of this:
 User::select(
     [User::NAME],
@@ -128,7 +132,7 @@ User::select(
     orderByAll([User::NAME], [User::ALIAS]),
     limit(5, 10)
 );
-</code></pre>
+</code-block>
             <p>
                 It hides the exact implementation of the queries whilst keeping it understandable and easily modifiable.
                 You would only need to modify the function <code>limit</code> to change its behaviour.
