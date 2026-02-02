@@ -18,10 +18,7 @@ function createIcon(url, classes, title) {
 
 class Header extends HTMLElement {
     connectedCallback() {
-        const titleText = this.getAttribute("title") ?? document.title;
-
         const header = document.createElement("header");
-        const title = document.createElement("span");
         const icons = document.createElement("div");
 
         const home = createIcon("index.html", "fa-solid fa-house", "Home");
@@ -29,7 +26,6 @@ class Header extends HTMLElement {
         const pages = createIcon("pages/index.html", "fa-solid fa-compass", "Pages");
         const tools = createIcon("pages/tools.html", "fa-solid fa-wrench", "Online Tools");
         
-        title.innerText = titleText;
         icons.id = "headerIcons";
 
 
@@ -38,7 +34,6 @@ class Header extends HTMLElement {
         icons.appendChild(pages);
         icons.appendChild(tools);
 
-        header.appendChild(title);
         header.appendChild(icons);
 
         this.replaceWith(header);
