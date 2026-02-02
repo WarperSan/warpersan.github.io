@@ -7,7 +7,6 @@ class ToolCard extends HTMLElement {
 
         const link = document.createElement("a");
         link.href = href;
-        link.title = titleText;
         link.classList.add("tool")
 
         const icon = document.createElement("i");
