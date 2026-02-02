@@ -19,13 +19,21 @@ header {
     flex: 1;
     justify-content: end;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
+    padding-right: 1rem;
 }
 
 .headerIcon {
     display: flex;
     align-items: baseline;
-    gap: 0.3rem;
+    gap: 0.5rem;
     color: white;
     text-decoration: none;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.headerIcon:hover {
+    background-color: var(--dark);
 }
