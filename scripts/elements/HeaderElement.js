@@ -23,15 +23,17 @@ class Header extends HTMLElement {
 
         const home = createIcon("index.html", "fa-solid fa-house", "Home");
         const aboutMe = createIcon("pages/about-me.html", "fa-solid fa-user", "About Me");
-        const pages = createIcon("pages/index.html", "fa-solid fa-compass", "Pages");
-        const tools = createIcon("pages/tools.html", "fa-solid fa-wrench", "Online Tools");
+        const articles = createIcon("pages/articles/index.html", "fa-solid fa-newspaper", "Articles");
+        const games = createIcon("pages/games/index.html", "fa-solid fa-dice", "Games");
+        const tools = createIcon("pages/tools/index.html", "fa-solid fa-wrench", "Online Tools");
         
         icons.id = "headerIcons";
 
 
         icons.appendChild(home);
         icons.appendChild(aboutMe);
-        icons.appendChild(pages);
+        icons.appendChild(articles);
+        icons.appendChild(games);
         icons.appendChild(tools);
 
         header.appendChild(icons);
