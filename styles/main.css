@@ -29,7 +29,7 @@ body {
 
 article {
     padding: 2rem;
-    margin-top: 3rem;
+    margin-top: 3.5rem;
 
     background-color: var(--bg-panel);
 
@@ -74,6 +74,11 @@ article>p {
 }
 
 /* HEADINGS */
+h2 {
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 h2,
 h3 {
     color: #f4f4f4;
