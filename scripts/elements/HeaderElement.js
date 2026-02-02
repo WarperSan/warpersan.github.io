@@ -1,6 +1,6 @@
 function createIcon(url, classes, title) {
     const link = document.createElement("a");
-    link.href = url;
+    link.href = window.absoluteSrc(url);
     link.classList.add("headerIcon");
     link.title = title;
     
