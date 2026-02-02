@@ -1,16 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('skill-icon').forEach(el => {
+class Skill extends HTMLElement {
+    connectedCallback() {
         const container = document.createElement("div");
         const icon = document.createElement("i");
         const label = document.createElement("span");
 
         container.classList.add("skill");
-        icon.className = el.className;
-        label.innerText = el.textContent;
+        icon.className = this.className;
+        label.innerText = this.textContent;
 
         container.appendChild(icon);
         container.appendChild(label);
 
-        el.replaceWith(container);
-    });
-});
+        this.replaceWith(container);
+    }
+}
+
+customElements.define("skill-icon", Skill);

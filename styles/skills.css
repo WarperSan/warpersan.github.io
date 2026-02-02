@@ -27,6 +27,7 @@
 
     border: 1px solid var(--border);
 
+    user-select: none;
     overflow-x: scroll;
     overflow-y: hidden;
 }
