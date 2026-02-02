@@ -131,6 +131,7 @@ code:not(pre code) {
     border-radius: 4px;
     font-size: 0.95em;
     font-family: 'JetBrains Mono', monospace;
+    word-break: keep-all;
 }
 
 pre:has(>code) {
