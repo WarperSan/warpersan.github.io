@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GENERIC -->
+    <link href="/styles/import.css" rel="stylesheet">
+    <script src="/scripts/utils.js"></script>
+    <script src="/scripts/elements/HeaderElement.js"></script>
+    <script src="/scripts/elements/FooterElement.js"></script>
+
+    <!-- SPECIFIC -->
+    <title>Tools</title>
+    <link href="/styles/pages/tools.css" rel="stylesheet">
+    <script src="/scripts/elements/ToolCardElement.js"></script>
+</head>
+
+<body>
+    <custom-header></custom-header>
+
+    <article>
+        <section>
+            <h2>Online Tools</h2>
+            <p>
+                Variety of online tools developed by me for a variety of tasks.
+            </p>
+            <div id="tools-container" style="background-color: var(--bg);">
+                <tool-card title="JSON Compare" description="A editor for comparing two JSON data." icon="fa-solid fa-code-compare" href="/pages/tools/json-compare.html"></tool-card>
+                <tool-card title="DDS Converter" description="A converter to parse DDS images into PNG." icon="fa-solid fa-arrow-right-arrow-left" href="/pages/tools/dds-convert.html"></tool-card>
+            </div>
+        </section>
+    </article>
+
+    <custom-footer></custom-footer>
+</body>
+
+</html>
