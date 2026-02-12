@@ -35,7 +35,6 @@ class Header extends HTMLElement {
                 return;
 
             iconsList.classList.remove("open");
-            document.body.classList.remove("menu-open");
         });
 
         container.appendChild(menuBtn);
