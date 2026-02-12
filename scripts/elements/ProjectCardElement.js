@@ -1,4 +1,4 @@
-class GameCard extends HTMLElement {
+class ProjectCard extends HTMLElement {
     connectedCallback() {
         const titleText = this.getAttribute("title") ?? document.title;
         const href = this.getAttribute("href") ?? "";
@@ -7,7 +7,7 @@ class GameCard extends HTMLElement {
 
         const link = document.createElement("a");
         link.href = href;
-        link.classList.add("game")
+        link.classList.add("project")
 
         const topContainer = document.createElement("div");
         topContainer.classList.add("top");
@@ -34,4 +34,4 @@ class GameCard extends HTMLElement {
     }
 }
 
-customElements.define("game-card", GameCard);
+customElements.define("project-card", ProjectCard);

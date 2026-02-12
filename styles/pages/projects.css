@@ -1,4 +1,4 @@
-#games-container {
+#projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: 1fr;
@@ -10,17 +10,17 @@
     border: 1px solid var(--border);
 }
 
-#games-container>div {
+#projects-container>div {
     box-sizing: border-box;
     flex: fit-content;
     overflow-x: hidden;
 }
 
-#games-container h3 {
+#projects-container h3 {
     user-select: none;
 }
 
-.game {
+.project {
     border-radius: 1em;
     overflow: hidden;
 
@@ -28,8 +28,9 @@
     transition: all 0.2s ease-in-out;
 }
 
-.game h3 {
-    margin: 0;
+.project:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 25px -5px var(--border);
 }
 
 .top {
@@ -49,13 +50,10 @@
     background-color: var(--bg-panel);
 }
 
+.bottom h3 {
+    margin: 0;
+}
 
 .bottom span {
     color: var(--text-muted);
-}
-
-
-.game:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 25px -5px var(--border);
 }

@@ -13,7 +13,7 @@ class Header extends HTMLElement {
             { url: "index.html", icon: "fa-solid fa-house", title: "Home" },
             { url: "pages/about-me.html", icon: "fa-solid fa-user", title: "About Me" },
             { url: "pages/articles/index.html", icon: "fa-solid fa-newspaper", title: "Articles" },
-            { url: "pages/games/index.html", icon: "fa-solid fa-dice", title: "Games" },
+            { url: "pages/projects.html", icon: "fa-solid fa-box-archive", title: "Projects" },
             { url: "pages/tools/index.html", icon: "fa-solid fa-wrench", title: "Online Tools" }
         ];
 
