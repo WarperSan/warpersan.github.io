@@ -1,28 +1,51 @@
 class Header extends HTMLElement {
     connectedCallback() {
-        const header = document.createElement("header");
-        const icons = document.createElement("div");
+        const container = document.createElement("header");
 
-        const home = this.createIcon("index.html", "fa-solid fa-house", "Home");
-        const aboutMe = this.createIcon("pages/about-me.html", "fa-solid fa-user", "About Me");
-        const articles = this.createIcon("pages/articles/index.html", "fa-solid fa-newspaper", "Articles");
-        const games = this.createIcon("pages/games/index.html", "fa-solid fa-dice", "Games");
-        const tools = this.createIcon("pages/tools/index.html", "fa-solid fa-wrench", "Online Tools");
+        const menuBtn = document.createElement("button");
+        menuBtn.id = "headerMenu";
+        menuBtn.classList.add("fa-solid");
 
-        icons.id = "headerIcons";
+        const iconsList = document.createElement("ul");
+        iconsList.id = "headerIcons";
 
-        icons.appendChild(home);
-        icons.appendChild(aboutMe);
-        icons.appendChild(articles);
-        icons.appendChild(games);
-        icons.appendChild(tools);
+        const navItems = [
+            { url: "index.html", icon: "fa-solid fa-house", title: "Home" },
+            { url: "pages/about-me.html", icon: "fa-solid fa-user", title: "About Me" },
+            { url: "pages/articles/index.html", icon: "fa-solid fa-newspaper", title: "Articles" },
+            { url: "pages/games/index.html", icon: "fa-solid fa-dice", title: "Games" },
+            { url: "pages/tools/index.html", icon: "fa-solid fa-wrench", title: "Online Tools" }
+        ];
 
-        header.appendChild(icons);
+        navItems.forEach(item => {
+            iconsList.appendChild(this.createIcon(item.url, item.icon, item.title));
+        });
 
-        this.replaceWith(header);
+        menuBtn.addEventListener("click", () => {
+            iconsList.classList.toggle("open");
+        });
+        window.addEventListener("click", (event) => {
+            if (!iconsList.classList.contains("open"))
+                return;
+
+            if (menuBtn.contains(event.target))
+                return;
+
+            if (iconsList.contains(event.target))
+                return;
+
+            iconsList.classList.remove("open");
+            document.body.classList.remove("menu-open");
+        });
+
+        container.appendChild(menuBtn);
+        container.appendChild(iconsList);
+
+        this.replaceWith(container);
     }
 
     createIcon(url, classes, title) {
+        const element = document.createElement("li");
         const link = document.createElement("a");
         link.href = window.absoluteSrc(url);
         link.classList.add("headerIcon");
@@ -36,8 +59,9 @@ class Header extends HTMLElement {
 
         link.appendChild(icon);
         link.appendChild(label);
+        element.appendChild(link);
 
-        return link;
+        return element;
     }
 }
 
