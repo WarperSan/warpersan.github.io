@@ -13,6 +13,9 @@ const config = {
 			strict: true
 		})
 	},
+	basePaths: {
+		base: dev ? '' : '/warpersan.github.io' 
+	},
 	vitePlugin: {
 		dynamicCompileOptions: ({ filename }) =>
 			filename.includes('node_modules') ? undefined : { runes: true }
