@@ -2,6 +2,7 @@
 	import "../app.css";
 	import favicon from "$lib/assets/favicon.ico";
 	import { onMount } from "svelte";
+    import Footer from "$lib/components/Footer.svelte";
 
 	let { children } = $props();
 
@@ -83,11 +84,7 @@
 	{@render children()}
 </article>
 
-<footer
-	class="flex justify-center mt-auto p-2 select-none text-[0.8em] bg-[var(--dark)] color-[var(--main)]"
->
-	<span>© 2026 WarperSan. All rights reserved.</span>
-</footer>
+<Footer></Footer>
 
 <style>
 	header :global {
