@@ -1,0 +1,14 @@
+footer {
+    display: flex;
+    justify-content: center;
+
+    margin-top: auto;
+    padding: 0.5rem;
+
+    background-color: var(--dark);
+    color: var(--main);
+
+    user-select: none;
+
+    font-size: 0.8em;
+}

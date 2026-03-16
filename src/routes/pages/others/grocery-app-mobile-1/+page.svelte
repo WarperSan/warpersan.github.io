@@ -1,0 +1,143 @@
+<script>
+    import { assets } from "$app/paths";
+
+</script>
+<svelte:head>
+    <title>Grocery App</title>
+    <link rel="icon" href="" type="image/x-icon" />
+    <meta name="title" content="Grocery App" />
+    <meta
+        name="description"
+        content="A Java-based mobile grocery app developed as a college project, featuring product listings, multi-language support, and XML-based data storage."
+    />
+    <meta name="author" content="WarperSan" />
+    <meta
+        name="keywords"
+        content="Grocery App, Java Mobile App, Android Java, XML Data Storage, Multilingual App, College Project, WarperSan, Java UI, Grocery Store App"
+    />
+</svelte:head>
+
+<article>
+    <section>
+        <h1>Story</h1>
+        <p>
+            As the final project in my third year of college, we had to create
+            an app in Java. My teammate chose to make a grocery app and I
+            believe the result is pretty good. If you want to see the project,
+            you can find the source code
+            <a
+                href="https://github.com/WarperSanPlus/PFI-Mobile1"
+                text="Source Code"
+                target="_blank">here</a
+            >.
+        </p>
+    </section>
+    <section>
+        <h1>Showcase</h1>
+        <p>
+            The following video shows how the application works. The user first
+            starts at a login screen
+            <side-note>You can see it later in this post</side-note>. Once
+            logged in, the user can see all the products that are sold. They are
+            separated in different categories. If a product's quantity is too
+            low, it's marked as "Out of Stock". Clicking on a product gives
+            information about it and allows the user to purchase it.
+        </p>
+
+        <video
+            controls
+            src="{assets}/assets/videos/pages/grocery-app-mobile-1/Showcase.mp4"
+        ></video>
+    </section>
+    <section>
+        <h1>Development</h1>
+        <h2>Splitting tasks</h2>
+        <p>
+            The biggest strength of our team was that we were both good at
+            something the other was not. For me, I was better at Java than her,
+            and she was better at UI. This allowed each other to focus on
+            something they were good at and therefore, increase our
+            productivity.
+        </p>
+    </section>
+    <section>
+        <h2>Login Screen</h2>
+        <p>
+            The login screen is pretty much "unless" <side-note
+                >It works, but it doesn't connect the user to anything</side-note
+            >. Here, you can do two things:
+        </p>
+
+        <ol>
+            <li>Change the language of the app</li>
+            <li>Input your credentials to login</li>
+        </ol>
+
+        <p>
+            In the current state of the project, the credentials are not so
+            important. In fact, the username does not matter. The only important
+            thing is the password <side-note
+                >The password is "Password"</side-note
+            >. If you wanted to make this a real app, you just need to link that
+            to a database and the login should be working great.
+        </p>
+
+        <video
+            controls
+            src="{assets}/assets/videos/pages/grocery-app-mobile-1/LoginShowcase.mp4"
+        ></video>
+
+        <p>
+            The application also simulates the lag of fetching data from a
+            database. It also notifies the user when an error occurred, which is
+            nice.
+        </p>
+    </section>
+    <section>
+        <h2>Multi-language</h2>
+        <p>
+            As you can see in the video above, the app supports multiple
+            languages. In our case, we only switched between English and French.
+            However, you can add more languages and the app will work the same.
+            I just advice to look more into how to switch languages without
+            having to restart the entire application. We made it that you can
+            only change it here, because it would break everything otherwise.
+        </p>
+    </section>
+    <section>
+        <h2>Products Storing</h2>
+        <p>
+            Since we don't use a database, you might wonder how do we store the
+            items we sell? At the time, I was playing around with a mobile game
+            called "Rogue Adventure". In this game, they use a XML system to
+            store their data. So I decided to "borrow" their system to make it
+            my own.
+        </p>
+    </section>
+    <section>
+        <h2>Strong points of the project</h2>
+        <p>
+            Something I like about this project is the versatility of the
+            system. You want a different product? The cart system works
+            independently of the product itself. You want to implement a
+            database to the project? Most of the logic is already separated,
+            making it easy to simply swap how the app works.
+        </p>
+
+        <p>
+            The project has an entire file JUST for configuration. You can
+            enable the automatic connection, you can audit certain steps of a
+            process, you can enable certain features. The fact that we
+            generalized the application so much, it made it possible to easily
+            put new rules and change how things are done.
+        </p>
+    </section>
+    <section>
+        <h1>Conclusion</h1>
+        <p>
+            Is this a finished project? No! I would never show this to someone
+            who looks for a completed project. However, this is totally a great
+            start for someone looking to make something like this.
+        </p>
+    </section>
+</article>
