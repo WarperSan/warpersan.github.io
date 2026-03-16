@@ -1,3 +1,35 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+@import url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css');
+
+:root {
+    --bg: #1A1A1D;
+    --dark: #3B1C32;
+    --main: #6A1E55;
+    --light: #A64D79;
+    --bg-panel: #242428;
+    --border: #4B2C3F;
+    --accent: #7D295F;
+
+    /* Text */
+    --text-main: white;
+    --text-muted: #888;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0;
+
+    font-family: 'JetBrains Mono', sans-serif;
+    color: var(--text-main);
+
+    background-color: var(--bg);
+}
