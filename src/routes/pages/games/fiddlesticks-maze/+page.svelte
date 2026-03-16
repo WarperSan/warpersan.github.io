@@ -1,3 +1,7 @@
+<script>
+    import { assets, base } from "$app/paths";
+
+</script>
 <svelte:head>
     <title>FiddleSticks' Maze</title>
     <link
@@ -17,7 +21,7 @@
     />
 
     <script src="/scripts/elements/WebGLElement.js"></script>
-    <link href="/styles/elements/WebGL.css" rel="stylesheet" />
+    <link href="{base}/styles/elements/WebGL.css" rel="stylesheet" />
 </svelte:head>
 
 <article>
@@ -55,7 +59,7 @@
             <webgl-player
                 mobile
                 pc
-                src="assets/builds/FiddleStick-Maze/index.html"
+                src="{assets}/assets/builds/FiddleStick-Maze/index.html"
             ></webgl-player>
         </div>
         <warning>This game is compatible on PC.</warning>

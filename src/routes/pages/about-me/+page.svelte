@@ -1,8 +1,12 @@
+<script>
+    import { assets } from "$app/paths";
+
+</script>
 <svelte:head>
     <title>About Me</title>
-    <link href="/styles/skills.css" rel="stylesheet" />
-    <link href="/styles/contact.css" rel="stylesheet" />
-    <script defer src="/scripts/elements/SkillElement.js"></script>
+    <link href="{assets}/styles/skills.css" rel="stylesheet" />
+    <link href="{assets}/styles/contact.css" rel="stylesheet" />
+    <script defer src="{assets}/scripts/elements/SkillElement.js"></script>
 </svelte:head>
 
 <article>

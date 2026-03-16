@@ -1,13 +1,17 @@
+<script>
+    import { assets } from "$app/paths";
+
+</script>
 <svelte:head>
     <meta name="description"
         content="A guide on how to decompile Unity projects, explore game files, and understand the code structure." />
     <meta name="keywords" content="Unity, Decompiling, Game Hacking, WarperSan, Reverse Engineering, Game Modding" />
     <title>Unity Decompiling Guide</title>
 
-    <link href="/styles/elements/Tip.css" rel="stylesheet" />
+    <link href="{assets}/styles/elements/Tip.css" rel="stylesheet" />
     <script src="/scripts/elements/TipElement.js"></script>
 
-    <link rel="icon" href="/assets/images/icons/unity-icon.svg" type="image/x-icon" />
+    <link rel="icon" href="{assets}/assets/images/icons/unity-icon.svg" type="image/x-icon" />
 </svelte:head>
 
     <article>

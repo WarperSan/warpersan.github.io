@@ -1,3 +1,7 @@
+<script>
+    import { assets } from "$app/paths";
+
+</script>
 <svelte:head>
     <title>Procedural Snake</title>
     <link rel="icon" href="" type="image/x-icon" />
@@ -39,7 +43,7 @@
         </p>
 
         <img
-            src="/assets/images/pages/snake-procedural/demo.png"
+            src="{assets}/assets/images/pages/snake-procedural/demo.png"
             title="Demonstration of the program"
         />
         <video src="https://www.youtube.com/embed/_z5ziI1enio"></video>
@@ -71,7 +75,7 @@
         </p>
 
         <img
-            src="/assets/images/pages/snake-procedural/noise_map.png"
+            src="{assets}/assets/images/pages/snake-procedural/noise_map.png"
             title="Noise Map"
         />
     </section>
@@ -89,7 +93,7 @@
         </p>
 
         <img
-            src="/assets/images/pages/snake-procedural/blurry_noise_map.png"
+            src="{assets}/assets/images/pages/snake-procedural/blurry_noise_map.png"
             title="Blurry Noise Map"
         />
     </section>

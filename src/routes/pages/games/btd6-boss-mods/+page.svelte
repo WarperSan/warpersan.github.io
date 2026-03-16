@@ -1,3 +1,7 @@
+<script>
+    import { assets } from "$app/paths";
+
+</script>
 <svelte:head>
     <title>BTD6 Boss Mods</title>
     <link
@@ -127,55 +131,55 @@
     <section>
         <h3 id="gallery">Gallery</h3>
         <img
-            src="/assets/images/pages/btd6-boss-mods/v0.1-boss-menu.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/v0.1-boss-menu.png"
             title="First ever version of the boss menu"
         />
         <img
-            src="/assets/images/pages/btd6-boss-mods/v0.2-boss-menu.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/v0.2-boss-menu.png"
             title="Version darker and with a description"
         />
         <img
-            src="/assets/images/pages/btd6-boss-mods/boss-special-effect-border-with.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/boss-special-effect-border-with.png"
             title="Small box showing the special effects of the boss (Effects)"
         />
         <img
-            src="/assets/images/pages/btd6-boss-mods/boss-special-effects-border-without.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/boss-special-effects-border-without.png"
             title="Small box showing the special effects of the boss (No Effects)"
         />
         <img
-            src="/assets/images/pages/btd6-boss-mods/boss-special-effects-with.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/boss-special-effects-with.png"
             title="Special effects of the boss (no box)"
         />
         <img
-            src="/assets/images/pages/btd6-boss-mods/boss-button-test-0.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/boss-button-test-0.png"
             title="First position of the boss button"
         />
         <img
-            src="/assets/images/pages/btd6-boss-mods/in-game-boss-bars.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/in-game-boss-bars.png"
             title="The mod shows the bosses HP with their own health bar"
         />
         <img
-            src="/assets/images/pages/btd6-boss-mods/v1-boss-menu.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/v1-boss-menu.png"
             title="Final look of the boss menu"
         />
         <img
-            src="/assets/images/pages/btd6-boss-mods/boss-menu-icon-test-0.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/boss-menu-icon-test-0.png"
             title="First option tried while making the boss icon in the select menu"
         />
         <img
-            src="/assets/images/pages/btd6-boss-mods/boss-menu-icon-test-1.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/boss-menu-icon-test-1.png"
             title="Second option tried while making the boss icon in the select menu"
         />
         <img
-            src="/assets/images/pages/btd6-boss-mods/boss-menu-icon-test-2.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/boss-menu-icon-test-2.png"
             title="Third option tried while making the boss icon in the select menu"
         />
         <img
-            src="/assets/images/pages/btd6-boss-mods/v0-boss-toggle-menu.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/v0-boss-toggle-menu.png"
             title="First version of the boss toggle menu"
         />
         <img
-            src="/assets/images/pages/btd6-boss-mods/v1-boss-toggle-menu.png"
+            src="{assets}/assets/images/pages/btd6-boss-mods/v1-boss-toggle-menu.png"
             title="Second version of the boss toggle menu"
         />
     </section>

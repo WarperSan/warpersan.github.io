@@ -1,6 +1,10 @@
+<script>
+    import { assets, base } from "$app/paths";
+
+</script>
 <svelte:head>
     <title>Projects</title>
-    <link href="/styles/pages/projects.css" rel="stylesheet" />
+    <link href="{assets}/styles/pages/projects.css" rel="stylesheet" />
     <script src="/scripts/elements/ProjectCardElement.js"></script>
 </svelte:head>
 
@@ -21,25 +25,25 @@
             <project-card
                 title="FiddleStick's Maze"
                 description="Escape FiddleStick's realm before he catches you."
-                href="/pages/games/fiddlesticks-maze"
+                href="{base}/pages/games/fiddlesticks-maze"
                 cover="https://img.itch.zone/aW1nLzE5MjcwNzMxLnBuZw==/original/6oe9o6.png"
             ></project-card>
             <project-card
                 title="Game of Danger"
                 description="Solve the Problems by using &quot;Out-of-the-box&quot; solutions."
-                href="/pages/games/game-of-danger-prototype"
+                href="{base}/pages/games/game-of-danger-prototype"
                 cover="https://img.itch.zone/aW1hZ2UvMjM1NjcxOC8xMzk2MDQ4MC5wbmc=/original/VcmHOH.png"
             ></project-card>
             <project-card
                 title="Hotel"
                 description="Find the source of the Haunting."
-                href="/pages/games/hotel-prototype"
+                href="{base}/pages/games/hotel-prototype"
                 cover="https://img.itch.zone/aW1hZ2UvMTkyMTcyMi8xMzk2MDY4Ny5wbmc=/original/HTFeXZ.png"
             ></project-card>
             <project-card
                 title="Space Shooter"
                 description="Survive as long as possible through Touhou waves."
-                href="/pages/games/spaceshooter-prototype"
+                href="{base}/pages/games/spaceshooter-prototype"
             ></project-card>
             <project-card
                 title="Lethal Museum"

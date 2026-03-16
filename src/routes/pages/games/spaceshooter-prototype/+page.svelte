@@ -1,14 +1,17 @@
+<script>
+    import { assets, base } from "$app/paths";
+
+</script>
 <svelte:head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- GENERIC -->
-    <link href="/styles/import.css" rel="stylesheet" />
     <script src="/scripts/utils.js"></script>
     <script src="/scripts/elements/HeaderElement.js"></script>
     <script src="/scripts/elements/FooterElement.js"></script>
 
-    <link href="/styles/elements/Tip.css" rel="stylesheet" />
+    <link href="{assets}/styles/elements/Tip.css" rel="stylesheet" />
     <script src="/scripts/elements/TipElement.js"></script>
 
     <!-- SPECIFIC -->
@@ -30,7 +33,7 @@
     />
 
     <script src="/scripts/elements/WebGLElement.js"></script>
-    <link href="/styles/elements/WebGL.css" rel="stylesheet" />
+    <link href="{base}/styles/elements/WebGL.css" rel="stylesheet" />
 </svelte:head>
 
 <article>
@@ -68,7 +71,7 @@
             <webgl-player
                 pc
                 mobile
-                src="assets/builds/SpaceShooter-Prototype/index.html"
+                src="{assets}/assets/builds/SpaceShooter-Prototype/index.html"
             ></webgl-player>
         </div>
         <p>

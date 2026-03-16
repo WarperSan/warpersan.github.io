@@ -1,6 +1,7 @@
 <script lang="ts">
 	import "../app.css";
 	import favicon from "$lib/assets/favicon.ico";
+	import { assets, base } from "$app/paths";
 
 	let { children } = $props();
 </script>
@@ -15,13 +16,13 @@
 	<title>WarperSan</title>
 
 	<!-- GENERIC -->
-	<link href="/styles/main.css" rel="stylesheet" />
-	<link href="/styles/elements/header.css" rel="stylesheet" />
-	<link href="/styles/elements/footer.css" rel="stylesheet" />
-	<link href="/styles/fonts.css" rel="stylesheet" />
-	<script src="/scripts/utils.js"></script>
-	<script src="/scripts/elements/HeaderElement.js"></script>
-	<script src="/scripts/elements/FooterElement.js"></script>
+	<link href="{assets}/styles/main.css" rel="stylesheet" />
+	<link href="{assets}/styles/elements/header.css" rel="stylesheet" />
+	<link href="{assets}/styles/elements/footer.css" rel="stylesheet" />
+	<link href="{assets}/styles/fonts.css" rel="stylesheet" />
+	<script src="{assets}/scripts/utils.js"></script>
+	<script src="{assets}/scripts/elements/HeaderElement.js"></script>
+	<script src="{assets}/scripts/elements/FooterElement.js"></script>
 </svelte:head>
 
 <custom-header></custom-header>

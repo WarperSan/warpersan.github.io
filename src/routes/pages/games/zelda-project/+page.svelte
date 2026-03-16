@@ -1,3 +1,7 @@
+<script>
+    import { assets } from "$app/paths";
+
+</script>
 <svelte:head>
     <title>Zelda Project</title>
     <link rel="icon" href="" type="image/x-icon" />
@@ -39,7 +43,7 @@
         </p>
 
         <img
-            src="/assets/images/pages/zelda-project/skel.png"
+            src="{assets}/assets/images/pages/zelda-project/skel.png"
             title="Skeleton spritesheet"
         />
 
@@ -60,7 +64,7 @@
         </p>
 
         <img
-            src="/assets/images/pages/zelda-project/debug_ui.png"
+            src="{assets}/assets/images/pages/zelda-project/debug_ui.png"
             title="Debug UI"
         />
     </section>
@@ -82,7 +86,7 @@
         </p>
 
         <img
-            src="/assets/images/pages/zelda-project/controls_file.png"
+            src="{assets}/assets/images/pages/zelda-project/controls_file.png"
             title="Controls file"
         />
     </section>

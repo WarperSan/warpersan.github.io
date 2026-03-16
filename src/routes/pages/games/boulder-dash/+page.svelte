@@ -1,3 +1,7 @@
+<script>
+    import { assets } from "$app/paths";
+
+</script>
 <svelte:head>
     <title>Boulder Dash</title>
     <link rel="icon" href="" type="image/x-icon" />
@@ -47,12 +51,12 @@
     <section>
         <h3>Gallery</h3>
         <img
-            src="/assets/images/pages/boulder-dash/main-menu.png"
+            src="{assets}/assets/images/pages/boulder-dash/main-menu.png"
             title="Image of the main menu"
             style="width: 100%;"
         />
         <img
-            src="/assets/images/pages/boulder-dash/level-editor.png"
+            src="{assets}/assets/images/pages/boulder-dash/level-editor.png"
             title="Image of the level editor"
             style="width: 100%;"
         />

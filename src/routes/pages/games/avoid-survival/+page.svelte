@@ -1,3 +1,7 @@
+<script>
+    import { assets } from "$app/paths";
+
+</script>
 <svelte:head>
     <title>Avoid Survival</title>
     <link rel="icon" href="" type="image/x-icon" />
@@ -34,8 +38,8 @@
         <div
             style="display: flex;justify-content: center;align-items: baseline;"
         >
-            <img src="/assets/images/pages/avoid-survival/outside_worm.png" />
-            <img src="/assets/images/pages/avoid-survival/spikes-item.png" />
+            <img src="{assets}/assets/images/pages/avoid-survival/outside_worm.png" />
+            <img src="{assets}/assets/images/pages/avoid-survival/spikes-item.png" />
         </div>
     </section>
 
@@ -70,12 +74,12 @@
     <section>
         <h1>Gallery</h1>
         <img
-            src="/assets/images/pages/avoid-survival/awful-scripts.png"
+            src="{assets}/assets/images/pages/avoid-survival/awful-scripts.png"
             title="My awful organisation for the scripts"
             style="width: 100%;"
         />
         <img
-            src="/assets/images/pages/avoid-survival/banner.png"
+            src="{assets}/assets/images/pages/avoid-survival/banner.png"
             title="Image showing the game"
             style="width: 100%;"
         />

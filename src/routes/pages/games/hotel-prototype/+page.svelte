@@ -1,3 +1,7 @@
+<script>
+    import { assets, base } from "$app/paths";
+
+</script>
 <svelte:head>
     <title>Hotel - Prototype</title>
     <link rel="icon" type="image/x-icon" href="" />
@@ -13,7 +17,7 @@
     />
 
     <script src="/scripts/elements/WebGLElement.js"></script>
-    <link href="/styles/elements/WebGL.css" rel="stylesheet" />
+    <link href="{base}/styles/elements/WebGL.css" rel="stylesheet" />
 </svelte:head>
 
 <article>
@@ -37,7 +41,7 @@
     </section>
     <section>
         <div style="display: flex; justify-content: center;">
-            <webgl-player pc src="assets/builds/Hotel-Prototype/index.html"
+            <webgl-player pc src="{assets}/assets/builds/Hotel-Prototype/index.html"
             ></webgl-player>
         </div>
         <warning>This game is compatible on PC.</warning>

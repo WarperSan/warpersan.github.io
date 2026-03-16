@@ -1,6 +1,10 @@
+<script>
+    import { assets } from "$app/paths";
+
+</script>
 <svelte:head>
-    <link href="/styles/projects.css" rel="stylesheet" />
-    <script src="/scripts/elements/ControlElement.js"></script>
+    <link href="{assets}/styles/projects.css" rel="stylesheet" />
+    <script src="{assets}/scripts/elements/ControlElement.js"></script>
 </svelte:head>
 
 <article>

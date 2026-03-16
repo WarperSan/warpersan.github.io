@@ -1,3 +1,7 @@
+<script>
+    import { assets } from "$app/paths";
+
+</script>
 <svelte:head>
     <title>Harmony Patching</title>
     <link rel="icon" href="https://raw.githubusercontent.com/pardeike/Harmony/master/HarmonyLogo.png"
@@ -8,7 +12,7 @@
         content="Harmony, C# patching, HarmonyLib, modding, prefix, postfix, transpiler, guide, tutorial">
     <meta name="author" content="WarperSan">
 
-    <link href="/styles/elements/Tip.css" rel="stylesheet" />
+    <link href="{assets}/styles/elements/Tip.css" rel="stylesheet" />
     <script src="/scripts/elements/TipElement.js"></script>
     <script defer src="/scripts/elements/CodeElement.js"></script>
 </svelte:head>

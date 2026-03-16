@@ -1,13 +1,17 @@
+<script>
+    import { assets } from "$app/paths";
+
+</script>
 <svelte:head>
     <meta name="description" content="A list of every best practice I have found for game development." />
     <meta name="keywords" content="Unity, Best Practices, WarperSan" />
     <title>Unity Best Practices</title>
 
-    <link href="/styles/elements/Tip.css" rel="stylesheet" />
+    <link href="{assets}/styles/elements/Tip.css" rel="stylesheet" />
     <script src="/scripts/elements/TipElement.js"></script>
     <script defer src="/scripts/elements/CodeElement.js"></script>
 
-    <link rel="icon" href="/assets/images/icons/unity-icon.svg" type="image/x-icon" />
+    <link rel="icon" href="{assets}/assets/images/icons/unity-icon.svg" type="image/x-icon" />
 </svelte:head>
 
     <article>

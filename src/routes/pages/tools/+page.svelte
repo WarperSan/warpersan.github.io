@@ -1,7 +1,11 @@
+<script>
+    import { assets, base } from "$app/paths";
+
+</script>
 <svelte:head>
     <title>Tools</title>
-    <link href="/styles/pages/tools.css" rel="stylesheet" />
-    <script src="/scripts/elements/ToolCardElement.js"></script>
+    <link href="{assets}/styles/pages/tools.css" rel="stylesheet" />
+    <script src="{assets}/scripts/elements/ToolCardElement.js"></script>
 </svelte:head>
 
 <article>
@@ -15,13 +19,13 @@
                 title="JSON Compare"
                 description="A editor for comparing two JSON data."
                 icon="fa-solid fa-code-compare"
-                href="/pages/tools/json-compare"
+                href="{base}/pages/tools/json-compare"
             ></tool-card>
             <tool-card
                 title="DDS Converter"
                 description="A converter to parse DDS images into PNG."
                 icon="fa-solid fa-arrow-right-arrow-left"
-                href="/pages/tools/dds-convert"
+                href="{base}/pages/tools/dds-convert"
             ></tool-card>
         </div>
     </section>

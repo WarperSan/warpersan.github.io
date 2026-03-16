@@ -1,3 +1,7 @@
+<script>
+    import { assets } from "$app/paths";
+
+</script>
 <svelte:head>
     <title>PHP PDO</title>
     <link rel="icon" href="" type="image/x-icon" />
@@ -8,7 +12,7 @@
     <meta name="keywords"
         content="PHP PDO, PDO Manager, PHP Database, OOP PHP, PDO Wrapper, Stored Procedures, SQL Automation, PHP School Project">
 
-    <link href="/styles/elements/Tip.css" rel="stylesheet" />
+    <link href="{assets}/styles/elements/Tip.css" rel="stylesheet" />
     <script src="/scripts/elements/TipElement.js"></script>
     <script defer src="/scripts/elements/CodeElement.js"></script>
 </svelte:head>
