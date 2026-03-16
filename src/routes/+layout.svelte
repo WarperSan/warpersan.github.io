@@ -62,7 +62,7 @@
 		<li>
 			<a href="/pages/articles" class="headerIcon" title="Articles">
 				<i class="fa-solid fa-newspaper"></i>
-				<span>Home</span>
+				<span>Articles</span>
 			</a>
 		</li>
 		<li>
@@ -111,7 +111,7 @@
 			padding: 0;
 		}
 
-		@media (max-width: 6140px) {
+		@media (max-width: 640px) {
 			#headerMenu {
 				display: block;
 			}

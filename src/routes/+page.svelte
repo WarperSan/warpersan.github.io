@@ -1,20 +1,11 @@
 <svelte:head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="WarperSan" />
     <meta name="description" content="Portfolio of WarperSan" />
     <meta name="keywords" content="Portfolio, WarperSan, Projects" />
     <title>WarperSan</title>
 
-    <!-- GENERIC -->
-    <!--<link href="styles/import.css" rel="stylesheet">
-    <script src="scripts/utils.js"></script>
-    <script src="scripts/elements/HeaderElement.js"></script>
-    <script src="scripts/elements/FooterElement.js"></script>-->
-
     <!-- SPECIFIC -->
-    <!--<link href="styles/projects.css" rel="stylesheet">
-    <script src="scripts/elements/ControlElement.js"></script>-->
+    <link href="styles/projects.css" rel="stylesheet">
+    <script src="scripts/elements/ControlElement.js"></script>
 </svelte:head>
 
 <article>
