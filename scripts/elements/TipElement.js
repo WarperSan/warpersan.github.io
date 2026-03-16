@@ -32,4 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         el.replaceWith(tip);
     });
+
+    document.querySelectorAll('learn-more').forEach(el => {
+        const tip = createTip(el);
+        tip.classList.add("explore");
+        tip.innerHTML = "<strong>Learn More:</strong> " + tip.innerHTML;
+
+        el.replaceWith(tip);
+    })
 });

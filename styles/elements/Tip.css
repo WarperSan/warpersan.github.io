@@ -1,23 +1,27 @@
-.tip:is(.help) {
+.tip {
     margin: 1.5rem 0;
     padding: 1rem;
-    border-left: 4px solid #9dcdf5;
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-radius: 0 6px 6px 0;
+}
+
+.tip:is(.explore) {
+    border-left-color: #d59df5;
+    background-color: #2f293b;
+}
+
+.tip:is(.help) {
+    border-left-color: #9dcdf5;
     background-color: #29373b;
-    border-radius: 6px;
 }
 
 .tip:is(.warning) {
-    margin: 1.5rem 0;
-    padding: 1rem;
     border-left: 4px solid #f5d19d;
     background-color: #3B2B29;
-    border-radius: 6px;
 }
 
 .tip:is(.alert) {
-    margin: 1.5rem 0;
-    padding: 1rem;
-    border-left: 4px solid #f88080;
+    border-left-color: #f88080;
     background-color: #482323;
-    border-radius: 6px;
 }

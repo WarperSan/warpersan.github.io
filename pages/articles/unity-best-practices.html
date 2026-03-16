@@ -142,6 +142,81 @@ struct PlayerStats
 }
             </code-block>
         </section>
+
+        <section>
+            <h2>Drop <code>MonoBehaviour</code> (when possible)</h2>
+            <h3>Issue</h3>
+            <p>
+                A habit I see often when making games is to make everything a <code>MonoBehaviour</code>. This stems from
+                developers thinking this is needed to interact with the game. However, it is untrue. Making everything a
+                <code>MonoBehaviour</code> has a few downsides:
+            </p>
+            <ul>
+                <li>Creates a worst scene hierarchy, littering it with unnecessary objects</li>
+                <li>Makes heavier instances</li>
+                <li>Locks the class into a single ecosystem</li>
+            </ul>
+            <h3>Solution</h3>
+            <p>
+                Use plain old C# class.
+            </p>
+            <p>
+                Really, that is all. Not everything needs to be a component in the world. For example, object pools could be done
+                without being present in the world. They simply manage ìnstances of <code>IDisposable</code>, not even knowning
+                if they are objects, other classes or something else.
+            </p>
+            <p>
+                Another good example are <a
+                    href="https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence,_robotics_and_control)"
+                    target="_blank">Behaviour Trees</a>. In essence, they are just a bunch of classes linked together.
+                Let's see how it would work with both methods:
+            </p>
+            <code-block lang="csharp">
+// === Using MonoBehaviour ===
+class Tree : MonoBehaviour
+{
+    // ...
+}
+
+class Node : MonoBehaviour
+{
+    // ...
+}
+
+// Hierarchy:
+// |- tree
+// |  |- Node1
+// |  |- Node2
+
+// === Using Plain C# classes ===
+class TreePlayer : MonoBehaviour
+{
+    // ...
+}
+
+class Tree
+{
+    // ...
+}
+
+class Node
+{
+    // ...
+}
+
+
+// Hierarchy:
+// |- tree player
+            </code-block>
+            <p>
+                This makes the code more portable. With the example of the trees, it would be possible to extract the framework into
+                a basic <code>.dll</code> file.
+            </p>
+            <learn-more>A good real-life example is <a
+                    href="https://www.pcgamer.com/games/card-games/slay-the-spire-2-ditched-unity-for-open-source-engine-godot-after-2-years-of-development/"
+                    target="_blank">this</a>, where the developers switched engine with little disturbances, because of using plain classes.
+            </learn-more>
+        </section>
     </article>
 
     <custom-footer></custom-footer>
