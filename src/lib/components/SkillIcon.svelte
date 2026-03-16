@@ -106,3 +106,7 @@
         <span>{skillData.text}</span>
     </div>
 {/if}
+
+<style>
+    @import url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css");
+</style>
