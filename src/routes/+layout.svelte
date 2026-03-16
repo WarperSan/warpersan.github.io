@@ -1,5 +1,6 @@
-<script lang="ts">
-	import favicon from '$lib/assets/favicon.ico';
+<script>
+	import "../app.css";
+	import favicon from "$lib/assets/favicon.ico";
 
 	let { children } = $props();
 </script>
@@ -10,6 +11,8 @@
 
 <custom-header></custom-header>
 
+<div class="bg-sky-950">
 {@render children()}
+</div>
 
 <custom-footer></custom-footer>
