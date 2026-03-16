@@ -1,11 +1,6 @@
 <svelte:head>
-    <meta name="description" content="Portfolio of WarperSan" />
-    <meta name="keywords" content="Portfolio, WarperSan, Projects" />
-    <title>WarperSan</title>
-
-    <!-- SPECIFIC -->
-    <link href="styles/projects.css" rel="stylesheet">
-    <script src="scripts/elements/ControlElement.js"></script>
+    <link href="/styles/projects.css" rel="stylesheet" />
+    <script src="/scripts/elements/ControlElement.js"></script>
 </svelte:head>
 
 <article>
@@ -95,4 +90,3 @@
         </div>
     </section>
 </article>
-

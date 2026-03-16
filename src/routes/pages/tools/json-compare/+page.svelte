@@ -1,0 +1,118 @@
+<svelte:head>
+    <meta name="keywords" content="JSON, Compare, Solve" />
+    <meta
+        name="description"
+        content="Tool allowing you to compare two JSONs to find the added, removed and changed properties"
+    />
+
+    <title>JSON Compare</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/icons/json.png" />
+
+    <link href="/styles/pages/json-compare/main.css" rel="stylesheet" />
+    <link href="/styles/pages/json-compare/inputs.css" rel="stylesheet" />
+    <link href="/styles/pages/json-compare/outputs.css" rel="stylesheet" />
+    <link href="/styles/pages/json-compare/buttons.css" rel="stylesheet" />
+    <link href="/styles/pages/json-compare/error.css" rel="stylesheet" />
+    <script src="/scripts/pages/json-compare/AdditionChecker.js"></script>
+    <script src="/scripts/pages/json-compare/RemovalChecker.js"></script>
+    <script src="/scripts/pages/json-compare/ChangesChecker.js"></script>
+    <script src="/scripts/pages/json-compare/script.js"></script>
+</svelte:head>
+
+<article class="full">
+    <div id="mainContainer">
+        <div id="topContainer">
+            <div id="inputContainer">
+                <div class="input-group">
+                    <textarea
+                        id="originalInput"
+                        placeholder="Paste the original JSON"
+                    ></textarea>
+                    <label for="">Original</label>
+                </div>
+                <div class="input-group">
+                    <textarea
+                        id="modifiedInput"
+                        placeholder="Paste the modified JSON"
+                    ></textarea>
+                    <label for="">Modified</label>
+                </div>
+            </div>
+            <div id="outputContainer">
+                <div class="output-group">
+                    <textarea
+                        id="removedOutput"
+                        readonly
+                        placeholder="JSON found in the original that the modified doesn't have"
+                    ></textarea>
+                    <label
+                        for=""
+                        title="Content removed from the original JSON"
+                        style="color: red;">Removed</label
+                    >
+                </div>
+                <div class="output-group">
+                    <textarea
+                        id="changedOutput"
+                        readonly
+                        placeholder="JSON found in the original that has been changed in modified JSON"
+                    ></textarea>
+                    <label
+                        for=""
+                        title="Content changed from the original JSON"
+                        style="color: orange;">Changed</label
+                    >
+                </div>
+                <div class="output-group">
+                    <textarea
+                        id="addedOutput"
+                        readonly
+                        placeholder="JSON found in the modified that the original doesn't have"
+                    ></textarea>
+                    <label
+                        for=""
+                        title="Content added by the modified JSON"
+                        style="color: green;">Added</label
+                    >
+                </div>
+            </div>
+        </div>
+        <div id="bottomContainer">
+            <div id="buttonContainer">
+                <i
+                    class="fa-solid fa-broom"
+                    id="prettifyButton"
+                    title="Prettify both inputs"
+                ></i>
+                <i
+                    class="fa-solid fa-trash-can"
+                    id="clearAllButton"
+                    title="Clear all inputs"
+                ></i>
+                <i
+                    class="fa-solid fa-arrow-up"
+                    id="copyUpButton"
+                    title="Copy the modified to the original"
+                ></i>
+                <i
+                    class="fa-solid fa-arrow-down"
+                    id="copyDownButton"
+                    title="Copy the original to the modified"
+                ></i>
+                <i
+                    class="fa-solid fa-arrows-up-down"
+                    id="swapButton"
+                    title="Swap the original and the modified"
+                ></i>
+                <i
+                    class="fa-solid fa-magnifying-glass"
+                    id="compareButton"
+                    title="Compare both inputs"
+                ></i>
+            </div>
+            <div id="errorContainer">
+                <span id="errorText"></span>
+            </div>
+        </div>
+    </div>
+</article>

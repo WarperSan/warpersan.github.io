@@ -1,0 +1,105 @@
+<svelte:head>
+    <meta name="description"
+        content="A guide on how to decompile Unity projects, explore game files, and understand the code structure." />
+    <meta name="keywords" content="Unity, Decompiling, Game Hacking, WarperSan, Reverse Engineering, Game Modding" />
+    <title>Unity Decompiling Guide</title>
+
+    <link href="/styles/elements/Tip.css" rel="stylesheet" />
+    <script src="/scripts/elements/TipElement.js"></script>
+
+    <link rel="icon" href="/assets/images/icons/unity-icon.svg" type="image/x-icon" />
+</svelte:head>
+
+    <article>
+
+        <section>
+            <h1>Unity Decompiling Guide</h1>
+            <p>
+                Decompiling is the process of converting machine code into a high-level format. This allows to inspect
+                and partially retrieve code from a compiled program. There are many reasons you might want to decompile
+                a product:
+            </p>
+            <ul>
+                <li>Find flaws in the product</li>
+                <li>Recover the source code</li>
+                <li>Learn from others' code</li>
+                <li>Extract assets</li>
+                <li>Modify the product</li>
+            </ul>
+            <p>This guide focuses on Unity games. It will not work for Unreal Engine or other game engines.</p>
+            <warning>This guide is intended for educational purposes. Decompiling games may violate Terms of Service or
+                local laws. Do not use this guide to distribute pirated software.</warning>
+        </section>
+
+        <section>
+            <h2>Step 1: Obtain the Game</h2>
+            <p>You need access to the game's executable files. Avoid pirating the game — it's both unethical and
+                illegal. Always own the game you're working with.</p>
+        </section>
+
+        <section>
+            <h2>Step 2: Extract the Unity Project</h2>
+            <ol>
+                <li>
+                    <strong>Download the correct Unity Editor</strong>
+                    <p>
+                        Use a tool like <a href="https://github.com/BepInEx/BepInEx" target="_blank">BepInEx</a> to
+                        detect the Unity version. Match the Unity Editor version accordingly. Mismatched versions may
+                        cause bugs.
+                    </p>
+                </li>
+                <li>
+                    <strong>Download AssetRipper</strong><br />
+                    Get it from <a href="https://github.com/AssetRipper/AssetRipper" target="_blank">AssetRipper
+                        GitHub</a>.
+                </li>
+                <li>Open AssetRipper.</li>
+                <li>Go to <strong>File</strong> > <strong>Open File</strong> and select the game executable.</li>
+                <li>Click <strong>Export</strong> > <strong>Export All Files</strong>.</li>
+                <li>Choose a destination folder.</li>
+                <li>Click <strong>Export Unity Project</strong>.</li>
+                <li>Open the <code>ExportedProject</code> folder in Unity.</li>
+            </ol>
+            <p>Note: The initial export may take time. Future loads should be faster.</p>
+        </section>
+
+        <section>
+            <h2>Step 3: Fix Common Errors</h2>
+            <p>If Unity prompts to open in <strong>Safe Mode</strong>, there are likely issues to fix.</p>
+
+            <h3>Broken DLLs</h3>
+            <p>Error message: <em>"Unloading broken assembly 'AnyDLLFile'"</em></p>
+            <ol>
+                <li>Go to the <code>Plugins</code> folder.</li>
+                <li>Select the broken DLL.</li>
+                <li>In the Inspector, set the OS to <strong>Windows</strong>.</li>
+                <li>Click <strong>Apply</strong>.</li>
+            </ol>
+
+            <h3>Black Scene</h3>
+            <p>If the Scene window is blank, check the OS settings for these DLLs:</p>
+            <ul>
+                <li><code>Unity.RenderPipelines.Universal.Runtime.dll</code></li>
+                <li><code>Unity.RenderPipelines.Core.Runtime.dll</code></li>
+            </ul>
+
+            <h3>Broken or Invisible Text</h3>
+            <ol>
+                <li>Locate the shader used in the font material.</li>
+                <li>
+                    Replace it with a clean version. If using <code>TextMeshPro/Mobile/Distance Field</code>, you can
+                    use
+                    <a href="https://gist.github.com/WarperSan/eaea2b6ee17c78d8b441fafad27105e4#file-textmeshpro_distance-field-shader"
+                        target="_blank">this shader</a>.
+                </li>
+                <li>
+                    Create a file named <code>TMPro_Properties.cginc</code> in the <code>Shader</code> folder.
+                    You can get the file from
+                    <a href="https://gist.github.com/WarperSan/eaea2b6ee17c78d8b441fafad27105e4#file-tmpro_properties-cginc"
+                        target="_blank">this source</a>
+                    or a blank Unity project.
+                </li>
+            </ol>
+        </section>
+
+    </article>

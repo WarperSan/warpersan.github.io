@@ -1,0 +1,39 @@
+#bottomContainer {
+    display: flex;
+
+    margin: 0 1rem 1rem 1rem;
+
+    gap: 0.5rem;
+}
+
+#buttonContainer {
+    background-color: var(--bg);
+    
+    padding: 0.6rem;
+
+    border-radius: 1rem;
+
+    user-select: none;
+}
+
+#buttonContainer > i {
+    background-color: var(--dark);
+    color: var(--accent);
+
+    padding: 0.5rem;
+    
+    border-radius: 1rem;
+
+    cursor: pointer;
+
+    transition: background-color 0.25s, color 0.25s;
+
+    min-width: 20px;
+    text-align: center;
+}
+
+#buttonContainer > i:hover {
+    background-color: var(--accent);
+    color: var(--dark);
+}
+
