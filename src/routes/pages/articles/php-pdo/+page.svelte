@@ -1,5 +1,6 @@
 <script>
     import { assets } from "$app/paths";
+    import WarningTip from "$lib/components/Tips/WarningTip.svelte";
 
 </script>
 <svelte:head>
@@ -12,8 +13,6 @@
     <meta name="keywords"
         content="PHP PDO, PDO Manager, PHP Database, OOP PHP, PDO Wrapper, Stored Procedures, SQL Automation, PHP School Project">
 
-    <link href="{assets}/styles/elements/Tip.css" rel="stylesheet" />
-    <script src="/scripts/elements/TipElement.js"></script>
     <script defer src="/scripts/elements/CodeElement.js"></script>
 </svelte:head>
 
@@ -128,7 +127,9 @@ User::select(
                 This little project is very useful to efficiently handle oriented-object problems. It unifies the
                 easiness of oriented-object programming while building upon the interface of PDO.
             </p>
-            <warning>Altough I've made concepts of this library, none are properly done. Either they are abandonned or
-                they are deprecated.</warning>
+            <WarningTip>
+                Altough I've made concepts of this library, none are properly done. Either they are abandonned or
+                they are deprecated.
+            </WarningTip>
         </section>
     </article>

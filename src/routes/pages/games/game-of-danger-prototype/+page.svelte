@@ -1,7 +1,8 @@
 <script>
     import { assets, base } from "$app/paths";
-
+    import WarningTip from "$lib/components/Tips/WarningTip.svelte";
 </script>
+
 <svelte:head>
     <title>Game of Danger - Prototype</title>
     <link rel="icon" type="image/x-icon" href="" />
@@ -50,7 +51,7 @@
                 src="{assets}/assets/builds/GameOfDanger-Prototype/index.html"
             ></webgl-player>
         </div>
-        <warning>This game is compatible on PC.</warning>
+        <WarningTip>This game is compatible on PC.</WarningTip>
         <p>
             If you want to download the game or support it, you can find it <a
                 href="https://warpersan.itch.io/game-of-danger"

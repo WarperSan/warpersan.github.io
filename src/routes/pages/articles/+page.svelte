@@ -1,11 +1,10 @@
 <script>
     import { assets, base } from "$app/paths";
+    import WarningTip from "$lib/components/Tips/WarningTip.svelte";
 
 </script>
 <svelte:head>
     <title>Articles</title>
-    <link href="{assets}/styles/elements/Tip.css" rel="stylesheet" />
-    <script src="/scripts/elements/TipElement.js"></script>
 </svelte:head>
 
 <article>
@@ -28,12 +27,12 @@
     <section>
         <h2>Older Projects</h2>
         <p>Projects from earlier years.</p>
-        <warning>
+        <WarningTip>
             Since many of these pages were made before I settled on standards
             and format, their quality may vary. I <strong
                 >do not guarantee their quality</strong
             >.
-        </warning>
+        </WarningTip>
         <ul>
             <li>
                 <a href="{base}/pages/games/avoid-survival">Avoid Survival</a>

@@ -11,9 +11,6 @@
     <script src="/scripts/elements/HeaderElement.js"></script>
     <script src="/scripts/elements/FooterElement.js"></script>
 
-    <link href="{assets}/styles/elements/Tip.css" rel="stylesheet" />
-    <script src="/scripts/elements/TipElement.js"></script>
-
     <!-- SPECIFIC -->
     <title>Space Shooter - Prototype</title>
     <link

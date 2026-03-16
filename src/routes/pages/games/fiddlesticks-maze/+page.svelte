@@ -1,5 +1,6 @@
 <script>
     import { assets, base } from "$app/paths";
+    import WarningTip from "$lib/components/Tips/WarningTip.svelte";
 
 </script>
 <svelte:head>
@@ -62,7 +63,7 @@
                 src="{assets}/assets/builds/FiddleStick-Maze/index.html"
             ></webgl-player>
         </div>
-        <warning>This game is compatible on PC.</warning>
+        <WarningTip>This game is compatible on PC.</WarningTip>
         <p>
             If you want to download the game or support it, you can find it <a
                 href="https://warpersan.itch.io/fiddlesticks-maze"

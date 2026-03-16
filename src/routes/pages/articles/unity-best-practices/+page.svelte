@@ -1,5 +1,8 @@
 <script>
     import { assets } from "$app/paths";
+    import LearnMoreTip from "$lib/components/Tips/LearnMoreTip.svelte";
+    import NoticeTip from "$lib/components/Tips/NoticeTip.svelte";
+    import WarningTip from "$lib/components/Tips/WarningTip.svelte";
 
 </script>
 <svelte:head>
@@ -7,8 +10,6 @@
     <meta name="keywords" content="Unity, Best Practices, WarperSan" />
     <title>Unity Best Practices</title>
 
-    <link href="{assets}/styles/elements/Tip.css" rel="stylesheet" />
-    <script src="/scripts/elements/TipElement.js"></script>
     <script defer src="/scripts/elements/CodeElement.js"></script>
 
     <link rel="icon" href="{assets}/assets/images/icons/unity-icon.svg" type="image/x-icon" />
@@ -22,11 +23,13 @@
                 Making a game is very hard. There are a million sides to work on. However, it is possible to code in a
                 certain way to avoid problems in the long run.
             </p>
-            <warning>This guide goes over the practices <b>I personnally</b> consider the best. This is meant more as a
+            <WarningTip>
+            This guide goes over the practices <b>I personnally</b> consider the best. This is meant more as a
                 basis than
-                as a global truth.</warning>
-            <warning>Most practices will increase development time and cost. I simply present the <i>ideal world</i>.
-            </warning>
+                as a global truth.
+            </WarningTip>
+            <WarningTip>Most practices will increase development time and cost. I simply present the <i>ideal world</i>.
+            </WarningTip>
         </section>
 
         <section>
@@ -53,8 +56,8 @@
                 The easiest way of adding this is to add <code>-nullable:enable</code> to the <code>csc.rsp</code> file.
                 Unity and the IDE should then notify you that certain fields may have a null reference.
             </p>
-            <help>You need to create the file <code>csc.rsp</code> inside <code>Assets</code>. It should then recompile
-                the project.</help>
+            <NoticeTip>You need to create the file <code>csc.rsp</code> inside <code>Assets</code>. It should then recompile
+                the project.</NoticeTip>
         </section>
 
         <section>
@@ -201,9 +204,9 @@ class Node
                 This makes the code more portable. With the example of the trees, it would be possible to extract the framework into
                 a basic <code>.dll</code> file.
             </p>
-            <learn-more>A good real-life example is <a
+            <LearnMoreTip>A good real-life example is <a
                     href="https://www.pcgamer.com/games/card-games/slay-the-spire-2-ditched-unity-for-open-source-engine-godot-after-2-years-of-development/"
                     target="_blank">this</a>, where the developers switched engine with little disturbances, because of using plain classes.
-            </learn-more>
+            </LearnMoreTip>
         </section>
     </article>

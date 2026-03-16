@@ -1,5 +1,7 @@
 <script>
     import { assets } from "$app/paths";
+    import NoticeTip from "$lib/components/Tips/NoticeTip.svelte";
+    import WarningTip from "$lib/components/Tips/WarningTip.svelte";
 
 </script>
 <svelte:head>
@@ -12,8 +14,6 @@
         content="Harmony, C# patching, HarmonyLib, modding, prefix, postfix, transpiler, guide, tutorial">
     <meta name="author" content="WarperSan">
 
-    <link href="{assets}/styles/elements/Tip.css" rel="stylesheet" />
-    <script src="/scripts/elements/TipElement.js"></script>
     <script defer src="/scripts/elements/CodeElement.js"></script>
 </svelte:head>
 
@@ -24,18 +24,18 @@
                 Harmony is a tool that allows to alter the functionality in C# applications. This allows to modify the
                 application without needing to recompile it.
             </p>
-            <help>This guide breaks things down in a simpler way. For more detailed info, check out the <a
+            <NoticeTip>This guide breaks things down in a simpler way. For more detailed info, check out the <a
                     href="https://harmony.pardeike.net/articles/intro.html" target="_blank">official documentation</a>.
-            </help>
+            </NoticeTip>
         </section>
         <section>
             <h2>Basics</h2>
             <p>
                 To make the rest of this guide easier to follow, let's go over a few basics first.
             </p>
-            <help>If you'd like to dive deeper into the fundamentals of Harmony, check out the <a
+            <NoticeTip>If you'd like to dive deeper into the fundamentals of Harmony, check out the <a
                     href="https://harmony.pardeike.net/articles/basics.html" target="_blank">official basics
-                    article</a>.</help>
+                    article</a>.</NoticeTip>
         </section>
         <section>
             <h3>Creating patches</h3>
@@ -53,10 +53,10 @@ internal class OriginalClass_Patches
                 Grouping patches by type improves readability and maintainability by keeping the code organized and
                 structured.
             </p>
-            <warning>
+            <WarningTip>
                 The following example demonstrates one approach to creating patches based on my experience. Other valid
                 methods exist as well.
-            </warning>
+            </WarningTip>
         </section>
         <section>
             <h3>Applying patches</h3>
@@ -106,15 +106,15 @@ if (Dependency.ModTest.Enabled)
             <p>
                 In my opinion, they are the most important ones that you will be using while you mod any C# application.
             </p>
-            <help>If you'd like to dive deeper into either types, check out the official article about <a
+            <NoticeTip>If you'd like to dive deeper into either types, check out the official article about <a
                     href="https://harmony.pardeike.net/articles/patching-prefix.html" target="_blank">prefixes</a>, <a
                     href="https://harmony.pardeike.net/articles/patching-postfix.html" target="_blank">postfixes</a> and
                 <a href="https://harmony.pardeike.net/articles/patching-transpiler.html"
                     target="_blank">transpilers</a>.
-            </help>
-            <help>In the examples, the original method is:
+            </NoticeTip>
+            <NoticeTip>In the examples, the original method is:
                 <code>int OriginalMethod(int number, string format)</code>
-            </help>
+            </NoticeTip>
         </section>
         <section>
             <h3>Prefix</h3>
@@ -181,10 +181,10 @@ private static void OriginalMethod_Postfix(ref int __result)
         <section>
             <h3>Transpiler</h3>
 
-            <warning>
+            <WarningTip>
                 Use a transpiler only when simpler patching methods are insufficient. This technique requires a good
                 understanding of IL (Intermediate Language) code.
-            </warning>
+            </WarningTip>
 
             <p>
                 A transpiler modifies a method by injecting instructions directly into its compiled IL code. This offers
@@ -239,13 +239,13 @@ public int OriginalMethod(int number, string format)
     return number;
 &rbrace;
             </code-block>
-            <help>
+            <NoticeTip>
                 To analyze IL code, tools like
                 <a href="https://www.jetbrains.com/help/rider/Viewing_Intermediate_Language.html#using-il-viewer"
                     target="_blank">Rider's IL Viewer</a> or
                 <a href="https://github.com/dnSpy/dnSpy" target="_blank">dnSpy</a> are highly recommended. These tools
                 help visualize compiled IL instructions, making it easier to pinpoint insertion points.
-            </help>
+            </NoticeTip>
 
             <p>
                 To determine where to inject your code, you will need to inspect the IL output of the method and
@@ -289,11 +289,11 @@ for (var i = 0; i &lt; code.Count - 1; i++)
     break;
 &rbrace;
             </code-block>
-            <help>
+            <NoticeTip>
                 For more precise targeting, consider matching a sequence of instructions—for example,
                 <code>ldloc.0</code> followed by <code>call</code>. This reduces the risk of injecting at the wrong
                 place if similar opcodes appear elsewhere in the method.
-            </help>
+            </NoticeTip>
 
             <p>
                 To determine the exact IL instructions to inject, you can write the desired logic in a separate dummy
@@ -351,9 +351,9 @@ private static IEnumerable&lt;CodeInstruction&gt; OriginalMethod_Transpiler(IEnu
     return code;
 &rbrace;
             </code-block>
-            <help>For more complex logic, it is recommended to inject instructions that call a separate method
+            <NoticeTip>For more complex logic, it is recommended to inject instructions that call a separate method
                 containing your code. This approach is simpler and more maintainable than injecting each instruction
-                individually.</help>
+                individually.</NoticeTip>
         </section>
 
     </article>

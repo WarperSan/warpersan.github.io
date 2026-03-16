@@ -1,5 +1,6 @@
 <script>
     import { assets } from "$app/paths";
+    import WarningTip from "$lib/components/Tips/WarningTip.svelte";
 
 </script>
 <svelte:head>
@@ -7,9 +8,6 @@
         content="A guide on how to decompile Unity projects, explore game files, and understand the code structure." />
     <meta name="keywords" content="Unity, Decompiling, Game Hacking, WarperSan, Reverse Engineering, Game Modding" />
     <title>Unity Decompiling Guide</title>
-
-    <link href="{assets}/styles/elements/Tip.css" rel="stylesheet" />
-    <script src="/scripts/elements/TipElement.js"></script>
 
     <link rel="icon" href="{assets}/assets/images/icons/unity-icon.svg" type="image/x-icon" />
 </svelte:head>
@@ -31,8 +29,8 @@
                 <li>Modify the product</li>
             </ul>
             <p>This guide focuses on Unity games. It will not work for Unreal Engine or other game engines.</p>
-            <warning>This guide is intended for educational purposes. Decompiling games may violate Terms of Service or
-                local laws. Do not use this guide to distribute pirated software.</warning>
+            <WarningTip>This guide is intended for educational purposes. Decompiling games may violate Terms of Service or
+                local laws. Do not use this guide to distribute pirated software.</WarningTip>
         </section>
 
         <section>
