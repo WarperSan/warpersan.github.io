@@ -1,12 +1,12 @@
 <script>
     import { assets } from "$app/paths";
-
+    import SkillIcon from "$lib/components/SkillIcon.svelte";
 </script>
+
 <svelte:head>
     <title>About Me</title>
     <link href="{assets}/styles/skills.css" rel="stylesheet" />
     <link href="{assets}/styles/contact.css" rel="stylesheet" />
-    <script defer src="{assets}/scripts/elements/SkillElement.js"></script>
 </svelte:head>
 
 <article>
@@ -29,18 +29,14 @@
             <div>
                 <h3 title="All the languages I once used">Languages</h3>
                 <div class="skills">
-                    <skill-icon class="devicon-csharp-plain">C#</skill-icon>
-                    <skill-icon class="devicon-php-plain">PHP</skill-icon>
-                    <skill-icon class="devicon-javascript-plain"
-                        >JavaScript</skill-icon
-                    >
-                    <skill-icon class="devicon-haxe-plain">Haxe</skill-icon>
-                    <skill-icon class="devicon-lua-plain">Lua</skill-icon>
-                    <skill-icon class="devicon-typescript-plain"
-                        >TypeScript</skill-icon
-                    >
-                    <skill-icon class="devicon-java-plain">Java</skill-icon>
-                    <skill-icon class="devicon-cplusplus-plain">C++</skill-icon>
+                    <SkillIcon skill="csharp" />
+                    <SkillIcon skill="ts" />
+                    <SkillIcon skill="php" />
+                    <SkillIcon skill="js" />
+                    <SkillIcon skill="cpp" />
+                    <SkillIcon skill="java" />
+                    <SkillIcon skill="lua" />
+                    <SkillIcon skill="haxe" />
                 </div>
             </div>
 
@@ -49,63 +45,47 @@
                     Markup & Scripting
                 </h3>
                 <div class="skills">
-                    <skill-icon class="devicon-html5-plain">HTML</skill-icon>
-                    <skill-icon class="devicon-css3-plain">CSS</skill-icon>
-                    <skill-icon class="devicon-bash-plain">Bash</skill-icon>
-                    <skill-icon class="devicon-markdown-plain"
-                        >Markdown</skill-icon
-                    >
+                    <SkillIcon skill="html" />
+                    <SkillIcon skill="css" />
+                    <SkillIcon skill="bash" />
+                    <SkillIcon skill="markdown" />
                 </div>
             </div>
 
             <div>
                 <h3 title="All the frameworks I once used">Frameworks</h3>
                 <div class="skills">
-                    <skill-icon class="devicon-nodejs-plain">Node JS</skill-icon
-                    >
-                    <skill-icon class="devicon-jquery-plain">JQuery</skill-icon>
-                    <skill-icon class="devicon-react-plain">React</skill-icon>
-                    <skill-icon class="devicon-codeigniter-plain"
-                        >CodeIgniter</skill-icon
-                    >
+                    <SkillIcon skill="nodejs" />
+                    <SkillIcon skill="jquery" />
+                    <SkillIcon skill="react" />
+                    <SkillIcon skill="codeigniter" />
                 </div>
             </div>
 
             <div>
                 <h3 title="All the databases I once used">Databases</h3>
                 <div class="skills">
-                    <skill-icon class="devicon-azuresqldatabase-plain"
-                        >SQL</skill-icon
-                    >
-                    <skill-icon class="devicon-mongodb-plain"
-                        >MongoDB</skill-icon
-                    >
+                    <SkillIcon skill="sql" />
+                    <SkillIcon skill="mongodb" />
                 </div>
             </div>
 
             <div>
                 <h3 title="All the IDEs I once used">IDEs</h3>
                 <div class="skills">
-                    <skill-icon class="devicon-rider-plain">Rider</skill-icon>
-                    <skill-icon class="devicon-webstorm-plain"
-                        >WebStorm</skill-icon
-                    >
-                    <skill-icon class="devicon-vscode-plain">VS Code</skill-icon
-                    >
-                    <skill-icon class="devicon-visualstudio-plain"
-                        >Visual Studio</skill-icon
-                    >
-                    <skill-icon class="devicon-androidstudio-plain"
-                        >Android Studio</skill-icon
-                    >
+                    <SkillIcon skill="rider" />
+                    <SkillIcon skill="webstorm" />
+                    <SkillIcon skill="vscode" />
+                    <SkillIcon skill="visualstudio" />
+                    <SkillIcon skill="androidstudio" />
                 </div>
             </div>
 
             <div>
                 <h3 title="All the tools I once used">Tools</h3>
                 <div class="skills">
-                    <skill-icon class="devicon-github-plain">GitHub</skill-icon>
-                    <skill-icon class="devicon-git-plain">Git</skill-icon>
+                    <SkillIcon skill="github" />
+                    <SkillIcon skill="git" />
                 </div>
             </div>
 
@@ -114,11 +94,9 @@
                     Operating Systems
                 </h3>
                 <div class="skills">
-                    <skill-icon class="devicon-windows11-plain"
-                        >Windows 11</skill-icon
-                    >
-                    <skill-icon class="devicon-linux-plain">Linux</skill-icon>
-                    <skill-icon class="devicon-ubuntu-plain">Ubuntu</skill-icon>
+                    <SkillIcon skill="windows11" />
+                    <SkillIcon skill="linux" />
+                    <SkillIcon skill="ubuntu" />
                 </div>
             </div>
 
@@ -127,15 +105,11 @@
                     Dev Tools & Collaboration
                 </h3>
                 <div class="skills">
-                    <skill-icon class="devicon-docker-plain">Docker</skill-icon>
-                    <skill-icon class="devicon-jira-plain">Jira</skill-icon>
-                    <skill-icon class="devicon-slack-plain">Slack</skill-icon>
-                    <skill-icon class="devicon-sonarqube-plain"
-                        >SonarQube</skill-icon
-                    >
-                    <skill-icon class="devicon-swagger-plain"
-                        >Swagger</skill-icon
-                    >
+                    <SkillIcon skill="docker" />
+                    <SkillIcon skill="jira" />
+                    <SkillIcon skill="slack" />
+                    <SkillIcon skill="sonarqube" />
+                    <SkillIcon skill="swagger" />
                 </div>
             </div>
 
@@ -144,7 +118,7 @@
                     Personal Use
                 </h3>
                 <div class="skills">
-                    <skill-icon class="devicon-unity-plain">Unity</skill-icon>
+                    <SkillIcon skill="unity" />
                 </div>
             </div>
         </div>
