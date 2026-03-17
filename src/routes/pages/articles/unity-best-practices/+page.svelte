@@ -1,5 +1,6 @@
 <script>
     import { assets } from "$app/paths";
+    import CodeBlock from "$lib/components/CodeBlock.svelte";
     import LearnMoreTip from "$lib/components/Tips/LearnMoreTip.svelte";
     import NoticeTip from "$lib/components/Tips/NoticeTip.svelte";
     import WarningTip from "$lib/components/Tips/WarningTip.svelte";
@@ -68,7 +69,7 @@
                 parameters, but it grows until it reaches 9. This makes the method less maintainable, and the problem
                 will only grow more and more:
             </p>
-            <code-block lang="csharp">
+            <CodeBlock lang="csharp">
 void InitV1(int health, int maxHealth, int speed)
 &lbrace;
     // ...
@@ -79,13 +80,13 @@ void InitV2(int health, int maxHealth, int speed, int defense, int shield, int m
 &lbrace;
     // ...
 &rbrace;
-            </code-block>
+            </CodeBlock>
             <h3>Solution</h3>
             <p>
                 When a method starts to have too many parameters, you can put them into a class. The class (or
                 <code>struct</code>) only job is to hold data and process it if needed.
             </p>
-            <code-block lang="csharp">
+            <CodeBlock lang="csharp">
 struct PlayerStats
 &lbrace;
     int health;
@@ -113,7 +114,7 @@ void InitV2(PlayerStats stats)
 &lbrace;
     // ...
 &rbrace;
-            </code-block>
+            </CodeBlock>
             <p>
                 The signature stays the same, even if more properties are added. This allows to not bleed the requirements onto
                 every method that touch it. They also only need to receive a <code>PlayerStats</code> to pass it along.
@@ -121,7 +122,7 @@ void InitV2(PlayerStats stats)
             <p>
                 It is also possible to have utility methods in the data. Using the example above, it is maybe interesting to know how much total health the player has, combining the health and the shields.
             </p>
-            <code-block lang="csharp">
+            <CodeBlock lang="csharp">
 struct PlayerStats
 &lbrace;
     int maxHealth;
@@ -132,7 +133,7 @@ struct PlayerStats
         return maxHealth + shield;
     &rbrace;
 &rbrace;
-            </code-block>
+            </CodeBlock>
         </section>
 
         <section>
@@ -163,7 +164,7 @@ struct PlayerStats
                     target="_blank">Behaviour Trees</a>. In essence, they are just a bunch of classes linked together.
                 Let's see how it would work with both methods:
             </p>
-            <code-block lang="csharp">
+            <CodeBlock lang="csharp">
 // === Using MonoBehaviour ===
 class Tree : MonoBehaviour
 &lbrace;
@@ -199,7 +200,7 @@ class Node
 
 // Hierarchy:
 // |- tree player
-            </code-block>
+            </CodeBlock>
             <p>
                 This makes the code more portable. With the example of the trees, it would be possible to extract the framework into
                 a basic <code>.dll</code> file.

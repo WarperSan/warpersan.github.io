@@ -1,5 +1,6 @@
 <script>
     import { assets } from "$app/paths";
+    import CodeBlock from "$lib/components/CodeBlock.svelte";
     import WarningTip from "$lib/components/Tips/WarningTip.svelte";
 
 </script>
@@ -39,11 +40,11 @@
                 The external code would simply need to run the following code in order to directly call procedures and
                 functions:
             </p>
-            <code-block lang="php">
+            <CodeBlock lang="php">
 $a = 10;
 $b = "0x0";
 PDO_Manager::call_procedure("test", $a, $b, null);
-            </code-block>
+            </CodeBlock>
             <p>
                 The manager would then automatically create the query needed to call it. The advantage is also that the
                 manager would convert PHP values into SQL values. For example, it would convert <code>null</code> into
@@ -60,7 +61,7 @@ PDO_Manager::call_procedure("test", $a, $b, null);
             <p>
                 This problematic was solved by creating a class that would bridge this gap:
             </p>
-            <code-block lang="php">
+            <CodeBlock lang="php">
 class User extends PDO_Object
 &lbrace;
     #[PDO_Object_Id("idUser")]
@@ -72,7 +73,7 @@ class User extends PDO_Object
     #[PDO_Object_Id("name")]
     public string $Name = "";
 &rbrace;
-            </code-block>
+            </CodeBlock>
             <p>
                 By giving a string map, the object would assign each value to the correct property, following the
                 column's name defined in the attribute. This allows to separate the database names and the PHP names,
@@ -81,7 +82,7 @@ class User extends PDO_Object
             <p>
                 It also allows to have type safety that are more understandable than before:
             </p>
-            <code-block lang="php">
+            <CodeBlock lang="php">
 function updateUser(array $user): void
 &lbrace;
     // Need to assume that the array has the correct values
@@ -91,7 +92,7 @@ function updateUser(User $user): void
 &lbrace;
     // Prevents giving the wrong values
 &rbrace;
-</code-block>
+</CodeBlock>
             <p>
                 You can also add instance functions to these classes to make special queries. For example, you could
                 call <code>$user->censorName()</code> to call special queries or functions from a given state.
@@ -102,7 +103,7 @@ function updateUser(User $user): void
             <p>
                 While adding the support for custom queries, I also added custom functions to help create the query:
             </p>
-            <code-block lang="php">
+            <CodeBlock lang="php">
 // Instead of this:
 User::select(
     [User::NAME],
@@ -115,7 +116,7 @@ User::select(
     orderByAll([User::NAME], [User::ALIAS]),
     limit(5, 10)
 );
-</code-block>
+</CodeBlock>
             <p>
                 It hides the exact implementation of the queries whilst keeping it understandable and easily modifiable.
                 You would only need to modify the function <code>limit</code> to change its behaviour.
