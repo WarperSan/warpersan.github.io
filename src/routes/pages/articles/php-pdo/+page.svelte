@@ -13,8 +13,6 @@
     <meta name="author" content="WarperSan">
     <meta name="keywords"
         content="PHP PDO, PDO Manager, PHP Database, OOP PHP, PDO Wrapper, Stored Procedures, SQL Automation, PHP School Project">
-
-    <script defer src="/scripts/elements/CodeElement.js"></script>
 </svelte:head>
 
     <article>

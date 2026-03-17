@@ -11,8 +11,6 @@
     <meta name="keywords" content="Unity, Best Practices, WarperSan" />
     <title>Unity Best Practices</title>
 
-    <script defer src="/scripts/elements/CodeElement.js"></script>
-
     <link rel="icon" href="{assets}/assets/images/icons/unity-icon.svg" type="image/x-icon" />
 </svelte:head>
 

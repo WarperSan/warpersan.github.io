@@ -14,8 +14,6 @@
     <meta name="keywords"
         content="Harmony, C# patching, HarmonyLib, modding, prefix, postfix, transpiler, guide, tutorial">
     <meta name="author" content="WarperSan">
-
-    <script defer src="/scripts/elements/CodeElement.js"></script>
 </svelte:head>
 
     <article>
