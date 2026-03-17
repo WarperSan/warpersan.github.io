@@ -1,6 +1,7 @@
 <script>
     import { assets, base } from "$app/paths";
     import WarningTip from "$lib/components/Tips/WarningTip.svelte";
+    import WebGLPlayer from "$lib/components/WebGLPlayer.svelte";
 </script>
 
 <svelte:head>
@@ -16,9 +17,6 @@
         name="keywords"
         content="Game of Danger, Puzzle Game, WebGL Prototype, 3D Puzzle, 2D Puzzle, Indie Game, itch.io game, browser game"
     />
-
-    <script src="/scripts/elements/WebGLElement.js"></script>
-    <link href="{base}/styles/elements/WebGL.css" rel="stylesheet" />
 </svelte:head>
 
 <article>
@@ -46,10 +44,10 @@
     </section>
     <section>
         <div style="display: flex; justify-content: center;">
-            <webgl-player
+            <WebGLPlayer
                 pc
                 src="{assets}/assets/builds/GameOfDanger-Prototype/index.html"
-            ></webgl-player>
+            />
         </div>
         <WarningTip>This game is compatible on PC.</WarningTip>
         <p>

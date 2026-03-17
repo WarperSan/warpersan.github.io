@@ -1,6 +1,7 @@
 <script>
     import { assets, base } from "$app/paths";
     import WarningTip from "$lib/components/Tips/WarningTip.svelte";
+    import WebGLPlayer from "$lib/components/WebGLPlayer.svelte";
 
 </script>
 <svelte:head>
@@ -16,9 +17,6 @@
         name="keywords"
         content="Hotel Game, Horror Prototype, Indie Horror, Game Jam, WebGL Horror Game, itch.io horror, short horror game"
     />
-
-    <script src="/scripts/elements/WebGLElement.js"></script>
-    <link href="{base}/styles/elements/WebGL.css" rel="stylesheet" />
 </svelte:head>
 
 <article>
@@ -42,8 +40,7 @@
     </section>
     <section>
         <div style="display: flex; justify-content: center;">
-            <webgl-player pc src="{assets}/assets/builds/Hotel-Prototype/index.html"
-            ></webgl-player>
+            <WebGLPlayer pc src="{assets}/assets/builds/Hotel-Prototype/index.html"/>
         </div>
         <WarningTip>This game is compatible on PC.</WarningTip>
         <p>

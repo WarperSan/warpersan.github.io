@@ -1,5 +1,6 @@
 <script>
     import { assets, base } from "$app/paths";
+    import WebGLPlayer from "$lib/components/WebGLPlayer.svelte";
 
 </script>
 <svelte:head>
@@ -28,9 +29,6 @@
         name="keywords"
         content="Space Shooter, Touhou Clone, Bullet Hell Game, Indie Prototype, WebGL Game, itch.io shooter, game dev school project"
     />
-
-    <script src="/scripts/elements/WebGLElement.js"></script>
-    <link href="{base}/styles/elements/WebGL.css" rel="stylesheet" />
 </svelte:head>
 
 <article>
@@ -65,11 +63,11 @@
     </section>
     <section>
         <div style="display: flex; justify-content: center;">
-            <webgl-player
+            <WebGLPlayer
                 pc
                 mobile
                 src="{assets}/assets/builds/SpaceShooter-Prototype/index.html"
-            ></webgl-player>
+            />
         </div>
         <p>
             If you want to download the game or support it, you can find it <a

@@ -1,6 +1,7 @@
 <script>
     import { assets, base } from "$app/paths";
     import WarningTip from "$lib/components/Tips/WarningTip.svelte";
+    import WebGLPlayer from "$lib/components/WebGLPlayer.svelte";
 
 </script>
 <svelte:head>
@@ -20,9 +21,6 @@
         name="keywords"
         content="FiddleSticks Maze, WebGL Game, Indie Game, AI Behavior Trees, Random Maze Game, itch.io game, horror game"
     />
-
-    <script src="/scripts/elements/WebGLElement.js"></script>
-    <link href="{base}/styles/elements/WebGL.css" rel="stylesheet" />
 </svelte:head>
 
 <article>
@@ -57,11 +55,7 @@
     </section>
     <section>
         <div style="display: flex; justify-content: center;">
-            <webgl-player
-                mobile
-                pc
-                src="{assets}/assets/builds/FiddleStick-Maze/index.html"
-            ></webgl-player>
+            <WebGLPlayer mobile pc src="{assets}/assets/builds/FiddleStick-Maze/index.html" />
         </div>
         <WarningTip>This game is compatible on PC.</WarningTip>
         <p>
