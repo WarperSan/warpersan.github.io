@@ -2,7 +2,7 @@
 	import "../app.css";
 	import favicon from "$lib/assets/favicon.ico";
 	import { assets, base } from "$app/paths";
-    import Footer from "$lib/components/Footer.svelte";
+	import Footer from "$lib/components/Footer.svelte";
 
 	let { children } = $props();
 </script>
@@ -28,6 +28,8 @@
 
 <custom-header></custom-header>
 
-{@render children()}
+<div class="my-6">
+	{@render children()}
+</div>
 
 <Footer />

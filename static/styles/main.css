@@ -29,7 +29,6 @@ body {
 
 article {
     padding: 2rem;
-    margin-top: 3.5rem;
 
     background-color: var(--bg-panel);
 
@@ -41,14 +40,12 @@ article:is(.full) {
     flex: 1;
     margin-left: 2rem;
     margin-right: 2rem;
-    margin-bottom: 1rem;
 }
 
 article:not(.full) {
     max-width: 850px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2rem;
 }
 
 @media (min-width: 1200px) {
