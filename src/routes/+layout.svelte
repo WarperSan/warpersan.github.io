@@ -2,6 +2,7 @@
 	import "../app.css";
 	import favicon from "$lib/assets/favicon.ico";
 	import { assets, base } from "$app/paths";
+    import Footer from "$lib/components/Footer.svelte";
 
 	let { children } = $props();
 </script>
@@ -29,4 +30,4 @@
 
 {@render children()}
 
-<custom-footer></custom-footer>
+<Footer />
