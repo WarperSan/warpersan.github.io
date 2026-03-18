@@ -7,12 +7,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- GENERIC -->
-    <script src="/scripts/utils.js"></script>
-    <script src="/scripts/elements/HeaderElement.js"></script>
-    <script src="/scripts/elements/FooterElement.js"></script>
-
-    <!-- SPECIFIC -->
     <title>Space Shooter - Prototype</title>
     <link
         rel="icon"
