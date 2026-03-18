@@ -45,7 +45,7 @@
     </button>
     <ul
         id="headerIcons"
-        class="{isMenuOpened ? 'open' : ''} flex gap-5 list-none m-0 p-0"
+        class="{isMenuOpened ? 'open' : ''} flex items-center gap-5 list-none m-0 p-0"
         bind:this={iconsList}
     >
         <li>
@@ -90,6 +90,10 @@
 
     .headerIcon:hover {
         background-color: var(--dark);
+    }
+
+    #headerIcons > li {
+        margin: 0;
     }
 
     @media (max-width: 640px) {
