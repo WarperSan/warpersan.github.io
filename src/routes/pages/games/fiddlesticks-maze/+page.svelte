@@ -55,7 +55,7 @@
     </section>
     <section>
         <div style="display: flex; justify-content: center;">
-            <WebGLPlayer mobile pc src="{assets}/assets/builds/FiddleStick-Maze/index.html" />
+            <WebGLPlayer pc src="{assets}/assets/builds/FiddleStick-Maze/index.html" />
         </div>
         <WarningTip>This game is compatible on PC.</WarningTip>
         <p>
