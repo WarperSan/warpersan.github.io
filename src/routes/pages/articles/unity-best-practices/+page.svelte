@@ -23,11 +23,12 @@
                 certain way to avoid problems in the long run.
             </p>
             <WarningTip>
-            This guide goes over the practices <b>I personnally</b> consider the best. This is meant more as a
-                basis than
-                as a global truth.
+                Consider this guide a starting point rather than a rulebook. These are
+                practices I have found useful.
             </WarningTip>
-            <WarningTip>Most practices will increase development time and cost. I simply present the <i>ideal world</i>.
+            <WarningTip>
+                Most practices will increase development time and cost. Consider them
+                long-term investments rather than immediate requirements.
             </WarningTip>
         </section>
 
@@ -44,16 +45,33 @@
                 <li>Mods "breaking" your content</li>
             </ul>
             <p>
-                In bref, it is not a good sign. It shows only the intended use case was considered.
+                In short, it is not a good sign. It shows only the intended use case was considered.
             </p>
             <h3>Solution</h3>
             <p>
-                The best solution is to allow nullables by default. This will let the IDE know that a certain field
+                A good solution is to allow nullables by default. This will let the IDE know that a certain field
                 <i>may</i> be <code>null</code>, which would force to consider this case.
             </p>
             <p>
                 The easiest way of adding this is to add <code>-nullable:enable</code> to the <code>csc.rsp</code> file.
                 Unity and the IDE should then notify you that certain fields may have a null reference.
+            </p>
+            <CodeBlock lang="csharp">
+// Before Nullables
+HealthBar target;
+target.SetHealth(10); // NullReferenceException if target is not assigned
+
+// After Nullables
+HealthBar? target;
+
+if (target != null)
+    target.SetHealth(10); // Safe
+
+target?.SetHealth(10); // Short and Safe
+            </CodeBlock>
+            <p>
+                A good habit is to mark every field as nullable by default,
+                and only remove it when it's guaranteed the field will always be assigned.
             </p>
             <NoticeTip>You need to create the file <code>csc.rsp</code> inside <code>Assets</code>. It should then recompile
                 the project.</NoticeTip>
@@ -82,7 +100,7 @@ void InitV2(int health, int maxHealth, int speed, int defense, int shield, int m
             <h3>Solution</h3>
             <p>
                 When a method starts to have too many parameters, you can put them into a class. The class (or
-                <code>struct</code>) only job is to hold data and process it if needed.
+                <code>struct</code>) whose only job is to hold data and process it if needed.
             </p>
             <CodeBlock lang="csharp">
 struct PlayerStats
@@ -117,6 +135,7 @@ void InitV2(PlayerStats stats)
                 The signature stays the same, even if more properties are added. This allows to not bleed the requirements onto
                 every method that touch it. They also only need to receive a <code>PlayerStats</code> to pass it along.
             </p>
+            <WarningTip>This solution should only be considered when a method has more than 4 or 5 parameters. Below that, this will be overkill.</WarningTip>
             <p>
                 It is also possible to have utility methods in the data. Using the example above, it is maybe interesting to know how much total health the player has, combining the health and the shields.
             </p>
@@ -143,18 +162,19 @@ struct PlayerStats
                 <code>MonoBehaviour</code> has a few downsides:
             </p>
             <ul>
-                <li>Creates a worst scene hierarchy, littering it with unnecessary objects</li>
+                <li>Creates a worse scene hierarchy, littering it with unnecessary objects</li>
                 <li>Makes heavier instances</li>
                 <li>Locks the class into a single ecosystem</li>
             </ul>
             <h3>Solution</h3>
             <p>
-                Use plain old C# class.
+                Consider using plain C# classes instead. Not everything needs to be a component in the world. For example, object pools
+                could be done without being present in the world. They simply manage ìnstances of <code>IDisposable</code>,
+                not even knowing if they are objects, other classes or something else.
             </p>
             <p>
-                Really, that is all. Not everything needs to be a component in the world. For example, object pools could be done
-                without being present in the world. They simply manage ìnstances of <code>IDisposable</code>, not even knowning
-                if they are objects, other classes or something else.
+                A good rule of thumb is to ask the following question: Can the class do its work without
+                Unity's lifecycle methods? If so, it might not need to be a <code>MonoBehaviour</code>.
             </p>
             <p>
                 Another good example are <a
