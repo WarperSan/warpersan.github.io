@@ -40,7 +40,7 @@
         if (skill == "markdown")
             return { iconClass: "devicon-markdown-plain", text: "Markdown" };
         if (skill == "nodejs" || skill == "node")
-            return { iconClass: "devicon-nodejs-plain", text: "Node JS" };
+            return { iconClass: "devicon-nodejs-plain", text: "NodeJS" };
         if (skill == "jquery")
             return { iconClass: "devicon-jquery-plain", text: "JQuery" };
         if (skill == "react")
@@ -50,36 +50,18 @@
                 iconClass: "devicon-codeigniter-plain",
                 text: "CodeIgniter",
             };
-        if (skill == "sql")
-            return { iconClass: "devicon-azuresqldatabase-plain", text: "SQL" };
+        if (skill == "mysql")
+            return { iconClass: "devicon-azuresqldatabase-plain", text: "MySQL" };
         if (skill == "mongodb" || skill == "mongo")
             return { iconClass: "devicon-mongodb-plain", text: "MongoDB" };
-        if (skill == "rider")
-            return { iconClass: "devicon-rider-plain", text: "Rider" };
-        if (skill == "webstorm")
-            return { iconClass: "devicon-webstorm-plain", text: "WebStorm" };
-        if (skill == "vscode")
-            return { iconClass: "devicon-vscode-plain", text: "VS Code" };
-        if (skill == "visualstudio" || skill == "vs")
-            return {
-                iconClass: "devicon-visualstudio-plain",
-                text: "Visual Studio",
-            };
-        if (skill == "androidstudio")
-            return {
-                iconClass: "devicon-androidstudio-plain",
-                text: "Android Studio",
-            };
         if (skill == "github")
             return { iconClass: "devicon-github-plain", text: "GitHub" };
         if (skill == "git")
             return { iconClass: "devicon-git-plain", text: "Git" };
         if (skill == "windows" || skill == "windows11")
-            return { iconClass: "devicon-windows11-plain", text: "Windows 11" };
+            return { iconClass: "devicon-windows11-plain", text: "Windows" };
         if (skill == "linux")
             return { iconClass: "devicon-linux-plain", text: "Linux" };
-        if (skill == "ubuntu")
-            return { iconClass: "devicon-ubuntu-plain", text: "Ubuntu" };
         if (skill == "docker")
             return { iconClass: "devicon-docker-plain", text: "Docker" };
         if (skill == "jira")
