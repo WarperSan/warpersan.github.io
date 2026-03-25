@@ -45,7 +45,9 @@
     </button>
     <ul
         id="headerIcons"
-        class="{isMenuOpened ? 'open' : ''} flex items-center gap-5 list-none m-0 p-0"
+        class="{isMenuOpened
+            ? 'open'
+            : ''} flex items-center gap-5 list-none m-0 p-0"
         bind:this={iconsList}
     >
         <li>
@@ -104,6 +106,7 @@
             right: 10px;
 
             flex-direction: column;
+            align-items: flex-start;
 
             border-radius: 0 0 1em 1em;
 
@@ -113,6 +116,10 @@
 
         #headerIcons.open {
             display: flex;
+        }
+
+        #headerIcons > li {
+            width: 100%;
         }
     }
 </style>
