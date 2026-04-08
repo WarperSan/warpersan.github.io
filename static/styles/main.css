@@ -85,14 +85,18 @@ h6 {
 }
 
 /* LINKS */
-a {
+article a,
+article p a,
+article li a {
     color: var(--light);
     text-decoration: none;
     border-bottom: 1px solid var(--light);
     transition: all 0.2s ease;
 }
 
-a:hover {
+article a:hover,
+article p a:hover,
+article li a:hover {
     color: var(--accent);
     border-color: var(--accent);
 }
