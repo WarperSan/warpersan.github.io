@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
     import BaseTip from "./BaseTip.svelte";
+    import MenuBookIcon from "virtual:icons/material-symbols/menu-book-outline-rounded";
 
     interface Props {
         children?: Snippet;
@@ -10,6 +11,6 @@
 </script>
 
 <BaseTip border="#d59df5" background="#2f293b">
-    <strong>Learn more: </strong>
-    {@render children?.()}
+    <MenuBookIcon color="#d59df5" style="display: inline-block;" />
+    <strong>Learn more:&nbsp;</strong>{@render children?.()}
 </BaseTip>
