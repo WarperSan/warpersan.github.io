@@ -2,29 +2,34 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* BASE TYPOGRAPHY LAYER */
 @layer base {
     h1 {
-        @apply text-4xl font-bold mt-8 mb-4;
+        @apply text-4xl font-bold mt-10 mb-5;
     }
 
     h2 {
-        @apply text-3xl font-bold mt-7 mb-3;
+        @apply text-3xl font-bold mt-10 mb-4;
     }
 
     h3 {
-        @apply text-2xl font-semibold mt-6 mb-3;
+        @apply text-2xl font-semibold mt-8 mb-3;
     }
 
     h4 {
-        @apply text-xl font-semibold mt-5 mb-2;
+        @apply text-xl font-semibold mt-6 mb-2;
     }
 
     h5 {
-        @apply text-lg font-medium mt-4 mb-2;
+        @apply text-lg font-medium mt-5 mb-2;
     }
 
     h6 {
-        @apply text-base font-medium mt-3 mb-1;
+        @apply text-base font-medium mt-4 mb-1;
+    }
+
+    p {
+        @apply leading-relaxed;
     }
 
     ul {
@@ -45,5 +50,13 @@
     ul ol,
     ol ul {
         @apply mt-1 mb-0;
+    }
+
+    strong {
+        @apply font-semibold text-white;
+    }
+
+    hr {
+        @apply my-8 border-t border-white/10;
     }
 }
