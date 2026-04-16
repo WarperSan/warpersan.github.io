@@ -38,14 +38,14 @@
 
 .skill i {
     display: block;
-    color: var(--main);
+    color: var(--text-secondary);
     transition: color var(--transition-delay), transform var(--transition-delay);
 
     font-size: 4em;
 }
 
 .skill:hover i {
-    color: var(--light);
+    color: var(--text-body);
     transform: translateY(-16px) scale(0.85);
 }
 
