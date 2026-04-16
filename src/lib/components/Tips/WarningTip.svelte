@@ -10,7 +10,6 @@
     let { children }: Props = $props();
 </script>
 
-<BaseTip border="#f5d19d" background="#3B2B29">
-    <WarningIcon color="#f5d19d" style="display: inline-block;" />
-    <strong>Warning:&nbsp;</strong>{@render children?.()}
+<BaseTip border="#f5d19d" background="#3B2B29" title="Warning" icon={WarningIcon}>
+    {@render children?.()}
 </BaseTip>
