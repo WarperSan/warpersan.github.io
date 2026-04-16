@@ -23,7 +23,7 @@
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 
-    transition: border 0.25s;
+    transition: border var(--transition-delay);
 }
 
 .projects:hover {
@@ -71,7 +71,7 @@
 
     border-radius: 0.5rem;
 
-    transition: color 0.2s, background-color 0.2s;
+    transition: color var(--transition-delay), background-color var(--transition-delay);
 }
 
 .projects-controls *:hover {

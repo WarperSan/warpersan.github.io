@@ -1,5 +1,5 @@
 <script>
-    import { assets, base } from "$app/paths";
+    import { asset, resolve } from "$app/paths";
     import WebGLPlayer from "$lib/components/WebGLPlayer.svelte";
 
 </script>
@@ -60,7 +60,7 @@
             <WebGLPlayer
                 pc
                 mobile
-                src="{assets}/assets/builds/SpaceShooter-Prototype/index.html"
+                src={asset("/assets/builds/SpaceShooter-Prototype/index.html")}
             />
         </div>
         <p>

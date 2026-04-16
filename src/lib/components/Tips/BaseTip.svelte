@@ -16,7 +16,7 @@
 	class="p-4 border-l-4 rounded-r-md my-6"
 	style="border-color: {border}; background-color: {background};"
 >
-	<span class="flex items-center gap-1 select-none">
+	<span class="flex items-center gap-1 select-none mb-2">
 		<Icon color={border} style="display: inline-block;"/>
 		<strong>{title}</strong>
 	</span>

@@ -1,11 +1,11 @@
 <script>
-    import { assets } from "$app/paths";
+    import { asset } from "\$app/paths";
     import SkillIcon from "$lib/components/SkillIcon.svelte";
 </script>
 
 <svelte:head>
     <title>About Me</title>
-    <link href="{assets}/styles/skills.css" rel="stylesheet" />
+    <link href={asset("/styles/skills.css")} rel="stylesheet" />
 </svelte:head>
 
 <article>

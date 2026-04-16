@@ -1,13 +1,13 @@
 <script>
-    import { assets } from "$app/paths";
+    import { asset } from "\$app/paths";
 
 </script>
 <svelte:head>
-    <link href="{assets}/styles/pages/dds-convert/file-items.css" rel="stylesheet" />
-    <script src="{assets}/scripts/pages/dds-convert/BinaryReader.js"></script>
-    <script src="{assets}/scripts/pages/dds-convert/Converter.js"></script>
-    <script src="{assets}/scripts/pages/dds-convert/FileItem.js"></script>
-    <script src="{assets}/scripts/pages/dds-convert/script.js"></script>
+    <link href={asset("/styles/pages/dds-convert/file-items.css")} rel="stylesheet" />
+    <script src={asset("/scripts/pages/dds-convert/BinaryReader.js")}></script>
+    <script src={asset("/scripts/pages/dds-convert/Converter.js")}></script>
+    <script src={asset("/scripts/pages/dds-convert/FileItem.js")}></script>
+    <script src={asset("/scripts/pages/dds-convert/script.js")}></script>
 
     <title>DDS Converter</title>
     <link rel="icon" href="" type="image/x-icon" />

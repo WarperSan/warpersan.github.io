@@ -1,5 +1,5 @@
 <script>
-    import { assets, base } from "$app/paths";
+    import { asset, resolve } from "$app/paths";
     import WarningTip from "$lib/components/Tips/WarningTip.svelte";
     import WebGLPlayer from "$lib/components/WebGLPlayer.svelte";
 
@@ -40,7 +40,7 @@
     </section>
     <section>
         <div style="display: flex; justify-content: center;">
-            <WebGLPlayer pc src="{assets}/assets/builds/Hotel-Prototype/index.html"/>
+            <WebGLPlayer pc src={asset("/assets/builds/Hotel-Prototype/index.html")}/>
         </div>
         <WarningTip>This game is compatible on PC.</WarningTip>
         <p>

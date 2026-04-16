@@ -93,7 +93,8 @@
         transition: all var(--transition-delay) ease-in-out;
     }
 
-    .headerIcon:hover {
+    .headerIcon:hover,
+    .headerIcon:focus {
         color: var(--hover-text);
         background-color: var(--hover-background);
     }

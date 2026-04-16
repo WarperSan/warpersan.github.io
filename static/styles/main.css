@@ -73,10 +73,10 @@ h6 {
 article a,
 article p a,
 article li a {
-    color: var(--light);
+    color: var(--link-color);
     text-decoration: none;
-    border-bottom: 1px solid var(--light);
-    transition: all 0.2s ease;
+    border-bottom: 1px solid var(--link-color);
+    transition: all var(--transition-delay) ease;
 }
 
 article a:hover,

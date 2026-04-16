@@ -26,7 +26,7 @@
 
     cursor: pointer;
 
-    transition: background-color 0.25s, color 0.25s;
+    transition: background-color var(--transition-delay), color var(--transition-delay);
 
     min-width: 20px;
     text-align: center;

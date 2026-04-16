@@ -1,5 +1,5 @@
 <script>
-    import { assets } from "$app/paths";
+    import { asset } from "\$app/paths";
     import WarningTip from "$lib/components/Tips/WarningTip.svelte";
 
 </script>
@@ -9,7 +9,7 @@
     <meta name="keywords" content="Unity, Decompiling, Game Hacking, WarperSan, Reverse Engineering, Game Modding" />
     <title>Unity Decompiling Guide</title>
 
-    <link rel="icon" href="{assets}/assets/images/icons/unity-icon.svg" type="image/x-icon" />
+    <link rel="icon" href={asset("/assets/images/icons/unity-icon.svg")} type="image/x-icon" />
 </svelte:head>
 
     <article>

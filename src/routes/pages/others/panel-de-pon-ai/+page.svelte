@@ -1,5 +1,5 @@
 <script>
-    import { assets } from "$app/paths";
+    import { asset } from "\$app/paths";
 
 </script>
 <svelte:head>
@@ -72,7 +72,7 @@
         </p>
 
         <img
-            src="{assets}/assets/images/pages/panel-de-pon-ai/data-optimizing.png"
+            src={asset("/assets/images/pages/panel-de-pon-ai/data-optimizing.png")}
             title="Data optimizing"
         />
 

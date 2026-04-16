@@ -1,5 +1,5 @@
 <script>
-    import { assets } from "$app/paths";
+    import { asset } from "\$app/paths";
 
 </script>
 <svelte:head>
@@ -43,7 +43,7 @@
         </p>
 
         <img
-            src="{assets}/assets/images/pages/snake-procedural/demo.png"
+            src={asset("/assets/images/pages/snake-procedural/demo.png")}
             title="Demonstration of the program"
         />
         <video src="https://www.youtube.com/embed/_z5ziI1enio"></video>
@@ -75,7 +75,7 @@
         </p>
 
         <img
-            src="{assets}/assets/images/pages/snake-procedural/noise_map.png"
+            src={asset("/assets/images/pages/snake-procedural/noise_map.png")}
             title="Noise Map"
         />
     </section>
@@ -93,7 +93,7 @@
         </p>
 
         <img
-            src="{assets}/assets/images/pages/snake-procedural/blurry_noise_map.png"
+            src={asset("/assets/images/pages/snake-procedural/blurry_noise_map.png")}
             title="Blurry Noise Map"
         />
     </section>

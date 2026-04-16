@@ -1,107 +1,138 @@
 /* Colors */
 :root {
-    /* === BACKGROUND === */
-    /* Used for the body */
-    --background-body: #18181B;
+   /* === BACKGROUND === */
+   /* Used for the body */
+   --background-body: #18181B;
 
-    /* Used for cards, modals, containers */
-    --background-container: #202024;
+   /* Used for cards, modals, containers */
+   --background-container: #202024;
 
-    /* === BORDER === */
-    /* Used for containers */
-    --border-container: #3A2A34;
+   /* Used for inputs */
+   --background-input: #26262B;
 
-    /* === TEXT === */
-    /* Used for texts that should draw attention  */
-    --text-primary: #F4F4F5;
+   /* === BORDER === */
+   /* Used for containers */
+   --border-container: #3A2A34;
 
-    /* Used for texts inside containers */
-    --text-body: #CFCFD4;
+   /* Used for inputs */
+   --border-input: #2A2A30;
 
-    /* Used for texts that should not draw attention */
-    --text-secondary: #A1A1AA;
+   /* === TEXT === */
+   /* Used for texts that should draw attention  */
+   --text-primary: #F4F4F5;
 
-    /* === HOVER === */
-    /* Used when the user hovers an element */
-    --hover-text: #121214;
-    --hover-background: #D85FA3;
+   /* Used for texts inside containers */
+   --text-body: #CFCFD4;
+
+   /* Used for texts that should not draw attention */
+   --text-secondary: #A1A1AA;
+
+   /* === LINKS === */
+   /* Used for links */
+   --link-color: #A64D79;
+
+   /* === HOVER === */
+   /* Used when the user hovers an element */
+   --hover-text: #121214;
+   --hover-background: #D85FA3;
+   --hover-border: #8A2D6E;
 }
 
 /* Behaviors */
 :root {
-    --transition-delay: 0.2s;
+   --transition-delay: 0.2s;
 }
 
 uwu {
-    /* =========================
+   /* =========================
        BACKGROUND SYSTEM
        These define depth/layers
        ========================= */
 
-    --bg-panel: #26262B;
-    /* Inner sections (sidebars, inputs)
-       Slight contrast from elevated */
-
-    --bg-hover: #2E2E35;
-    /* Hover state for surfaces
+   --bg-hover: #2E2E35;
+   /* Hover state for surfaces
        Must be clearly visible but subtle */
+   /* =========================
+   PRIMARY COLOR SYSTEM
+   Brand foundation & hierarchy
+   ========================= */
+
+   --primary-900: #2A0F24;
+   /* Used for:
+   Pressed/active states and depth layers
+   When you need strong contrast or to anchor the UI
+   Ideal for overlays, shadows, or emphasis on interaction */
+
+   --primary-700: #4A183F;
+   /* Used for:
+   Selected or active UI elements
+   Navigation highlights and current states
+   When reinforcing user focus without overpowering */
+
+   --primary-500: #6A1E55;
+   /* Used for:
+   Core brand expression across the interface
+   Primary buttons, calls-to-action, and key accents
+   The default “go-to” brand color */
+
+   --primary-400: #8A2D6E;
+   /* Used for:
+   Hover and interactive feedback on primary elements
+   Indicating interactivity without changing hierarchy
+   Subtle transitions and micro-interactions */
+
+   --primary-300: #A64D79;
+   /* Used for:
+   Supporting accents and lighter emphasis
+   Secondary text highlights or decorative elements
+   When a softer, less dominant brand presence is needed */
 
 
-    /* =========================
+   /* =========================
        PRIMARY COLOR SYSTEM
        Your brand color (structure)
        ========================= */
 
-    --primary-900: #2A0F24;
-    /* Deep shade
+   --primary-900: #2A0F24;
+   /* Deep shade
        Used for active/pressed states
        Adds depth */
 
-    --primary-700: #4A183F;
-    /* Strong UI emphasis
+   --primary-700: #4A183F;
+   /* Strong UI emphasis
        Active nav items, selected states */
 
-    --primary-500: #6A1E55;
-    /* Main brand color
+   --primary-500: #6A1E55;
+   /* Main brand color
        Buttons, highlights, key UI elements */
 
-    --primary-400: #8A2D6E;
-    /* Hover state for primary elements */
+   --primary-400: #8A2D6E;
+   /* Hover state for primary elements */
 
-    --primary-300: #A64D79;
-    /* Softer usage
+   --primary-300: #A64D79;
+   /* Softer usage
        Text accents, subtle highlights */
 
 
-    /* =========================
+   /* =========================
        ACCENT SYSTEM
        Attention-grabbing actions
        ========================= */
 
-    --accent: #C0438A;
-    /* Call-to-action color
+   --accent: #C0438A;
+   /* Call-to-action color
        Should POP compared to primary */
 
-
-    /* =========================
-       BORDERS & STRUCTURE
-       Defines edges and separation
-       ========================= */
-
-    --border-soft: #2A2A30;
-    /* Subtle borders
-       Inputs, low emphasis separation */
-
-    /* =========================
+   /* =========================
        INTERACTION HELPERS
        Accessibility & UX clarity
        ========================= */
 
-    --focus-ring: #C0438A;
-    /* Keyboard focus outline
+   --focus-ring: #C0438A;
+   /* Keyboard focus outline
        Must be clearly visible */
 
-    --selection: #6A1E55;
-    /* Text selection highlight
+   --selection: #6A1E55;
+   /* Text selection highlight
        Should match brand but stay readable */
 }

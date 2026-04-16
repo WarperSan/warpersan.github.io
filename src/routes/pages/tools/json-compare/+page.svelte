@@ -1,5 +1,5 @@
 <script>
-    import { assets } from "$app/paths";
+    import { asset } from "\$app/paths";
 
 </script>
 <svelte:head>
@@ -10,17 +10,17 @@
     />
 
     <title>JSON Compare</title>
-    <link rel="icon" type="image/x-icon" href="{assets}/assets/images/icons/json.png" />
+    <link rel="icon" type="image/x-icon" href={asset("/assets/images/icons/json.png")} />
 
-    <link href="{assets}/styles/pages/json-compare/main.css" rel="stylesheet" />
-    <link href="{assets}/styles/pages/json-compare/inputs.css" rel="stylesheet" />
-    <link href="{assets}/styles/pages/json-compare/outputs.css" rel="stylesheet" />
-    <link href="{assets}/styles/pages/json-compare/buttons.css" rel="stylesheet" />
-    <link href="{assets}/styles/pages/json-compare/error.css" rel="stylesheet" />
-    <script src="{assets}/scripts/pages/json-compare/AdditionChecker.js"></script>
-    <script src="{assets}/scripts/pages/json-compare/RemovalChecker.js"></script>
-    <script src="{assets}/scripts/pages/json-compare/ChangesChecker.js"></script>
-    <script src="{assets}/scripts/pages/json-compare/script.js"></script>
+    <link href={asset("/styles/pages/json-compare/main.css")} rel="stylesheet" />
+    <link href={asset("/styles/pages/json-compare/inputs.css")} rel="stylesheet" />
+    <link href={asset("/styles/pages/json-compare/outputs.css")} rel="stylesheet" />
+    <link href={asset("/styles/pages/json-compare/buttons.css")} rel="stylesheet" />
+    <link href={asset("/styles/pages/json-compare/error.css")} rel="stylesheet" />
+    <script src={asset("/scripts/pages/json-compare/AdditionChecker.js")}></script>
+    <script src={asset("/scripts/pages/json-compare/RemovalChecker.js")}></script>
+    <script src={asset("/scripts/pages/json-compare/ChangesChecker.js")}></script>
+    <script src={asset("/scripts/pages/json-compare/script.js")}></script>
 </svelte:head>
 
 <article class="full">

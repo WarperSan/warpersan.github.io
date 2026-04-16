@@ -4,10 +4,6 @@
     grid-auto-rows: 1fr;
     gap: 1rem;
     padding: 1rem;
-
-    background-color: var(--bg);
-
-    border: 1px solid var(--border);
 }
 
 #projects-container>div {
@@ -24,18 +20,18 @@
     border-radius: 1em;
     overflow: hidden;
 
+    border: 2px solid var(--border-input);
+
     text-decoration: none;
-    transition: all 0.2s ease-in-out;
+    transition: all var(--transition-delay) ease-in-out;
 }
 
+.project:focus,
 .project:hover {
     transform: translateY(-4px);
-    box-shadow: 0 15px 25px -5px var(--border);
-}
+    box-shadow: 0 15px 25px -5px var(--border-input);
 
-.top {
-    display: flex;
-    height: 60%;
+    border-color: var(--hover-border);
 }
 
 .top img {
@@ -47,7 +43,7 @@
 .bottom {
     height: 100%;
     padding: 1em;
-    background-color: var(--bg-panel);
+    background-color: var(--background-container);
 }
 
 .bottom h3 {
@@ -55,5 +51,5 @@
 }
 
 .bottom span {
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }

@@ -23,9 +23,9 @@
     padding: 1rem;
     border-radius: 5px;
 
-    background-color: var(--bg);
+    background-color: var(--background-input);
 
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-container);
 
     user-select: none;
     overflow-x: scroll;
@@ -39,7 +39,7 @@
 .skill i {
     display: block;
     color: var(--main);
-    transition: color 0.25s, transform 0.2s;
+    transition: color var(--transition-delay), transform var(--transition-delay);
 
     font-size: 4em;
 }
@@ -63,7 +63,7 @@
 
     opacity: 0;
     transform: translateY(16px);
-    transition: opacity 0.25s, transform 0.25s;
+    transition: opacity var(--transition-delay), transform var(--transition-delay);
 }
 
 .skill:hover span {

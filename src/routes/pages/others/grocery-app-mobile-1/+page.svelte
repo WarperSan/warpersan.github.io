@@ -1,5 +1,5 @@
 <script>
-    import { assets } from "$app/paths";
+    import { asset } from "\$app/paths";
 
 </script>
 <svelte:head>
@@ -46,7 +46,7 @@
 
         <video
             controls
-            src="{assets}/assets/videos/pages/grocery-app-mobile-1/Showcase.mp4"
+            src={asset("/assets/videos/pages/grocery-app-mobile-1/Showcase.mp4")}
         ></video>
     </section>
     <section>
@@ -84,7 +84,7 @@
 
         <video
             controls
-            src="{assets}/assets/videos/pages/grocery-app-mobile-1/LoginShowcase.mp4"
+            src={asset("/assets/videos/pages/grocery-app-mobile-1/LoginShowcase.mp4")}
         ></video>
 
         <p>
