@@ -20,6 +20,7 @@
 	<!-- GENERIC -->
 	<link href="{assets}/styles/main.css" rel="stylesheet" />
 	<link href="{assets}/styles/fonts.css" rel="stylesheet" />
+    <link href="{assets}/styles/theme.css" rel="stylesheet" />
 	<script src="{assets}/scripts/utils.js"></script>
 </svelte:head>
 

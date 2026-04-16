@@ -6,7 +6,6 @@
 <svelte:head>
     <title>About Me</title>
     <link href="{assets}/styles/skills.css" rel="stylesheet" />
-    <link href="{assets}/styles/contact.css" rel="stylesheet" />
 </svelte:head>
 
 <article>
@@ -99,33 +98,6 @@
                     <SkillIcon skill="slack" />
                 </div>
             </div>
-        </div>
-    </section>
-    <section>
-        <h2 id="contact-me">Contact me</h2>
-        <p>You can contact me through the following means:</p>
-        <div id="contact-container">
-            <a
-                href="https://discord.com/users/457981279485427724"
-                target="_blank"
-                aria-label="Discord"
-            >
-                <i class="fa-brands fa-discord"></i>
-            </a>
-            <a
-                href="https://github.com/WarperSan"
-                target="_blank"
-                aria-label="GitHub"
-            >
-                <i class="devicon-github-plain"></i>
-            </a>
-            <a
-                href="https://youtube.com/@WarperSan"
-                target="_blank"
-                aria-label="Youtube"
-            >
-                <i class="fa-brands fa-youtube"></i>
-            </a>
         </div>
     </section>
 </article>

@@ -1,0 +1,107 @@
+/* Colors */
+:root {
+    /* === BACKGROUND === */
+    /* Used for the body */
+    --background-body: #18181B;
+
+    /* Used for cards, modals, containers */
+    --background-container: #202024;
+
+    /* === BORDER === */
+    /* Used for containers */
+    --border-container: #3A2A34;
+
+    /* === TEXT === */
+    /* Used for texts that should draw attention  */
+    --text-primary: #F4F4F5;
+
+    /* Used for texts inside containers */
+    --text-body: #CFCFD4;
+
+    /* Used for texts that should not draw attention */
+    --text-secondary: #A1A1AA;
+
+    /* === HOVER === */
+    /* Used when the user hovers an element */
+    --hover-text: #121214;
+    --hover-background: #D85FA3;
+}
+
+/* Behaviors */
+:root {
+    --transition-delay: 0.2s;
+}
+
+uwu {
+    /* =========================
+       BACKGROUND SYSTEM
+       These define depth/layers
+       ========================= */
+
+    --bg-panel: #26262B;
+    /* Inner sections (sidebars, inputs)
+       Slight contrast from elevated */
+
+    --bg-hover: #2E2E35;
+    /* Hover state for surfaces
+       Must be clearly visible but subtle */
+
+
+    /* =========================
+       PRIMARY COLOR SYSTEM
+       Your brand color (structure)
+       ========================= */
+
+    --primary-900: #2A0F24;
+    /* Deep shade
+       Used for active/pressed states
+       Adds depth */
+
+    --primary-700: #4A183F;
+    /* Strong UI emphasis
+       Active nav items, selected states */
+
+    --primary-500: #6A1E55;
+    /* Main brand color
+       Buttons, highlights, key UI elements */
+
+    --primary-400: #8A2D6E;
+    /* Hover state for primary elements */
+
+    --primary-300: #A64D79;
+    /* Softer usage
+       Text accents, subtle highlights */
+
+
+    /* =========================
+       ACCENT SYSTEM
+       Attention-grabbing actions
+       ========================= */
+
+    --accent: #C0438A;
+    /* Call-to-action color
+       Should POP compared to primary */
+
+
+    /* =========================
+       BORDERS & STRUCTURE
+       Defines edges and separation
+       ========================= */
+
+    --border-soft: #2A2A30;
+    /* Subtle borders
+       Inputs, low emphasis separation */
+
+    /* =========================
+       INTERACTION HELPERS
+       Accessibility & UX clarity
+       ========================= */
+
+    --focus-ring: #C0438A;
+    /* Keyboard focus outline
+       Must be clearly visible */
+
+    --selection: #6A1E55;
+    /* Text selection highlight
+       Should match brand but stay readable */
+}
