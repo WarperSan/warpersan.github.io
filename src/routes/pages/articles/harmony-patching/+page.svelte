@@ -1,5 +1,5 @@
 <script>
-    import { assets } from "$app/paths";
+    import { asset } from "\$app/paths";
     import CodeBlock from "$lib/components/CodeBlock.svelte";
     import NoticeTip from "$lib/components/Tips/NoticeTip.svelte";
     import WarningTip from "$lib/components/Tips/WarningTip.svelte";

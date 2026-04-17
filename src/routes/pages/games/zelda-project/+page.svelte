@@ -1,5 +1,5 @@
 <script>
-    import { assets } from "$app/paths";
+    import { asset } from "\$app/paths";
 
 </script>
 <svelte:head>
@@ -43,7 +43,7 @@
         </p>
 
         <img
-            src="{assets}/assets/images/pages/zelda-project/skel.png"
+            src={asset("/assets/images/pages/zelda-project/skel.png")}
             title="Skeleton spritesheet"
         />
 
@@ -64,7 +64,7 @@
         </p>
 
         <img
-            src="{assets}/assets/images/pages/zelda-project/debug_ui.png"
+            src={asset("/assets/images/pages/zelda-project/debug_ui.png")}
             title="Debug UI"
         />
     </section>
@@ -86,7 +86,7 @@
         </p>
 
         <img
-            src="{assets}/assets/images/pages/zelda-project/controls_file.png"
+            src={asset("/assets/images/pages/zelda-project/controls_file.png")}
             title="Controls file"
         />
     </section>

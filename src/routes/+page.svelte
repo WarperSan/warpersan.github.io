@@ -1,96 +1,45 @@
 <script>
-    import { assets } from "$app/paths";
+    import BriefcaseIcon from "virtual:icons/fa7-solid/briefcase";
+    import CommentIcon from "virtual:icons/fa7-solid/comment";
 
+    import { resolve } from "$app/paths";
 </script>
-<svelte:head>
-    <link href="{assets}/styles/projects.css" rel="stylesheet" />
-    <script src="{assets}/scripts/elements/ControlElement.js"></script>
-</svelte:head>
 
-<article>
-    <section>
-        <h2 id="featured-projects">Projects</h2>
-        <p>
-            This is a list of the featured projects that I did. If you want more
-            information on the projects I did, you can check <a
-                href="https://warpersan-blog.onrender.com/"
-                target="_blank">this</a
-            >.
-        </p>
-        <div id="projects-container">
-            <div class="projects">
-                <h3>Obstacle Racer</h3>
-                <div>
-                    <span>
-                        This game is the result of a self-hosted game jam. In
-                        one week, I was able to make a small arcade game similar
-                        to <i>Ultimate Chicken Horse</i>.<br /><br />Although
-                        this game is very simple and unbalanced, it is still a
-                        blast to play with friends. This project required me to
-                        manage my time efficiently, draw art without
-                        overdesigning, create modular parts to easily add new
-                        stuff and manage networking for multiplayer.
-                    </span>
-                </div>
-                <hr />
-                <div class="projects-controls">
-                    <project-control
-                        type="play"
-                        href="https://warpersan.itch.io/obstacle-racer"
-                    ></project-control>
-                </div>
-            </div>
-            <div class="projects">
-                <h3>Shadow Spire</h3>
-                <div>
-                    <span>
-                        For my game developement class, me and my friend
-                        achieved to make a retro dungeon crawler. Throughout its
-                        making, we had to solve multiple problems we never faced
-                        before: path finding, room generation, enemy and weapon
-                        design.<br /><br />By the end, we had a working game
-                        with several weapons, multiple enemies, a progressive
-                        room generation and a
-                        <i>Undertale</i>-like fight system. This project taught
-                        us how to design a world to make it interesting yet
-                        challenging.
-                    </span>
-                </div>
-                <hr />
-                <div class="projects-controls">
-                    <project-control
-                        type="code"
-                        href="https://github.com/WarperSan/Shadow-Spire"
-                    ></project-control>
-                </div>
-            </div>
-            <div class="projects">
-                <h3>Bingo API</h3>
-                <div>
-                    <span>
-                        This library allows any mod to add a seamless
-                        integration of <a href="https://bingosync.com"
-                            >BingoSync</a
-                        >
-                        to the game. This has the advantages of not requiring
-                        any browser or user input. You can create a room with
-                        given objectives, connect to it, change team and mark
-                        goals.<br /><br />Although this is very powerful and
-                        easy to use, by itself, the library does nothing. You
-                        can take a look on how to use it from
-                        <a href="https://github.com/WarperSan/LethalBingo"
-                            >this project</a
-                        >, which implements part of the library.
-                    </span>
-                </div>
-                <hr />
-                <div class="projects-controls">
-                    <project-control
-                        type="code"
-                        href="https://github.com/WarperSan/BingoAPI"
-                    ></project-control>
-                </div>
-            </div>
-        </div>
-    </section>
-</article>
+<div class="w-4/5 mx-auto my-0 pt-12 pb-10 px-8">
+    <p
+        class="text-xs tracking-widest uppercase text-[color:var(--text-secondary)] mt-0 mb-4 mx-0"
+    >
+        Game Developer and Modder
+    </p>
+    <h1
+        class="text-[clamp(2.8rem,7vw,4.5rem)] leading-none text-[color:var(--text-primary)] tracking-[-0.02em] mt-0 mb-2 mx-0"
+    >
+        Warper<em class="text-[color:var(--brand-500)]">San</em>
+    </h1>
+    <p class="text-[color:var(--text-body)] leading-[1.75] mt-4 mb-10 mx-0">
+        I build puzzle or horror games in Unity. I also create mods for a
+        variety of games. Currently studying <a
+            class="link"
+            href="https://www.uqac.ca/programme/6596/"
+            target="_blank">Game Programming</a
+        >
+        at
+        <a class="link" href="https://www.uqac.ca/" target="_blank">
+            Université du Québec à Chicoutimi
+        </a>
+    </p>
+    <div class="flex gap-4">
+        <a
+            class="flex items-center bg-[var(--button-primary)] rounded-2xl p-4 transition-[var(--transition-delay)] hover:text-[color:var(--hover-text)] hover:bg-[var(--hover-background)]"
+            href={resolve("/pages/projects")}
+        >
+            <BriefcaseIcon class="mr-2" /><span>View My Work</span></a
+        >
+        <a
+            class="flex items-center bg-[var(--button-secondary)] rounded-2xl p-4 transition-[var(--transition-delay)] hover:text-[color:var(--hover-text)] hover:bg-[var(--hover-background)]"
+            href={resolve("/pages/contact-me")}
+        >
+            <CommentIcon class="mr-2" /><span>Get in Touch</span>
+        </a>
+    </div>
+</div>

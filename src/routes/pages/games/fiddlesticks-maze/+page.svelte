@@ -1,5 +1,5 @@
 <script>
-    import { assets, base } from "$app/paths";
+    import { asset, resolve } from "$app/paths";
     import WarningTip from "$lib/components/Tips/WarningTip.svelte";
     import WebGLPlayer from "$lib/components/WebGLPlayer.svelte";
 
@@ -55,13 +55,13 @@
     </section>
     <section>
         <div style="display: flex; justify-content: center;">
-            <WebGLPlayer pc src="{assets}/assets/builds/FiddleStick-Maze/index.html" />
+            <WebGLPlayer pc src={asset("/assets/builds/FiddleStick-Maze/index.html")} />
         </div>
         <WarningTip>This game is compatible on PC.</WarningTip>
         <p>
             If you want to download the game or support it, you can find it <a
                 href="https://warpersan.itch.io/fiddlesticks-maze"
-                >here <i class="fa-solid fa-download"></i></a
+                >here</a
             >.
         </p>
     </section>

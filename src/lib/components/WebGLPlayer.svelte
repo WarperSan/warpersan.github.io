@@ -5,7 +5,6 @@
     import ComputerIcon from "virtual:icons/material-symbols/computer-outline-rounded";
     import MobileIcon from "virtual:icons/material-symbols/mobile-3-outline";
     import { isOnMobile } from "$lib/utils/host-checks";
-    import { onMount } from "svelte";
 
     interface Props {
         mobile?: boolean;

@@ -1,6 +1,12 @@
 <script lang="ts">
     import MenuIcon from "virtual:icons/material-symbols/menu-rounded";
     import CloseIcon from "virtual:icons/material-symbols/close-rounded";
+    import HomeIcon from "virtual:icons/fa7-solid/home";
+    import UserIcon from "virtual:icons/fa7-solid/user";
+    import NewspaperIcon from "virtual:icons/fa7-solid/newspaper";
+    import ArchiveIcon from "virtual:icons/fa7-solid/box-archive";
+    import ToolIcon from "virtual:icons/fa7-solid/wrench";
+
     import { onMount } from "svelte";
 
     let isMenuOpened = $state(false);
@@ -29,11 +35,11 @@
 </script>
 
 <header
-    class="flex z-[100] fixed items-center justify-end bg-[color:var(--main)] select-none px-4 py-2 top-0 inset-x-0 h-10"
+    class="flex z-[100] fixed items-center justify-end bg-[color:var(--background-container)] select-none px-4 py-2 top-0 inset-x-0 h-10 border-b border-b-[var(--border-container)]"
 >
     <button
         id="headerMenu"
-        class="hidden max-sm:block text-[white] text-2xl cursor-pointer border-[none]"
+        class="hidden max-sm:block text-[var(--text-primary)] text-2xl cursor-pointer border-[none]"
         onclick={onMenuClicked}
         bind:this={menuBtn}
     >
@@ -52,27 +58,27 @@
     >
         <li>
             <a href="/" class="headerIcon" title="Home"
-                ><i class="fa-solid fa-house"></i><span>Home</span></a
+                ><HomeIcon class="self-center" /><span>Home</span></a
             >
         </li>
         <li>
             <a href="/pages/about-me" class="headerIcon" title="About Me"
-                ><i class="fa-solid fa-user"></i><span>About Me</span></a
+                ><UserIcon class="self-center" /><span>About Me</span></a
             >
         </li>
         <li>
             <a href="/pages/articles" class="headerIcon" title="Articles"
-                ><i class="fa-solid fa-newspaper"></i><span>Articles</span></a
+                ><NewspaperIcon class="self-center" /><span>Articles</span></a
             >
         </li>
         <li>
             <a href="/pages/projects" class="headerIcon" title="Projects"
-                ><i class="fa-solid fa-box-archive"></i><span>Projects</span></a
+                ><ArchiveIcon class="self-center" /><span>Projects</span></a
             >
         </li>
         <li>
             <a href="/pages/tools" class="headerIcon" title="Online Tools"
-                ><i class="fa-solid fa-wrench"></i><span>Online Tools</span></a
+                ><ToolIcon class="self-center" /><span>Online Tools</span></a
             >
         </li>
     </ul>
@@ -81,17 +87,22 @@
 <style>
     .headerIcon {
         display: flex;
-        align-items: baseline;
-        gap: 0.5rem;
-        color: white;
-        text-decoration: none;
+        align-items: anchor-center;
+        gap: 0.3rem;
+
         padding: 0.2rem;
+
+        color: var(--text-primary);
+        text-decoration: none;
+
         border-radius: 0.3rem;
-        transition: all 0.2s ease-in-out;
+        transition: all var(--transition-delay) ease-in-out;
     }
 
-    .headerIcon:hover {
-        background-color: var(--dark);
+    .headerIcon:hover,
+    .headerIcon:focus {
+        color: var(--hover-text);
+        background-color: var(--hover-background);
     }
 
     #headerIcons > li {
@@ -110,8 +121,11 @@
 
             border-radius: 0 0 1em 1em;
 
-            background: var(--bg);
+            background: var(--background-container);
             padding: 20px;
+
+            border-color: var(--border-container);
+            border-width: 0 1px 1px 1px;
         }
 
         #headerIcons.open {

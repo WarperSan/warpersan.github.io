@@ -1,5 +1,5 @@
 <script>
-    import { assets } from "$app/paths";
+    import { asset } from "\$app/paths";
 
 </script>
 <svelte:head>
@@ -51,12 +51,12 @@
     <section>
         <h3>Gallery</h3>
         <img
-            src="{assets}/assets/images/pages/boulder-dash/main-menu.png"
+            src={asset("/assets/images/pages/boulder-dash/main-menu.png")}
             title="Image of the main menu"
             style="width: 100%;"
         />
         <img
-            src="{assets}/assets/images/pages/boulder-dash/level-editor.png"
+            src={asset("/assets/images/pages/boulder-dash/level-editor.png")}
             title="Image of the level editor"
             style="width: 100%;"
         />

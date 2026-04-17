@@ -1,12 +1,12 @@
 <script>
-    import { assets } from "$app/paths";
+    import { asset } from "\$app/paths";
 
 </script>
 <svelte:head>
     <title>Obstacle Racer</title>
     <link
         rel="icon"
-        href="{assets}/assets/images/pages/obstacle-racer/icon.png"
+        href={asset("/assets/images/pages/obstacle-racer/icon.png")}
         type="image/x-icon"
     />
     <meta name="title" content="Obstacle Racer" />
@@ -70,7 +70,7 @@
         </p>
 
         <img
-            src="{assets}/assets/images/pages/obstacle-racer/player-spritesheet.png"
+            src={asset("/assets/images/pages/obstacle-racer/player-spritesheet.png")}
             title="Player spritesheet"
         />
 
@@ -81,7 +81,7 @@
         </p>
 
         <img
-            src="{assets}/assets/images/pages/obstacle-racer/player-ascension.png"
+            src={asset("/assets/images/pages/obstacle-racer/player-ascension.png")}
             title="Player ascension"
         />
     </section>
@@ -95,7 +95,7 @@
         </p>
 
         <img
-            src="{assets}/assets/images/pages/obstacle-racer/mono.png"
+            src={asset("/assets/images/pages/obstacle-racer/mono.png")}
             title="Mono <3"
         />
     </section>

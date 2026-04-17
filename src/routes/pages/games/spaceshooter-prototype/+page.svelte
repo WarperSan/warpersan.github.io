@@ -1,5 +1,5 @@
 <script>
-    import { assets, base } from "$app/paths";
+    import { asset, resolve } from "$app/paths";
     import WebGLPlayer from "$lib/components/WebGLPlayer.svelte";
 
 </script>
@@ -60,13 +60,13 @@
             <WebGLPlayer
                 pc
                 mobile
-                src="{assets}/assets/builds/SpaceShooter-Prototype/index.html"
+                src={asset("/assets/builds/SpaceShooter-Prototype/index.html")}
             />
         </div>
         <p>
             If you want to download the game or support it, you can find it <a
                 href="https://warpersan.itch.io/touhou-from-wish"
-                >here <i class="fa-solid fa-download"></i></a
+                >here</a
             >.
         </p>
     </section>

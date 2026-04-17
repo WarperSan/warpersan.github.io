@@ -1,5 +1,5 @@
 <script>
-    import { assets } from "$app/paths";
+    import { asset } from "\$app/paths";
     import CodeBlock from "$lib/components/CodeBlock.svelte";
     import LearnMoreTip from "$lib/components/Tips/LearnMoreTip.svelte";
     import NoticeTip from "$lib/components/Tips/NoticeTip.svelte";
@@ -11,7 +11,7 @@
     <meta name="keywords" content="Unity, Best Practices, WarperSan" />
     <title>Unity Best Practices</title>
 
-    <link rel="icon" href="{assets}/assets/images/icons/unity-icon.svg" type="image/x-icon" />
+    <link rel="icon" href={asset("/assets/images/icons/unity-icon.svg")} type="image/x-icon" />
 </svelte:head>
 
     <article>
@@ -225,7 +225,7 @@ class Node
             </p>
             <LearnMoreTip>A good real-life example is <a
                     href="https://www.pcgamer.com/games/card-games/slay-the-spire-2-ditched-unity-for-open-source-engine-godot-after-2-years-of-development/"
-                    target="_blank">this</a>, where the developers switched engine with little disturbances, because of using plain classes.
+                    target="_blank">Slay the Spire 2</a>, where the developers switched engine with little disturbances, because of using plain classes.
             </LearnMoreTip>
         </section>
     </article>
