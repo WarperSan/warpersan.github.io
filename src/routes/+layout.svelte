@@ -22,6 +22,21 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
     <link href={asset("/styles/theme.css")} rel="stylesheet" />
 	<script src={asset("/scripts/utils.js")}></script>
+
+	<!-- Google tag (gtag.js) -->
+	<script
+		async
+		src="https://www.googletagmanager.com/gtag/js?id=G-QEB56QNBY6"
+	></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+
+		gtag("config", "G-QEB56QNBY6");
+	</script>
 </svelte:head>
 
 <Header />
