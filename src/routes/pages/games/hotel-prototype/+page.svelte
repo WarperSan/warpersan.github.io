@@ -46,7 +46,7 @@
         <p>
             If you want to download the game or support it, you can find it <a
                 href="https://warpersan.itch.io/one-shot"
-                >here <i class="fa-solid fa-download"></i></a
+                >here</a
             >.
         </p>
     </section>

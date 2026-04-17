@@ -1,6 +1,12 @@
 <script lang="ts">
     import MenuIcon from "virtual:icons/material-symbols/menu-rounded";
     import CloseIcon from "virtual:icons/material-symbols/close-rounded";
+    import HomeIcon from "virtual:icons/fa7-solid/home";
+    import UserIcon from "virtual:icons/fa7-solid/user";
+    import NewspaperIcon from "virtual:icons/fa7-solid/newspaper";
+    import ArchiveIcon from "virtual:icons/fa7-solid/box-archive";
+    import ToolIcon from "virtual:icons/fa7-solid/wrench";
+
     import { onMount } from "svelte";
 
     let isMenuOpened = $state(false);
@@ -52,27 +58,27 @@
     >
         <li>
             <a href="/" class="headerIcon" title="Home"
-                ><i class="fa-solid fa-house"></i><span>Home</span></a
+                ><HomeIcon class="self-center" /><span>Home</span></a
             >
         </li>
         <li>
             <a href="/pages/about-me" class="headerIcon" title="About Me"
-                ><i class="fa-solid fa-user"></i><span>About Me</span></a
+                ><UserIcon class="self-center" /><span>About Me</span></a
             >
         </li>
         <li>
             <a href="/pages/articles" class="headerIcon" title="Articles"
-                ><i class="fa-solid fa-newspaper"></i><span>Articles</span></a
+                ><NewspaperIcon class="self-center" /><span>Articles</span></a
             >
         </li>
         <li>
             <a href="/pages/projects" class="headerIcon" title="Projects"
-                ><i class="fa-solid fa-box-archive"></i><span>Projects</span></a
+                ><ArchiveIcon class="self-center" /><span>Projects</span></a
             >
         </li>
         <li>
             <a href="/pages/tools" class="headerIcon" title="Online Tools"
-                ><i class="fa-solid fa-wrench"></i><span>Online Tools</span></a
+                ><ToolIcon class="self-center" /><span>Online Tools</span></a
             >
         </li>
     </ul>
@@ -81,8 +87,8 @@
 <style>
     .headerIcon {
         display: flex;
-        align-items: baseline;
-        gap: 0.5rem;
+        align-items: anchor-center;
+        gap: 0.3rem;
 
         padding: 0.2rem;
 

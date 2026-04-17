@@ -53,7 +53,7 @@
         <p>
             If you want to download the game or support it, you can find it <a
                 href="https://warpersan.itch.io/game-of-danger"
-                >here <i class="fa-solid fa-download"></i></a
+                >here</a
             >.
         </p>
     </section>

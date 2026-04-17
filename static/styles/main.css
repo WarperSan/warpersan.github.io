@@ -46,6 +46,10 @@ article:not(.full) {
     }
 }
 
+::selection {
+    background-color: var(--background-selection);
+}
+
 /* TEXT PARAGRAPH */
 article>section>p,
 article>p {
@@ -72,7 +76,8 @@ h6 {
 /* LINKS */
 article a,
 article p a,
-article li a {
+article li a,
+a.link {
     color: var(--link-color);
     text-decoration: none;
     border-bottom: 1px solid var(--link-color);

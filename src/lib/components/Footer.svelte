@@ -1,4 +1,7 @@
 <script lang="ts">
+    import DiscordIcon from "virtual:icons/fa7-brands/discord";
+    import GitHubIcon from "virtual:icons/fa7-brands/github";
+
     const year = new Date().getFullYear();
 </script>
 
@@ -13,7 +16,7 @@
             aria-label="Discord"
             title="Discord"
         >
-            <i class="fa-brands fa-discord"></i>
+            <DiscordIcon />
         </a>
         <a
             href="https://github.com/WarperSan"
@@ -21,7 +24,7 @@
             aria-label="GitHub"
             title="GitHub"
         >
-            <i class="devicon-github-plain"></i>
+            <GitHubIcon />
         </a>
     </nav>
 </footer>
