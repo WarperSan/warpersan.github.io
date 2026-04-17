@@ -1,5 +1,5 @@
 <script>
-    import { asset } from "\$app/paths";
+    import { asset } from "$app/paths";
     import SkillIcon from "$lib/components/SkillIcon.svelte";
 </script>
 
@@ -10,94 +10,54 @@
 
 <article>
     <section>
-        <h2 id="about-me">About me</h2>
+        <h2>Contact Me</h2>
         <p>
-            Hi, I'm WarperSan. I am a Canadian programmer that loves to mess
-            around libraries. I specialize myself in game making, back-end web
-            developement and library creation, mostly all written in C#. I try
-            my best to keep my work both efficient and organized.
+            Have a project in mind, or want to connect? Feel free to reach out
+            using the form below:
         </p>
-    </section>
-    <section>
-        <h2 id="tools-and-skills">Skills</h2>
-        <p>
-            You can see all the tools, languages and frameworks I use or once
-            used.
-        </p>
-        <div id="skills-container">
-            <div>
-                <h3 title="All the languages I use">Languages</h3>
-                <div class="skills">
-                    <SkillIcon skill="csharp" />
-                    <SkillIcon skill="ts" />
-                    <SkillIcon skill="php" />
-                    <SkillIcon skill="js" />
-                    <SkillIcon skill="cpp" />
-                    <SkillIcon skill="java" />
-                    <SkillIcon skill="lua" />
-                </div>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input
+                type="hidden"
+                name="access_key"
+                value="41a05436-6f5b-4ece-8a84-6ebe30a88406"
+            />
+            <div class="flex flex-col p-2">
+                <label for="name" class="font-bold mb-1">Name:</label>
+                <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="Your Name"
+                    class="bg-[color:var(--background-input)] border-[color:var(--border-input)] p-2 rounded-xl border-2 border-solid"
+                />
             </div>
-
-            <div>
-                <h3 title="All the scripting and markup languages I use">
-                    Markup & Scripting
-                </h3>
-                <div class="skills">
-                    <SkillIcon skill="html" />
-                    <SkillIcon skill="css" />
-                    <SkillIcon skill="bash" />
-                    <SkillIcon skill="markdown" />
-                </div>
+            <div class="flex flex-col p-2">
+                <label for="email" class="font-bold mb-1">Email:</label>
+                <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Your Email"
+                    class="bg-[color:var(--background-input)] border-[color:var(--border-input)] p-2 rounded-xl border-2 border-solid"
+                />
             </div>
-
-            <div>
-                <h3 title="All the engines and frameworks I use">
-                    Engines & Frameworks
-                </h3>
-                <div class="skills">
-                    <SkillIcon skill="unity" />
-                    <SkillIcon skill="nodejs" />
-                    <SkillIcon skill="jquery" />
-                    <SkillIcon skill="react" />
-                    <SkillIcon skill="codeigniter" />
-                </div>
+            <div class="flex flex-col p-2">
+                <label for="message" class="font-bold mb-1">Message:</label>
+                <textarea
+                    name="message"
+                    required
+                    rows="4"
+                    placeholder="Your Message"
+                    class="bg-[color:var(--background-input)] border-[color:var(--border-input)] p-2 rounded-xl border-2 border-solid"
+                ></textarea>
             </div>
-
-            <div>
-                <h3 title="All the databases I use">Databases</h3>
-                <div class="skills">
-                    <SkillIcon skill="mysql" />
-                    <SkillIcon skill="mongodb" />
-                </div>
+            <div class="flex justify-center mt-2">
+                <button
+                    type="submit"
+                    class="bg-[var(--button-primary)] rounded-2xl p-4 transition-[var(--transition-delay)] hover:text-[color:var(--hover-text)] hover:bg-[var(--hover-background)]"
+                    >Submit</button
+                >
             </div>
-
-            <div>
-                <h3 title="All operating systems I use">Operating Systems</h3>
-                <div class="skills">
-                    <SkillIcon skill="windows11" />
-                    <SkillIcon skill="linux" />
-                </div>
-            </div>
-
-            <div>
-                <h3 title="All development tools I use">Dev Tools</h3>
-                <div class="skills">
-                    <SkillIcon skill="github" />
-                    <SkillIcon skill="git" />
-                    <SkillIcon skill="docker" />
-                    <SkillIcon skill="sonarqube" />
-                    <SkillIcon skill="swagger" />
-                </div>
-            </div>
-            <div>
-                <h3 title="All collaboration tools I use">
-                    Collaboration Tools
-                </h3>
-                <div class="skills">
-                    <SkillIcon skill="jira" />
-                    <SkillIcon skill="slack" />
-                </div>
-            </div>
-        </div>
+        </form>
     </section>
 </article>
