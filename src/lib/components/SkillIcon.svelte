@@ -91,4 +91,47 @@
 
 <style>
     @import url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css");
+
+    .skill {
+        position: relative;
+    }
+
+    .skill i {
+        display: block;
+        color: var(--text-secondary);
+        transition:
+            color var(--transition-delay),
+            transform var(--transition-delay);
+
+        font-size: 4em;
+    }
+
+    .skill:hover i {
+        color: var(--text-body);
+        transform: translateY(-16px) scale(0.85);
+    }
+
+    .skill span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -0.5rem;
+
+        user-select: none;
+
+        display: inline-flex;
+        justify-content: center;
+        text-align: center;
+
+        opacity: 0;
+        transform: translateY(16px);
+        transition:
+            opacity var(--transition-delay),
+            transform var(--transition-delay);
+    }
+
+    .skill:hover span {
+        opacity: 1;
+        transform: translateY(0);
+    }
 </style>

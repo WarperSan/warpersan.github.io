@@ -1,16 +1,14 @@
 <script>
-    import { asset } from "\$app/paths";
     import SkillIcon from "$lib/components/SkillIcon.svelte";
 </script>
 
 <svelte:head>
     <title>About Me</title>
-    <link href={asset("/styles/skills.css")} rel="stylesheet" />
 </svelte:head>
 
 <article>
     <section>
-        <h2 id="about-me">About me</h2>
+        <h2>About me</h2>
         <p>
             Hi, I'm WarperSan. I am a Canadian programmer that loves to mess
             around libraries. I specialize myself in game making, back-end web
@@ -19,7 +17,7 @@
         </p>
     </section>
     <section>
-        <h2 id="tools-and-skills">Skills</h2>
+        <h2>Skills</h2>
         <p>
             You can see all the tools, languages and frameworks I use or once
             used.
@@ -101,3 +99,35 @@
         </div>
     </section>
 </article>
+
+<style>
+    #skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-evenly;
+    }
+
+    #skills-container > div {
+        box-sizing: border-box;
+        flex: fit-content;
+        overflow-x: hidden;
+    }
+
+    .skills {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-evenly;
+
+        padding: 1rem;
+        border-radius: 5px;
+
+        background-color: var(--background-input);
+
+        border: 1px solid var(--border-container);
+
+        user-select: none;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+</style>
