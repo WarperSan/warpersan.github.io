@@ -28,18 +28,32 @@
             Université du Québec à Chicoutimi
         </a>
     </p>
-    <div class="flex gap-4">
+    <div class="flex flex-col sm:flex-row gap-4">
         <a
-            class="flex items-center bg-[var(--button-primary)] rounded-2xl p-4 transition-[var(--transition-delay)] hover:text-[color:var(--hover-text)] hover:bg-[var(--hover-background)]"
+            class="button bg-[var(--button-primary)] rounded-2xl p-4"
             href={resolve("/pages/projects")}
         >
             <BriefcaseIcon class="mr-2" /><span>View My Work</span></a
         >
         <a
-            class="flex items-center bg-[var(--button-secondary)] rounded-2xl p-4 transition-[var(--transition-delay)] hover:text-[color:var(--hover-text)] hover:bg-[var(--hover-background)]"
+            class="button bg-[var(--button-secondary)] rounded-2xl p-4"
             href={resolve("/pages/contact-me")}
         >
             <CommentIcon class="mr-2" /><span>Get in Touch</span>
         </a>
     </div>
 </div>
+
+<style>
+    .button {
+        display: flex;
+        align-items: center;
+
+        transition-duration: var(--transition-delay);
+
+        &:hover {
+            color: var(--hover-text);
+            background-color: var(--hover-background);
+        }
+    }
+</style>
