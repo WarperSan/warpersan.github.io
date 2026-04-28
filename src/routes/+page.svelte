@@ -14,7 +14,7 @@
     <h1
         class="text-[clamp(2.8rem,7vw,4.5rem)] leading-none text-[color:var(--text-primary)] tracking-[-0.02em] mt-0 mb-2 mx-0"
     >
-        Warper<em class="text-[color:var(--brand-500)]">San</em>
+        WarperSan
     </h1>
     <p class="text-[color:var(--text-body)] leading-[1.75] mt-4 mb-10 mx-0">
         Unity developer focused on tools and backend systems for game
