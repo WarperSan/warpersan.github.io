@@ -17,11 +17,19 @@
         Warper<em class="text-[color:var(--brand-500)]">San</em>
     </h1>
     <p class="text-[color:var(--text-body)] leading-[1.75] mt-4 mb-10 mx-0">
-    Unity developer focused on tools and backend systems for game development, including editors, workflows, and gameplay support systems. 
-    I also develop mods that extend and refine existing game mechanics. 
-    Currently studying <a class="link" href="https://programmes.uqac.ca/6596" target="_blank">Game Programming</a> 
-    at <a class="link" href="https://www.uqac.ca/" target="_blank">Université du Québec à Chicoutimi</a>.
-</p>
+        Unity developer focused on tools and backend systems for game
+        development, including editors, workflows, and gameplay support systems.
+        I also develop mods that extend existing game mechanics.
+        Currently studying <a
+            class="link"
+            href="https://programmes.uqac.ca/6596"
+            target="_blank">Game Programming</a
+        >
+        at
+        <a class="link" href="https://www.uqac.ca/" target="_blank"
+            >Université du Québec à Chicoutimi</a
+        >.
+    </p>
     <div class="flex flex-col sm:flex-row gap-4">
         <a
             class="button bg-[var(--button-primary)] rounded-2xl p-4"

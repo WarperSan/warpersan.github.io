@@ -67,13 +67,13 @@
             >
         </li>
         <li>
-            <a href="/pages/articles" class="headerIcon" title="Articles"
-                ><NewspaperIcon class="self-center" /><span>Articles</span></a
+            <a href="/pages/projects" class="headerIcon" title="Projects"
+                ><ArchiveIcon class="self-center" /><span>Projects</span></a
             >
         </li>
         <li>
-            <a href="/pages/projects" class="headerIcon" title="Projects"
-                ><ArchiveIcon class="self-center" /><span>Projects</span></a
+            <a href="/pages/articles" class="headerIcon" title="Articles"
+                ><NewspaperIcon class="self-center" /><span>Articles</span></a
             >
         </li>
         <li>
