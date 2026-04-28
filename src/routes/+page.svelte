@@ -9,7 +9,7 @@
     <p
         class="text-xs tracking-widest uppercase text-[color:var(--text-secondary)] mt-0 mb-4 mx-0"
     >
-        Game Developer and Modder
+        Game Tools Programmer
     </p>
     <h1
         class="text-[clamp(2.8rem,7vw,4.5rem)] leading-none text-[color:var(--text-primary)] tracking-[-0.02em] mt-0 mb-2 mx-0"
@@ -17,17 +17,11 @@
         Warper<em class="text-[color:var(--brand-500)]">San</em>
     </h1>
     <p class="text-[color:var(--text-body)] leading-[1.75] mt-4 mb-10 mx-0">
-        I build puzzle or horror games in Unity. I also create mods for a
-        variety of games. Currently studying <a
-            class="link"
-            href="https://www.uqac.ca/programme/6596/"
-            target="_blank">Game Programming</a
-        >
-        at
-        <a class="link" href="https://www.uqac.ca/" target="_blank">
-            Université du Québec à Chicoutimi
-        </a>
-    </p>
+    Unity developer focused on tools and backend systems for game development, including editors, workflows, and gameplay support systems. 
+    I also develop mods that extend and refine existing game mechanics. 
+    Currently studying <a class="link" href="https://www.uqac.ca/programme/6596/" target="_blank">Game Programming</a> 
+    at <a class="link" href="https://www.uqac.ca/" target="_blank">Université du Québec à Chicoutimi</a>.
+</p>
     <div class="flex flex-col sm:flex-row gap-4">
         <a
             class="button bg-[var(--button-primary)] rounded-2xl p-4"
