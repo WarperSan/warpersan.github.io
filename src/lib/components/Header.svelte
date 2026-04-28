@@ -76,11 +76,11 @@
                 ><NewspaperIcon class="self-center" /><span>Articles</span></a
             >
         </li>
-        <li>
+        <!--<li>
             <a href="/pages/tools" class="headerIcon" title="Online Tools"
                 ><ToolIcon class="self-center" /><span>Online Tools</span></a
             >
-        </li>
+        </li>-->
     </ul>
 </header>
 
