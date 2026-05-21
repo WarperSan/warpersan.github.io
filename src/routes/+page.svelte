@@ -5,7 +5,7 @@
     import { resolve } from "$app/paths";
 </script>
 
-<div class="w-4/5 mx-auto my-0 pt-12 pb-10 px-8">
+<div class="w-full max-w-[1500px] mx-auto my-0 pt-12 pb-10 px-8">
     <p
         class="text-xs tracking-widest uppercase text-[color:var(--text-secondary)] mt-0 mb-4 mx-0"
     >

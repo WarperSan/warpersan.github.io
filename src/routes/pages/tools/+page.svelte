@@ -9,7 +9,7 @@
 
 <article>
     <section>
-        <h2>Online Tools</h2>
+        <h1>Online Tools</h1>
         <p>
             A collection of online tools developed by me for a variety of tasks.
         </p>

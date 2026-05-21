@@ -9,12 +9,12 @@
 
 <article>
     <section>
-        <h2>Projects</h2>
+        <h1>Projects</h1>
         <p>
             A collection of projects I have made over the years. This includes
             games, mods, tools, interactive experiences.
         </p>
-        <div id="projects-container" class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] auto-rows-[1fr] gap-4 p-4 bg-[var(--background-input)] border-2 border-[var(--border-input)]">
+        <div id="projects-container" class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] auto-rows-[1fr] gap-4 p-4 bg-[var(--background-container)] border-2 border-[var(--border-input)]">
             <ProjectItem
                 title="ThunderPipe"
                 description="A CLI tool for validating and publishing packages to Thunderstore."

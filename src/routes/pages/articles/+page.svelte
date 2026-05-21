@@ -9,7 +9,7 @@
 
 <article>
     <section>
-        <h2>Articles</h2>
+        <h1>Articles</h1>
         <p>Articles I have written.</p>
         <ul>
             <li>

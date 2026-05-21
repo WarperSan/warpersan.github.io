@@ -4,7 +4,7 @@
 
 <article>
     <section>
-        <h2>Contact Me</h2>
+        <h1>Contact Me</h1>
         <p>
             Have a project in mind, or want to connect? Feel free to reach out
             using the form below:

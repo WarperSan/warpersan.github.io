@@ -8,7 +8,7 @@
 
 <article>
     <section>
-        <h2>About me</h2>
+        <h1>About me</h1>
         <p>
             Hi, I'm WarperSan. I am a Canadian programmer that loves to mess
             around libraries. I specialize myself in game making, back-end web
