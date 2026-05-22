@@ -77,6 +77,10 @@ article li a:hover {
     border-color: var(--accent);
 }
 
+[id] {
+    scroll-margin-top: 4rem;
+}
+
 /* LISTS */
 ul,
 ol {
