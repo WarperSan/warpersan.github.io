@@ -1,5 +1,5 @@
 <script>
-    import { asset, resolve } from "$app/paths";
+    import { resolve } from "$app/paths";
     import WarningTip from "$lib/components/Tips/WarningTip.svelte";
 
 </script>

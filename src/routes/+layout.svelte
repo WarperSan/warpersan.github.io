@@ -1,7 +1,7 @@
 <script lang="ts">
 	import "../app.css";
 	import favicon from "$lib/assets/favicon.ico";
-	import { asset, resolve } from "$app/paths";
+	import { asset } from "$app/paths";
 	import Footer from "$lib/components/Footer.svelte";
 	import Header from "$lib/components/Header.svelte";
 

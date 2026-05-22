@@ -1,5 +1,4 @@
 <script>
-    import { asset } from "$app/paths";
     import CodeBlock from "$lib/components/CodeBlock.svelte";
     import LearnMoreTip from "$lib/components/Tips/LearnMoreTip.svelte";
     import WarningTip from "$lib/components/Tips/WarningTip.svelte";

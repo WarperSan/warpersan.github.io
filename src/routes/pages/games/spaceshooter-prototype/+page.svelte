@@ -1,5 +1,5 @@
 <script>
-    import { asset, resolve } from "$app/paths";
+    import { asset } from "$app/paths";
     import WebGLPlayer from "$lib/components/WebGLPlayer.svelte";
 
 </script>

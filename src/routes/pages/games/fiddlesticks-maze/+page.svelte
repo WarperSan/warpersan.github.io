@@ -1,5 +1,5 @@
 <script>
-    import { asset, resolve } from "$app/paths";
+    import { asset } from "$app/paths";
     import WarningTip from "$lib/components/Tips/WarningTip.svelte";
     import WebGLPlayer from "$lib/components/WebGLPlayer.svelte";
 

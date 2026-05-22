@@ -1,5 +1,5 @@
 <script>
-    import { asset, resolve } from "$app/paths";
+    import { resolve } from "$app/paths";
     import ToolItem from "$lib/components/Items/ToolItem.svelte";
 </script>
 
