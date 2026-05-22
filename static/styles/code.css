@@ -1,0 +1,13 @@
+code:not(pre code) {
+    background-color: #2a2a2d;
+    color: #fc78ad;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 0.95em;
+    border: 1px solid #3a3a3d;
+    word-break: keep-all;
+}
+
+pre {
+    border-radius: 0.5rem;
+}

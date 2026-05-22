@@ -20,6 +20,7 @@
 	<!-- GENERIC -->
 	<link href={asset("/styles/main.css")} rel="stylesheet" />
 	<link href={asset("/styles/theme.css")} rel="stylesheet" />
+	<link href={asset("/styles/code.css")} rel="stylesheet" />
 	<script src={asset("/scripts/utils.js")}></script>
 
 	<!-- Google tag (gtag.js) -->
