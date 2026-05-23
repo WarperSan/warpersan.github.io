@@ -1,7 +1,7 @@
 <script>
-    import { asset } from "\$app/paths";
-
+    import { asset } from "$app/paths";
 </script>
+
 <svelte:head>
     <title>Obstacle Racer</title>
     <link
@@ -30,11 +30,9 @@
             "Obstacle Racer". The goal of the game is really simple yet
             effective: <strong>be the first to reach the goal</strong>. If you
             want to try the game, you can find its page
-            <a
-                href="https://warpersan.itch.io/obstacle-racer"
-                text="Source Code"
-                target="_blank">here</a
-            >. I didn't find any video of mine showcasing the game other than
+            <a href="https://warpersan.itch.io/obstacle-racer" target="_blank">
+                here
+            </a>. I didn't find any video of mine showcasing the game other than
             this one. In this version, the only things missing are the end flag
             and the final version of the obstacle selector:
         </p>
@@ -70,8 +68,11 @@
         </p>
 
         <img
-            src={asset("/assets/images/pages/obstacle-racer/player-spritesheet.png")}
-            title="Player spritesheet"
+            src={asset(
+                "/assets/images/pages/obstacle-racer/player-spritesheet.png",
+            )}
+            alt="Player sprite sheet"
+            title="Player sprite sheet"
         />
 
         <p>
@@ -81,7 +82,10 @@
         </p>
 
         <img
-            src={asset("/assets/images/pages/obstacle-racer/player-ascension.png")}
+            src={asset(
+                "/assets/images/pages/obstacle-racer/player-ascension.png",
+            )}
+            alt="Player ascension"
             title="Player ascension"
         />
     </section>
@@ -96,6 +100,7 @@
 
         <img
             src={asset("/assets/images/pages/obstacle-racer/mono.png")}
+            alt="Mono <3"
             title="Mono <3"
         />
     </section>
