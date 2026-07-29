@@ -16,10 +16,16 @@
         children?: Snippet;
     }
 
+    interface LanguageInfo {
+        code: string;
+        name: string;
+    }
+
     let { lang, children }: Props = $props();
     let codeElement: HTMLElement;
     let copied = $state(false);
     let copyTimeout: number | null = null;
+    let languageInfo: LanguageInfo = getLanguageInfo(lang);
 
     function highlight(node: HTMLElement) {
         const code = node.textContent?.trim() || "";
@@ -33,27 +39,50 @@
 
         if (copyTimeout != null) clearTimeout(copyTimeout);
 
-        copyTimeout = setTimeout(() => (copied = false), 2000);
+        copyTimeout = setTimeout(() => (copied = false), 1500);
+    }
+
+    function getLanguageInfo(lang: string): LanguageInfo {
+        switch (lang) {
+            case "csharp":
+                return { code: "csharp", name: "C#" };
+            case "php":
+                return { code: "php", name: "PHP" };
+            default:
+                return { code: lang, name: lang };
+        }
     }
 </script>
 
-<div class="relative group">
-    <button
-        class="absolute top-2 right-2 p-1 rounded-md cursor-pointer select-none transition-bg duration-200 transition-opacity opacity-0 group-hover:opacity-100 hover:bg-[var(--bg)]"
-        title="Copy Snippet"
-        onclick={onClick}
+<div
+    class="rounded bg-[var(--background-container)] overflow-hidden border-2 border-[var(--border-container)]"
+>
+    <div
+        class="flex items-center px-3 py-1 border-b-2 border-[var(--border-container)]"
     >
-        {#if copied}
-            <CheckIcon />
-        {:else}
-            <CopyIcon />
-        {/if}
-    </button>
-    <pre class="language-{lang}"><code
-            bind:this={codeElement}
-            use:highlight
-            class="language-{lang}">{@render children?.()}</code
-        ></pre>
+        <span class="font-semibold">{languageInfo.name}</span>
+        <div class="flex-1"></div>
+        <button
+            class="flex items-center gap-1 px-2 py-1 bg-[var(--background-input)] border border-[var(--border-input)] rounded-md cursor-pointer select-none hover:bg-[var(--hover-background)] hover:text-[var(--hover-text)] transition-colors duration-[var(--transition-delay)]"
+            title="Copy Snippet"
+            onclick={onClick}
+        >
+            {#if copied}
+                <CheckIcon />
+            {:else}
+                <CopyIcon />
+            {/if}
+            <span>Copy</span>
+        </button>
+    </div>
+    <div>
+        <pre style="margin: 0; border-radius: 0;"><code
+                bind:this={codeElement}
+                use:highlight
+                class="language-{languageInfo.code}"
+                >{@render children?.()}</code
+            ></pre>
+    </div>
 </div>
 
 <link
