@@ -10,10 +10,11 @@
     <section>
         <h1>About me</h1>
         <p>
-            Hi, I'm WarperSan. I am a Canadian programmer that loves to mess
-            around libraries. I specialize myself in game making, back-end web
-            developement and library creation, mostly all written in C#. I try
-            my best to keep my work both efficient and organized.
+            I'm WarperSan. I am a Canadian programmer that loves to dig into
+            libraries. I specialize myself in game development, and back-end web
+            development. I enjoy creating libraries and tools that can be used
+            by other developers. I try my best to keep my work both efficient
+            and organized.
         </p>
     </section>
     <section>
