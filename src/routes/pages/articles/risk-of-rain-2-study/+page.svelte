@@ -159,4 +159,103 @@ public class UnlockAllCrestsAchievement : Achievement
                 </p>
             </LearnMoreTip>
         </section>
+
+        <section>
+            <h2>Catalogs and Indexes</h2>
+            <p>
+                In Risk of Rain 2, the game uses a system of catalogs to manage the game's content.
+                For example, all artifacts (game modifiers) are stored inside the <code>ArtifactCatalog</code>.
+                This allows to have all related data stored in one singular place.
+            </p>
+            <p>
+                This is a genuinely great approach. It allows to have a single source of truth, and
+                to easily pass along references. Since the catalogs are the only way to access
+                the data, all systems are guaranteed to be using the same data.
+            </p>
+            <p>
+                As I was making <a href="https://github.com/WarperSan/WhatchaGotThere" target="_blank">my own mod, WhatchaGotThere</a>,
+                I found myself stubbed by the implementation of the system. The more conventional way to implement this structure would be to
+                return a number ID (e.g.: <code>int</code>) or a special handler type (e.g.: <code>CatalogItem</code>). However, the developers chose a
+                different approach: indexes via enumerations.
+            </p>
+            <CodeBlock lang="csharp">
+// Potential implementations
+int GetArtifactByName(string name);
+ArtifactItem GetArtifactByName(string name);
+
+// Implementation chose
+ArtifactEnum GetArtifactByName(string name);
+            </CodeBlock>
+            <p>
+                At first, it seems weird to use enumerations (<code>enum</code> for short) as indexes. Enums were designed to 
+                be used as labels for a set of integer constants. This alone doesn't raise any flags, as there are ways to
+                use them for this purpose.
+            </p>
+            <CodeBlock lang="csharp">
+// One entry per item
+enum Artifacts
+&lbrace;
+    Chaos   = 1,
+    Command = 2,
+    Death   = 3,
+    // ...
+&rbrace;
+            </CodeBlock>
+            <p>
+                Using enums like this does hurt the expandability of the system: adding an item
+                requires a developer to edit manually the enum, and create a new entry. However,
+                the developers did not used enums in the conventional way. This can be viewed when
+                looking at their actual implementation.
+            </p>
+            <CodeBlock lang="csharp">
+public enum ArtifactIndex
+&lbrace;
+	None = -1,
+&rbrace;
+            </CodeBlock>
+            <p>
+                Instead of containing an entry for each item, the enumeration only contains the <code>None</code>
+                entry. Since enumerations are simply integers with named values, they can fully be used as their
+                raw value. This implementation has two advantages: no memory overhead and type safety.
+            </p>
+            <p>
+                An implementation that could've been used was to use nullable numbers
+                (<code>int?</code> or <code>Nullable&lt;int&gt;</code>). It allows to display an invalid index, 
+                using <code>null</code>, as well as a valid one. However, it comes to the cost of the overhead brought
+                by <code>Nullable</code>. The added structure contains its own fields, which increases the size
+                of the data. This can lead to performance issues when most of the game rely on passing along this
+                kind of data.
+            </p>
+            <p>
+                Another implementation that could've been used was to simply use numbers (<code>int</code>). Under
+                the hood, that is what the chosen implementation does. However, it's hidden behind a type. Using
+                the raw value itself would've caused problems. Having a field of type <code>int</code> doesn't 
+                limit the caller and doesn't force them to understand the systems.
+            </p>
+            <CodeBlock lang="csharp">
+struct Data
+&lbrace;
+    public int Index;
+    public ArtifactIndex Artifact;
+&rbrace;
+
+var data = new Data();
+
+// Allows to set any int implicitly
+data.Index = 2541;
+
+// Errors when setting an int implicitly
+data.Artifact = 4241;
+            </CodeBlock>
+            <p>
+                Of course, this is not a fully fool-proofed system. A developer can still force the type change
+                and assign a number as an enumeration. However, this action now becomes a deliberate action, instead
+                of a simple negligence mistake.
+            </p>
+            <p>
+                Overall, this implementation is very interesting. It got me wondering for a good hour why the
+                developers have used this one instead of another implementation. It increases the learning curve
+                of the codebase, but brings an elegant solution to a simple yet complex problem.
+            </p>
+        </section>
     </article>
